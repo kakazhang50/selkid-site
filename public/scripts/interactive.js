@@ -65,6 +65,41 @@
     });
   }
 
+  function submitMailerLite(url, email, onSuccess, onFail) {
+    var body = 'fields[email]=' + encodeURIComponent(email);
+    return fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'application/json' },
+      body: body,
+    })
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (data) {
+        if (data && data.success) onSuccess();
+        else throw new Error('fail');
+      })
+      .catch(function () {
+        return new Promise(function (resolve, reject) {
+          var cb = 'ml_cb_' + Date.now();
+          var script = document.createElement('script');
+          window[cb] = function (data) {
+            delete window[cb];
+            if (script.parentNode) script.parentNode.removeChild(script);
+            if (data && data.success) resolve();
+            else reject(new Error('fail'));
+          };
+          script.src = url + '?callback=' + cb + '&' + body;
+          script.onerror = function () {
+            delete window[cb];
+            if (script.parentNode) script.parentNode.removeChild(script);
+            reject(new Error('fail'));
+          };
+          document.body.appendChild(script);
+        }).then(onSuccess);
+      });
+  }
+
   function initEmailForms() {
     document.querySelectorAll('[data-email-form]').forEach(function (form) {
       form.addEventListener('submit', function (event) {
@@ -73,6 +108,7 @@
         var note = form.querySelector('.form-note');
         var btn = form.querySelector('button[type="submit"]');
         var endpoint = (form.getAttribute('data-endpoint') || '').trim();
+        var mlUrl = (form.getAttribute('data-mailerlite-url') || '').trim();
         var sample = form.getAttribute('data-free-sample') || '';
         if (!input || !input.value) return;
         var email = input.value.trim();
@@ -101,6 +137,23 @@
           }
           input.value = '';
         };
+        var fail = function () {
+          note.textContent = 'Something went wrong. Please try again.';
+        };
+        var resetBtn = function () {
+          if (btn) {
+            btn.disabled = false;
+            btn.textContent = btn.getAttribute('data-label') || 'Join';
+          }
+        };
+        if (mlUrl) {
+          submitMailerLite(mlUrl, email, function () {
+            done('remote');
+          }, fail)
+            .catch(fail)
+            .finally(resetBtn);
+          return;
+        }
         if (!endpoint) {
           try {
             var list = JSON.parse(localStorage.getItem(WAITLIST_KEY) || '[]');
@@ -108,10 +161,7 @@
             localStorage.setItem(WAITLIST_KEY, JSON.stringify(list));
           } catch (e) {}
           done('local');
-          if (btn) {
-            btn.disabled = false;
-            btn.textContent = btn.getAttribute('data-label') || 'Join';
-          }
+          resetBtn();
           return;
         }
         fetch(endpoint, {
@@ -123,15 +173,8 @@
             if (!res.ok) throw new Error('fail');
             done('remote');
           })
-          .catch(function () {
-            note.textContent = 'Something went wrong. Please try again.';
-          })
-          .finally(function () {
-            if (btn) {
-              btn.disabled = false;
-              btn.textContent = btn.getAttribute('data-label') || 'Join';
-            }
-          });
+          .catch(fail)
+          .finally(resetBtn);
       });
       var btn = form.querySelector('button[type="submit"]');
       if (btn && !btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.textContent);

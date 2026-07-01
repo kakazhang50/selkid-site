@@ -1,5 +1,6 @@
 ---
 import { site } from '@/lib/site';
+import SubscribeForm from '@/components/SubscribeForm.astro';
 
 interface Props {
   compact?: boolean;
@@ -25,32 +26,18 @@ const {
   buttonLabel = compact ? 'Join' : 'Get free sample',
 } = Astro.props;
 
-const hasMailerLite = Boolean(site.mailerLiteFormId?.trim());
 const hasFormspree = Boolean(site.subscribeEndpoint?.trim());
 const showHeader = !inline && (eyebrow || title || description);
 ---
 
 {
   inline ? (
-    hasMailerLite ? (
-      <div class="ml-form-embed subscribe-form">
-        <div class="ml-embedded" data-form={site.mailerLiteFormId} />
-      </div>
-    ) : (
-      <form
-        class:list={['email-form', 'subscribe-form', 'footer-email-form']}
-        data-email-form
-        data-form-context={context}
-        data-free-sample={site.freeSampleUrl || ''}
-        data-endpoint={site.subscribeEndpoint || ''}
-      >
-        <input type="email" name="email" placeholder={compact ? 'Teacher email' : 'your@email.com'} required aria-label="Email" />
-        <button class:list={['btn', 'btn-primary', compact && 'btn-sm']} type="submit">
-          {buttonLabel}
-        </button>
-        <p class="form-note" />
-      </form>
-    )
+    <SubscribeForm
+      compact={compact}
+      context={context}
+      buttonLabel={buttonLabel}
+      class="footer-email-form"
+    />
   ) : (
     <section class:list={['subscribe-band', dark && 'subscribe-band--dark']} id={id}>
       <div class="subscribe-inner">
@@ -61,26 +48,8 @@ const showHeader = !inline && (eyebrow || title || description);
             {description && <p>{description}</p>}
           </div>
         )}
-        {hasMailerLite ? (
-          <div class="ml-form-embed subscribe-form">
-            <div class="ml-embedded" data-form={site.mailerLiteFormId} />
-          </div>
-        ) : (
-          <form
-            class="email-form subscribe-form"
-            data-email-form
-            data-form-context={context}
-            data-free-sample={site.freeSampleUrl || ''}
-            data-endpoint={site.subscribeEndpoint || ''}
-          >
-            <input type="email" name="email" placeholder={compact ? 'Teacher email' : 'your@email.com'} required aria-label="Email" />
-            <button class:list={['btn', 'btn-primary', compact && 'btn-sm']} type="submit">
-              {buttonLabel}
-            </button>
-            <p class="form-note" />
-            {!compact && !hasFormspree && <p class="form-fine">No spam. Unsubscribe anytime.</p>}
-          </form>
-        )}
+        <SubscribeForm compact={compact} context={context} buttonLabel={buttonLabel} />
+        {!compact && !hasFormspree && <p class="form-fine subscribe-band-fine">No spam. Unsubscribe anytime.</p>}
       </div>
     </section>
   )

@@ -1,10 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { site } from '@/lib/site';
+import SubscribeForm from '@/components/SubscribeForm.astro';
 import { catalog } from '@/lib/catalog';
 
 const total = catalog.totalProducts || catalog.products.length;
-const hasMailerLite = Boolean(site.mailerLiteFormId?.trim());
 ---
 
 <BaseLayout title="Free Resources" description="Get a free Training Data sample from Rex & Dino's Big AI Ideas — SELKID's flagship AI cognition series for Grades 3–6.">
@@ -19,29 +18,14 @@ const hasMailerLite = Boolean(site.mailerLiteFormId?.trim());
           <li>Early access to new AI cognition units</li>
           <li>Classroom tips from SELKID</li>
         </ul>
-        {
-          hasMailerLite ? (
-            <div id="subscribe" class="ml-form-embed subscribe-form subscribe-form--hero">
-              <div class="ml-embedded" data-form={site.mailerLiteFormId} />
-            </div>
-          ) : (
-            <>
-              <form
-                id="subscribe"
-                class="email-form subscribe-form subscribe-form--hero"
-                data-email-form
-                data-form-context="free-resources"
-                data-free-sample={site.freeSampleUrl || ''}
-                data-endpoint={site.subscribeEndpoint || ''}
-              >
-                <input type="email" name="email" placeholder="Teacher or parent email" required aria-label="Email" />
-                <button class="btn btn-primary" type="submit">Join &amp; get sample</button>
-                <p class="form-note" />
-              </form>
-              <p class="form-fine">No spam. Unsubscribe anytime.</p>
-            </>
-          )
-        }
+        <SubscribeForm
+          id="subscribe"
+          class="subscribe-form--hero"
+          context="free-resources"
+          placeholder="Teacher or parent email"
+          buttonLabel="Join & get sample"
+        />
+        <p class="form-fine">No spam. Unsubscribe anytime.</p>
       </div>
       <div class="subscribe-hero-art">
         <img src="/assets/ai/unit1-cover.png" alt="Training Data unit cover" />

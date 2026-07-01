@@ -1,0 +1,51 @@
+---
+import { site } from '@/lib/site';
+
+interface Props {
+  compact?: boolean;
+  context?: string;
+  placeholder?: string;
+  buttonLabel?: string;
+  id?: string;
+  class?: string;
+}
+
+const {
+  compact = false,
+  context = 'form',
+  placeholder,
+  buttonLabel,
+  id,
+  class: className = '',
+} = Astro.props;
+
+const mlUrl = site.mailerLiteSubscribeUrl?.trim() || '';
+const endpoint = site.subscribeEndpoint?.trim();
+const resolvedPlaceholder = placeholder ?? (compact ? 'Teacher email' : 'your@email.com');
+const resolvedButton = buttonLabel ?? (compact ? 'Join' : 'Get free sample');
+const inputId = id ? `${id}-email` : undefined;
+---
+
+<form
+  id={id}
+  class:list={['email-form', 'subscribe-form', compact && 'subscribe-form--compact', className]}
+  data-email-form
+  data-form-context={context}
+  data-free-sample={site.freeSampleUrl || ''}
+  data-endpoint={endpoint || ''}
+  data-mailerlite-url={mlUrl}
+>
+  <input
+    id={inputId}
+    type="email"
+    name="email"
+    placeholder={resolvedPlaceholder}
+    required
+    aria-label="Email"
+    autocomplete="email"
+  />
+  <button class:list={['btn', 'btn-primary', compact && 'btn-sm']} type="submit" data-label={resolvedButton}>
+    {resolvedButton}
+  </button>
+  <p class="form-note" role="status" aria-live="polite" />
+</form>

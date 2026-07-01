@@ -1,9 +1,9 @@
 ---
 import { site } from '@/lib/site';
 import { catalog } from '@/lib/catalog';
+import SubscribeForm from '@/components/SubscribeForm.astro';
 
 const total = catalog.totalProducts || catalog.products.length;
-const hasMailerLite = Boolean(site.mailerLiteFormId?.trim());
 const logo = site.brandLogo || '/assets/brand/selkid-logo.png';
 ---
 
@@ -43,25 +43,12 @@ const logo = site.brandLogo || '/assets/brand/selkid-logo.png';
               Free AI cognition sample · new story launches · classroom-ready downloads.
             </p>
           </div>
-          {
-            hasMailerLite ? (
-              <div class="ml-form-embed hero-home-form">
-                <div class="ml-embedded" data-form={site.mailerLiteFormId} />
-              </div>
-            ) : (
-              <form
-                class="email-form subscribe-form hero-home-form"
-                data-email-form
-                data-form-context="homepage-hero"
-                data-free-sample={site.freeSampleUrl || ''}
-                data-endpoint={site.subscribeEndpoint || ''}
-              >
-                <input type="email" name="email" placeholder="your@email.com" required aria-label="Email" />
-                <button class="btn btn-primary" type="submit">Get free sample</button>
-                <p class="form-note" />
-              </form>
-            )
-          }
+          <SubscribeForm
+            class="hero-home-form"
+            context="homepage-hero"
+            placeholder="Teacher or parent email"
+            buttonLabel="Get free sample"
+          />
           <p class="form-fine">No spam. Unsubscribe anytime.</p>
         </div>
 
