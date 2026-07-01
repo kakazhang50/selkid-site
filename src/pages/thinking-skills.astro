@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CatalogMatrixFilters from '@/components/CatalogMatrixFilters.astro';
+import PageCTA from '@/components/PageCTA.astro';
 import { catalog, coverSrc } from '@/lib/catalog';
 
 const products = catalog.products.filter((p) => p.pillar === 'thinking');
@@ -25,12 +26,25 @@ const heroImg = heroProduct ? coverSrc(heroProduct) : '/assets/covers/sel-waitin
         <div class="stat-chip"><strong>5</strong><span>Thinking habits</span></div>
         <div class="stat-chip"><strong>K–2</strong><span>Classroom ready</span></div>
       </div>
-      <a class="btn btn-ghost" href="/learning-system#sel-matrix">See full learning system</a>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#matrix-filters">Browse stories</a>
+        <a class="btn btn-ghost" href="/learning-system#sel-matrix">See full learning system</a>
+      </div>
     </div>
     <img src={heroImg} alt="Thinking skills story cover" />
   </section>
 
-  <section class="section white" style="padding-top:0">
+  <section class="section white section--flush-top">
     <CatalogMatrixFilters pillar="thinking" />
   </section>
+
+  <PageCTA
+    title="Bridge SEL and judgment"
+    description="Thinking skills connect emotional regulation to the habits children need in an AI-shaped world."
+    links={[
+      { href: '/sel-stories', label: 'SEL Stories' },
+      { href: '/ai-cognition', label: 'AI Cognition', variant: 'secondary' },
+      { href: '/free-resources#subscribe', label: 'Get free sample', variant: 'ghost' },
+    ]}
+  />
 </BaseLayout>

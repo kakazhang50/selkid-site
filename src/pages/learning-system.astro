@@ -4,6 +4,7 @@ import CaselFramework from '@/components/CaselFramework.astro';
 import EducationMatrix from '@/components/EducationMatrix.astro';
 import SelFrameworkExplainer from '@/components/SelFrameworkExplainer.astro';
 import StepsGrid from '@/components/StepsGrid.astro';
+import BeliefBand from '@/components/BeliefBand.astro';
 import SubscribeCTA from '@/components/SubscribeCTA.astro';
 import { catalog } from '@/lib/catalog';
 import { site, freeSample } from '@/lib/site';
@@ -17,15 +18,18 @@ const total = catalog.totalProducts || catalog.products.length;
       <p class="eyebrow">Learning System</p>
       <h1>{site.brandBeliefLead}</h1>
       <p class="page-hero-belief-sub">{site.brandBeliefSub}</p>
-      <p>{site.brandBeliefBody}</p>
       <p>
-        Built on the <strong>CASEL Framework</strong> and delivered through Rex &amp; Dino stories — a published SEL
-        matrix for K–2, thinking skills, and a flagship AI cognition series for Grades 3–6.
+        Built on the <strong>CASEL Framework</strong> and delivered through Rex &amp; Dino stories — SEL for K–2,
+        thinking skills, and a flagship AI cognition series for Grades 3–6.
       </p>
       <div class="page-stats">
         <div class="stat-chip"><strong>5</strong><span>CASEL competencies</span></div>
         <div class="stat-chip"><strong>{total}+</strong><span>Resources on TPT</span></div>
         <div class="stat-chip"><strong>{catalog.pillars.ai}</strong><span>AI Cognition units</span></div>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/free-resources#subscribe">Get free sample</a>
+        <a class="btn btn-ghost" href="#casel">CASEL framework</a>
       </div>
     </div>
     <img src="/assets/hero-maple-forest.png" alt="Rex and Dino in Maple Forest" />
@@ -33,7 +37,7 @@ const total = catalog.totalProducts || catalog.products.length;
 
   <section class="section white">
     <div class="section-inner">
-      <div class="section-heading centered">
+      <div class="section-heading centered section-heading--compact">
         <p class="eyebrow">Brand progression</p>
         <h2>From feelings, to thinking, to the future</h2>
       </div>
@@ -41,15 +45,15 @@ const total = catalog.totalProducts || catalog.products.length;
     </div>
   </section>
 
-  <section class="section white" id="casel">
+  <section class="section light" id="casel">
     <div class="section-inner">
       <CaselFramework />
     </div>
   </section>
 
-  <section class="section light" id="sel-matrix">
+  <section class="section white" id="sel-matrix">
     <div class="section-inner">
-      <div class="section-heading centered">
+      <div class="section-heading centered section-heading--compact">
         <p class="eyebrow">SEL methodology</p>
         <h2>From CASEL competency to classroom moment</h2>
         <p>
@@ -63,7 +67,7 @@ const total = catalog.totalProducts || catalog.products.length;
 
   <section class="steps section light">
     <div class="section-inner">
-      <div class="section-heading centered">
+      <div class="section-heading centered section-heading--compact">
         <p class="eyebrow">Delivery model</p>
         <h2>Story → Discussion → Activity → Reflection</h2>
         <p>Every SELKID resource follows the same classroom rhythm teachers can use immediately.</p>
@@ -71,6 +75,8 @@ const total = catalog.totalProducts || catalog.products.length;
       <StepsGrid />
     </div>
   </section>
+
+  <BeliefBand />
 
   <SubscribeCTA
     context="learning-system"

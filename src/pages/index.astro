@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import HeroHome from '@/components/HeroHome.astro';
-import VisitorPath from '@/components/VisitorPath.astro';
 import AudiencePaths from '@/components/AudiencePaths.astro';
+import BeliefBand from '@/components/BeliefBand.astro';
 import MatrixPreview from '@/components/MatrixPreview.astro';
 import StepsGrid from '@/components/StepsGrid.astro';
 import ProductGrid from '@/components/ProductGrid.astro';
@@ -12,135 +12,111 @@ import EducatorNotesPreview from '@/components/EducatorNotesPreview.astro';
 import { catalog, pickHomepageFeatured } from '@/lib/catalog';
 
 const total = catalog.totalProducts || catalog.products.length;
-const featured = pickHomepageFeatured(catalog.products, 6);
+const featured = pickHomepageFeatured(catalog.products, 4);
 const pillars = catalog.pillars;
 const ogImage = site.brandLogo || '/assets/brand/selkid-logo.png';
 ---
 
-<BaseLayout heroHeader ogImage={ogImage}>
-  <HeroHome />
+<BaseLayout heroHeader ogImage={ogImage} siteCompact={false}>
+  <div class="home-compact">
+    <HeroHome />
 
-  <VisitorPath />
+    <AudiencePaths />
 
-  <AudiencePaths />
+    <section class="section white">
+      <div class="section-inner reveal">
+        <div class="section-heading centered section-heading--compact">
+          <p class="eyebrow">Education matrix</p>
+          <h2>From feelings, to thinking, to the future</h2>
+          <p>
+            {pillars.sel} SEL stories · {pillars.thinking} thinking skills · flagship AI cognition series.
+          </p>
+        </div>
+        <MatrixPreview />
+        <div class="casel-teaser casel-teaser--compact">
+          <p>
+            Built on the <strong>CASEL Framework</strong> — five competencies in {pillars.sel}+ classroom stories.
+          </p>
+          <a class="btn btn-secondary" href="/learning-system#casel">How CASEL powers SELKID</a>
+        </div>
+      </div>
+    </section>
 
-  <section class="trust-band trust-band--compact">
-    <div class="trust-grid">
-      <div class="trust-item">
-        <strong>{total}+</strong>
-        <span>Classroom-ready stories — not random worksheets</span>
+    <section class="steps section light">
+      <div class="section-inner">
+        <div class="section-heading centered section-heading--compact">
+          <p class="eyebrow">How SELKID works</p>
+          <h2>Story → Discussion → Activity → Reflection</h2>
+        </div>
+        <StepsGrid />
       </div>
-      <div class="trust-item">
-        <strong>3</strong>
-        <span>Learning pillars: SEL · Thinking · AI</span>
-      </div>
-      <div class="trust-item">
-        <strong>{pillars.sel}+</strong>
-        <span>SEL stories cross-tagged by classroom moment</span>
-      </div>
-      <div class="trust-item">
-        <strong>{pillars.ai}</strong>
-        <span>AI cognition units for Grades 3–6</span>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section white">
-    <div class="section-inner reveal">
-      <div class="section-heading centered">
-        <p class="eyebrow">Education matrix</p>
-        <h2>From feelings, to thinking, to the future</h2>
-        <p>
-          SELKID is a structured learning system: {pillars.sel} SEL stories, {pillars.thinking} thinking skills
-          resources, and a flagship AI cognition series.
+    <BeliefBand />
+
+    <section class="unit-timeline">
+      <div class="section-inner">
+        <div class="section-heading centered section-heading--compact">
+          <p class="eyebrow">R&amp;D flagship · AI Cognition</p>
+          <h2>Rex &amp; Dino's Big AI Ideas</h2>
+          <p>Season 1 — six comic units for Grades 3–6.</p>
+        </div>
+        <p class="unit-scroll-hint" aria-hidden="true">Swipe to explore all 6 units →</p>
+        <div class="unit-scroll unit-scroll--peek">
+          <a class="unit-scroll-item" href="/ai-cognition"
+            ><img src="/assets/ai/unit1-cover.png" alt="Unit 1 — Training Data" loading="lazy" /><span
+              >Training Data</span
+            ></a
+          >
+          <a class="unit-scroll-item" href="/ai-cognition"
+            ><img src="/assets/ai/unit2-cover.png" alt="Unit 2 — Data Quality" loading="lazy" /><span
+              >Data Quality</span
+            ></a
+          >
+          <a class="unit-scroll-item" href="/ai-cognition"
+            ><img src="/assets/ai/unit3-cover.png" alt="Unit 3 — AI Bias" loading="lazy" /><span>AI Bias</span></a
+          >
+          <a class="unit-scroll-item" href="/ai-cognition"
+            ><img src="/assets/ai/unit4-cover.png" alt="Unit 4 — Hallucination" loading="lazy" /><span
+              >Hallucination</span
+            ></a
+          >
+          <a class="unit-scroll-item" href="/ai-cognition"
+            ><img src="/assets/ai/unit5-cover.png" alt="Unit 5 — Model Collapse" loading="lazy" /><span
+              >Model Collapse</span
+            ></a
+          >
+          <a class="unit-scroll-item" href="/ai-cognition"
+            ><img src="/assets/ai/unit6-cover.png" alt="Unit 6 — Human Judgment" loading="lazy" /><span
+              >Human Judgment</span
+            ></a
+          >
+        </div>
+        <p class="section-cta-row">
+          <a class="btn btn-primary" href="/free-resources">Get free sample</a>
+          <a class="btn btn-secondary" href="/ai-cognition">Explore AI series</a>
         </p>
       </div>
-      <MatrixPreview />
-      <div class="casel-teaser">
-        <p>
-          Built on the <strong>CASEL Framework</strong> — five competencies translated into {pillars.sel}+ classroom
-          stories.
-        </p>
-        <a class="btn btn-secondary" href="/learning-system#casel">How CASEL powers SELKID</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="steps section light">
-    <div class="section-inner">
-      <div class="section-heading centered">
-        <p class="eyebrow">How SELKID works</p>
-        <h2>Story → Discussion → Activity → Reflection</h2>
-        <p>The same classroom rhythm in every resource — Rex &amp; Dino carry the skill before the worksheet does.</p>
-      </div>
-      <StepsGrid />
-    </div>
-  </section>
+    <SocialProof />
 
-  <section class="unit-timeline">
-    <div class="section-inner">
-      <div class="section-heading centered">
-        <p class="eyebrow">R&amp;D flagship · AI Cognition</p>
-        <h2>Rex &amp; Dino's Big AI Ideas</h2>
-        <p>
-          Season 1: AI Mistakes &amp; Human Judgment — six comic units for Grades 3–6 on how AI learns, fails, and still
-          needs people.
+    <EducatorNotesPreview />
+
+    <section class="product-section">
+      <div class="section-inner">
+        <div class="section-heading centered section-heading--compact">
+          <p class="eyebrow">Classroom favorites</p>
+          <h2>Popular resources</h2>
+        </div>
+        <ProductGrid products={featured} preferInternal />
+        <p class="section-cta-row">
+          <a class="btn btn-secondary" href="/sel-stories">Browse all stories</a>
+          <a class="btn btn-ghost" href={site.tptStore} target="_blank" rel="noopener"
+            >Shop on TPT ({total}+)</a
+          >
         </p>
       </div>
-      <p class="unit-scroll-hint" aria-hidden="true">Swipe to explore all 6 units →</p>
-      <div class="unit-scroll unit-scroll--peek">
-        <a class="unit-scroll-item" href="/ai-cognition"
-          ><img src="/assets/ai/unit1-cover.png" alt="Unit 1 — Training Data" loading="lazy" /><span
-            >Training Data</span
-          ></a
-        >
-        <a class="unit-scroll-item" href="/ai-cognition"
-          ><img src="/assets/ai/unit2-cover.png" alt="Unit 2 — Data Quality" loading="lazy" /><span>Data Quality</span
-          ></a
-        >
-        <a class="unit-scroll-item" href="/ai-cognition"
-          ><img src="/assets/ai/unit3-cover.png" alt="Unit 3 — AI Bias" loading="lazy" /><span>AI Bias</span></a
-        >
-        <a class="unit-scroll-item" href="/ai-cognition"
-          ><img src="/assets/ai/unit4-cover.png" alt="Unit 4 — Hallucination" loading="lazy" /><span>Hallucination</span
-          ></a
-        >
-        <a class="unit-scroll-item" href="/ai-cognition"
-          ><img src="/assets/ai/unit5-cover.png" alt="Unit 5 — Model Collapse" loading="lazy" /><span
-            >Model Collapse</span
-          ></a
-        >
-        <a class="unit-scroll-item" href="/ai-cognition"
-          ><img src="/assets/ai/unit6-cover.png" alt="Unit 6 — Human Judgment" loading="lazy" /><span
-            >Human Judgment</span
-          ></a
-        >
-      </div>
-      <p style="text-align:center;margin-top:20px">
-        <a class="btn btn-primary" href="/free-resources">Get free sample</a>
-        <a class="btn btn-secondary" href="/ai-cognition" style="margin-left:10px">Explore AI series</a>
-      </p>
-    </div>
-  </section>
-
-  <SocialProof />
-
-  <EducatorNotesPreview />
-
-  <section class="product-section">
-    <div class="section-inner">
-      <div class="section-heading centered">
-        <p class="eyebrow">Classroom favorites</p>
-        <h2>Popular resources</h2>
-        <p>Explore on SELKID first — buy on TPT when you're ready.</p>
-      </div>
-      <ProductGrid products={featured} preferInternal />
-      <p style="text-align:center;margin-top:32px">
-        <a class="btn btn-secondary" href="/sel-stories">Browse all stories</a>
-        <a class="btn btn-ghost" href={site.tptStore} target="_blank" rel="noopener" style="margin-left:10px"
-          >Shop on TPT ({total}+)</a
-        >
-      </p>
-    </div>
-  </section>
+    </section>
+  </div>
 </BaseLayout>

@@ -1,0 +1,43 @@
+---
+interface Link {
+  href: string;
+  label: string;
+  external?: boolean;
+  variant?: 'primary' | 'secondary' | 'ghost';
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  links: Link[];
+}
+
+const { title, description, links } = Astro.props;
+
+function btnVariant(index: number, override?: Link['variant']) {
+  if (override) return override;
+  if (index === 0) return 'primary';
+  if (index === 1) return 'secondary';
+  return 'ghost';
+}
+---
+
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <h2>{title}</h2>
+    {description && <p>{description}</p>}
+    <div class="page-cta-actions">
+      {
+        links.map((link, i) => (
+          <a
+            class:list={['btn', `btn-${btnVariant(i, link.variant)}`]}
+            href={link.href}
+            {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

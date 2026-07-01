@@ -17,9 +17,12 @@ const total = catalog.totalProducts || catalog.products.length;
     <div>
       <p class="eyebrow">R&amp;D flagship · Grades 3–6</p>
       <h1>Rex &amp; Dino's Big AI Ideas</h1>
-      <p class="lead">Not coding. Not tool training. <strong>Human judgment.</strong> A comic-first AI cognition series helping children understand how AI learns, why it makes mistakes, and why people still matter.</p>
+      <p class="lead">
+        Not coding. Not tool training. <strong>Human judgment.</strong> A comic-first AI cognition series helping
+        children understand how AI learns, why it makes mistakes, and why people still matter.
+      </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="/free-resources">Get free sample</a>
+        <a class="btn btn-primary" href="/free-resources#subscribe">Get free sample</a>
         <a class="btn btn-secondary" href={site.tptStore} target="_blank" rel="noopener">Shop on TPT</a>
       </div>
       <p class="page-hero-note">{freeSample.shortLead}</p>
@@ -30,19 +33,42 @@ const total = catalog.totalProducts || catalog.products.length;
   <section class="rd-banner">
     <div class="rd-banner-inner">
       <span class="rd-badge">Active R&amp;D</span>
-      <p>Season 1: <strong>AI Mistakes &amp; Human Judgment</strong> — SELKID's strategic growth engine, built on {total}+ published classroom resources and the Rex &amp; Dino IP.</p>
+      <p>
+        Season 1: <strong>AI Mistakes &amp; Human Judgment</strong> — SELKID's strategic growth engine, built on {total}+
+        published classroom resources and the Rex &amp; Dino IP.
+      </p>
     </div>
-  </section>
-
-  <section class="framework">
-    <div><span>01</span><h2>How AI learns</h2><p>Children understand that AI systems learn from examples — not magic.</p></div>
-    <div><span>02</span><h2>Why AI fails</h2><p>Bad data, missing groups, false confidence, and repeated copying.</p></div>
-    <div><span>03</span><h2>Why people matter</h2><p>Checking evidence, context, and taking responsibility.</p></div>
   </section>
 
   <section class="section white">
     <div class="section-inner">
-      <div class="section-heading centered">
+      <div class="section-heading centered section-heading--compact">
+        <p class="eyebrow">The framework</p>
+        <h2>Learn → Fail → Judge</h2>
+      </div>
+      <div class="framework framework--inline">
+        <div>
+          <span>01</span>
+          <h2>How AI learns</h2>
+          <p>Children understand that AI systems learn from examples — not magic.</p>
+        </div>
+        <div>
+          <span>02</span>
+          <h2>Why AI fails</h2>
+          <p>Bad data, missing groups, false confidence, and repeated copying.</p>
+        </div>
+        <div>
+          <span>03</span>
+          <h2>Why people matter</h2>
+          <p>Checking evidence, context, and taking responsibility.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="section-inner">
+      <div class="section-heading centered section-heading--compact">
         <p class="eyebrow">Season One curriculum</p>
         <h2>Six units. One judgment framework.</h2>
       </div>
@@ -51,8 +77,18 @@ const total = catalog.totalProducts || catalog.products.length;
   </section>
 
   <section class="quote-section">
-    <blockquote>Children should not grow up believing AI is magic, neutral, or always right. They should grow up with stories that make AI understandable, questionable, and human-centered.</blockquote>
+    <blockquote>
+      Children should not grow up believing AI is magic, neutral, or always right. They should grow up with stories that
+      make AI understandable, questionable, and human-centered.
+    </blockquote>
   </section>
 
-  <SubscribeCTA dark context="ai-cognition" title="Be first to get new AI units" description={freeSample.ctaDescription} buttonLabel="Get free sample" eyebrow="" />
+  <SubscribeCTA
+    dark
+    context="ai-cognition"
+    title="Be first to get new AI units"
+    description={freeSample.ctaDescription}
+    buttonLabel="Get free sample"
+    eyebrow=""
+  />
 </BaseLayout>

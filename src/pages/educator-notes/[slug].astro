@@ -44,5 +44,9 @@ const next = idx < all.length - 1 ? all[idx + 1] : null;
       <a href="/educator-notes">All notes</a>
       {next ? <a href={`/educator-notes/${next.slug}`}>{next.data.title} →</a> : <span />}
     </nav>
+    <p class="note-article-cta">
+      <a class="btn btn-primary" href="/free-resources#subscribe">Get free sample</a>
+      <a class="btn btn-ghost" href="/sel-stories">Browse SEL stories</a>
+    </p>
   </article>
 </BaseLayout>

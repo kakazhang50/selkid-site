@@ -2,6 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CatalogMatrixFilters from '@/components/CatalogMatrixFilters.astro';
 import SelFrameworkExplainer from '@/components/SelFrameworkExplainer.astro';
+import PageCTA from '@/components/PageCTA.astro';
 import { catalog } from '@/lib/catalog';
 
 const caselCounts = catalog.facetCounts?.casel || {};
@@ -25,18 +26,35 @@ const caselCounts = catalog.facetCounts?.casel || {};
         <div class="stat-chip"><strong>5</strong><span>CASEL competencies</span></div>
         <div class="stat-chip"><strong>{caselCounts['self-management'] || 0}</strong><span>Self-Management tagged</span></div>
       </div>
-      <a class="btn btn-ghost" href="/learning-system#casel" style="margin-top:16px">How CASEL powers SELKID</a>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#matrix-filters">Browse stories</a>
+        <a class="btn btn-ghost" href="/learning-system#casel">How CASEL powers SELKID</a>
+      </div>
     </div>
     <img src="/assets/covers/sel-waiting-cover.png" alt="SELKID social story cover" />
   </section>
 
   <section class="section light" id="sel-matrix">
     <div class="section-inner">
+      <div class="section-heading centered section-heading--compact">
+        <p class="eyebrow">Find the right story</p>
+        <h2>Scenario × Trigger × Emotion × Skill</h2>
+      </div>
       <SelFrameworkExplainer />
     </div>
   </section>
 
-  <section class="section white" style="padding-top:0">
+  <section class="section white section--flush-top">
     <CatalogMatrixFilters pillar="sel" />
   </section>
+
+  <PageCTA
+    title="New to SELKID?"
+    description="Get the free Unit 1 sample — full 16-panel comic plus partial lesson guides — or explore how the learning system works."
+    links={[
+      { href: '/free-resources#subscribe', label: 'Get free sample' },
+      { href: '/learning-system', label: 'Learning System', variant: 'secondary' },
+      { href: '/thinking-skills', label: 'Thinking Skills', variant: 'ghost' },
+    ]}
+  />
 </BaseLayout>

@@ -4,6 +4,7 @@ import { catalog } from '@/lib/catalog';
 import SubscribeForm from '@/components/SubscribeForm.astro';
 
 const total = catalog.totalProducts || catalog.products.length;
+const pillars = catalog.pillars;
 const logo = site.brandLogo || '/assets/brand/selkid-logo.png';
 ---
 
@@ -14,16 +15,15 @@ const logo = site.brandLogo || '/assets/brand/selkid-logo.png';
         class="hero-home-logo"
         src={logo}
         alt="SELKID — Social Emotional Learning"
-        width="160"
-        height="160"
+        width="140"
+        height="140"
         fetchpriority="high"
       />
       <div class="hero-home-brand-copy">
         <p class="eyebrow">SELKID · Story-based learning</p>
         <h1>{site.tagline}</h1>
         <p class="hero-home-deck">
-          SEL for K–2 · Thinking skills for K–2 · AI literacy for Grades 3–6 — all through Rex &amp; Dino in Maple
-          Forest.
+          SEL for K–2 · Thinking skills for K–2 · AI literacy for Grades 3–6 — Rex &amp; Dino in Maple Forest.
         </p>
       </div>
     </div>
@@ -34,9 +34,7 @@ const logo = site.brandLogo || '/assets/brand/selkid-logo.png';
           <div class="hero-home-subscribe-head">
             <p class="eyebrow">Free for educators</p>
             <h2>Get {freeSample.unitTitle}</h2>
-            <p class="hero-home-subscribe-lead">
-              {freeSample.heroLead}
-            </p>
+            <p class="hero-home-subscribe-lead">{freeSample.heroLead}</p>
           </div>
           <ul class="subscribe-perks subscribe-perks--inline" aria-label="What's included">
             {
@@ -58,14 +56,6 @@ const logo = site.brandLogo || '/assets/brand/selkid-logo.png';
           <a class="btn btn-secondary" href="/sel-stories">Browse SEL stories</a>
           <a class="btn btn-ghost" href="/learning-system">See how it works</a>
         </div>
-
-        <div class="hero-home-meta">
-          <ul class="hero-proof hero-proof--chips" aria-label="Brand highlights">
-            <li>CASEL aligned</li>
-            <li>Scenario × Trigger × Emotion × Skill</li>
-            <li>{total}+ classroom-ready stories</li>
-          </ul>
-        </div>
       </div>
 
       <aside class="hero-home-visual" aria-label="Rex and Dino comic preview">
@@ -82,10 +72,23 @@ const logo = site.brandLogo || '/assets/brand/selkid-logo.png';
       </aside>
     </div>
 
-    <blockquote class="hero-home-belief reveal" aria-label="SELKID brand belief">
-      <p class="brand-belief-lead">{site.brandBeliefLead}</p>
-      <p class="brand-belief-sub">{site.brandBeliefSub}</p>
-      <p class="brand-belief-body">{site.brandBeliefBody}</p>
-    </blockquote>
+    <div class="hero-trust-stats" aria-label="SELKID at a glance">
+      <div class="hero-trust-stat">
+        <strong>{total}+</strong>
+        <span>Classroom stories</span>
+      </div>
+      <div class="hero-trust-stat">
+        <strong>3</strong>
+        <span>Learning pillars</span>
+      </div>
+      <div class="hero-trust-stat">
+        <strong>{pillars.sel}+</strong>
+        <span>SEL stories</span>
+      </div>
+      <div class="hero-trust-stat">
+        <strong>{pillars.ai}</strong>
+        <span>AI units</span>
+      </div>
+    </div>
   </div>
 </section>

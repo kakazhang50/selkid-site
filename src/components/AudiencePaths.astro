@@ -1,35 +1,59 @@
 ---
+import { freeSample } from '@/lib/site';
+
 const paths = [
   {
     eyebrow: 'Classroom teacher',
     title: 'SEL Stories',
-    description: '210+ CASEL-aligned read-alouds for real classroom moments — blurting, waiting, regulation, and more.',
+    description: '210+ CASEL-aligned read-alouds for blurting, waiting, regulation, and more.',
     href: '/sel-stories',
     cta: 'Browse SEL stories',
   },
   {
     eyebrow: 'Thinking habits',
     title: 'Thinking Skills',
-    description: 'Big-picture thinking, flexible thinking, and evidence habits — story-first, not worksheet-first.',
+    description: 'Big-picture and flexible thinking — story-first, not worksheet-first.',
     href: '/thinking-skills',
     cta: 'Explore thinking skills',
   },
   {
     eyebrow: 'AI literacy',
     title: 'AI Cognition',
-    description: 'Rex & Dino explain how AI learns, fails, and still needs people — built for Grades 3–6.',
+    description: 'How AI learns, fails, and still needs people — Grades 3–6.',
     href: '/ai-cognition',
     cta: 'See AI units',
   },
+];
+
+const quickSteps = [
+  { num: '1', label: 'Pick a story', href: '/sel-stories' },
+  { num: '2', label: 'Get free sample', href: '/free-resources' },
+  { num: '3', label: 'Teach the rhythm', href: '/learning-system' },
 ];
 ---
 
 <section class="audience-paths section light" aria-label="Choose your path">
   <div class="section-inner">
-    <div class="section-heading centered">
+    <div class="visitor-path-strip" aria-label="New to SELKID">
+      <span class="visitor-path-strip-label">New here?</span>
+      <ol class="visitor-path-strip-steps">
+        {
+          quickSteps.map((step) => (
+            <li>
+              <a href={step.href}>
+                <span class="visitor-path-strip-num">{step.num}</span>
+                {step.label}
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+      <a class="visitor-path-strip-sample" href="/free-resources">{freeSample.unitTitle} →</a>
+    </div>
+
+    <div class="section-heading centered section-heading--compact">
       <p class="eyebrow">Start here</p>
       <h2>What are you looking for?</h2>
-      <p>SELKID is one learning system with three doors in — pick the path that matches your classroom need.</p>
     </div>
     <div class="audience-paths-grid">
       {

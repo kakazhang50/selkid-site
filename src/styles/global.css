@@ -3340,3 +3340,491 @@ p {
   color: var(--muted);
   margin-bottom: 20px;
 }
+
+/* Hero trust stats (replaces standalone trust band on homepage) */
+
+.hero-trust-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: clamp(20px, 3vw, 28px);
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: white;
+  border: 1px solid var(--line);
+}
+
+.hero-trust-stat {
+  text-align: center;
+}
+
+.hero-trust-stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  color: var(--forest);
+  line-height: 1.1;
+}
+
+.hero-trust-stat span {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+  line-height: 1.25;
+}
+
+/* Visitor path strip (inside audience paths) */
+
+.visitor-path-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin-bottom: clamp(20px, 3vw, 28px);
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  background: white;
+  border: 1px solid var(--line);
+}
+
+.visitor-path-strip-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--forest);
+  white-space: nowrap;
+}
+
+.visitor-path-strip-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex: 1;
+}
+
+.visitor-path-strip-steps a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.visitor-path-strip-steps a:hover {
+  color: var(--forest);
+}
+
+.visitor-path-strip-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--forest);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.visitor-path-strip-sample {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--terracotta);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.visitor-path-strip-sample:hover {
+  text-decoration: underline;
+}
+
+/* Belief band (below fold on homepage) */
+
+.belief-band {
+  padding: clamp(28px, 4vw, 40px) clamp(18px, 5vw, 40px);
+  background: linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.belief-band-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.belief-band .brand-belief-lead {
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+}
+
+.belief-band .brand-belief-sub {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.belief-band .brand-belief-body {
+  margin-top: 12px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.section-heading--compact {
+  margin-bottom: clamp(20px, 3vw, 28px);
+}
+
+.section-heading--compact h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+}
+
+.section-heading--compact p {
+  font-size: 0.95rem;
+}
+
+.casel-teaser--compact {
+  margin-top: 20px;
+  padding: 14px 18px;
+}
+
+.section-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 24px 0 0;
+  text-align: center;
+}
+
+/* Homepage density — tighter vertical rhythm */
+
+.home-compact .hero--home {
+  padding: clamp(18px, 3vw, 32px) clamp(18px, 5vw, 40px) clamp(28px, 4vw, 44px);
+}
+
+.home-compact .hero-home-brand {
+  margin-bottom: clamp(16px, 2.5vw, 24px);
+}
+
+.home-compact .hero-home-logo {
+  width: clamp(88px, 14vw, 120px);
+  height: auto;
+}
+
+.home-compact .hero-home-body {
+  gap: clamp(18px, 3vw, 28px);
+}
+
+.home-compact .section,
+.home-compact .unit-timeline,
+.home-compact .product-section,
+.home-compact .belief-band {
+  padding-top: clamp(32px, 5vw, 48px);
+  padding-bottom: clamp(32px, 5vw, 48px);
+}
+
+.home-compact .section.light,
+.home-compact .section.white {
+  padding-top: clamp(32px, 5vw, 48px);
+  padding-bottom: clamp(32px, 5vw, 48px);
+}
+
+.home-compact .audience-paths-grid {
+  gap: 14px;
+}
+
+.home-compact .audience-path-card {
+  padding: clamp(16px, 2.5vw, 22px);
+}
+
+.home-compact .testimonial-grid {
+  gap: 14px;
+}
+
+@media (max-width: 720px) {
+  .hero-trust-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .visitor-path-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .visitor-path-strip-sample {
+    align-self: flex-start;
+  }
+}
+
+/* Site-wide compact rhythm (inner pages via BaseLayout) */
+
+.site-compact .page-hero,
+.site-compact .page-hero.refined {
+  padding: clamp(72px, 10vw, 96px) clamp(18px, 5vw, 40px) clamp(36px, 5vw, 52px);
+}
+
+.site-compact .page-hero.refined {
+  gap: clamp(24px, 4vw, 36px);
+}
+
+.site-compact .page-hero.refined h1 {
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+}
+
+.site-compact .page-hero.refined p,
+.site-compact .page-hero.refined .lead {
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.site-compact .page-hero--solo {
+  grid-template-columns: 1fr;
+  max-width: 720px;
+  text-align: center;
+}
+
+.site-compact .page-hero--solo .page-stats,
+.site-compact .page-hero--solo .hero-actions {
+  justify-content: center;
+}
+
+.site-compact .page-hero-tagline {
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--terracotta);
+}
+
+.site-compact .section,
+.site-compact .steps.section {
+  padding-top: clamp(32px, 5vw, 48px);
+  padding-bottom: clamp(32px, 5vw, 48px);
+}
+
+.site-compact .section--flush-top {
+  padding-top: 0;
+}
+
+.site-compact .framework,
+.site-compact .manifesto {
+  padding: 0;
+  gap: 14px;
+}
+
+.site-compact .framework--inline,
+.site-compact .manifesto--inline {
+  max-width: none;
+  margin: 0;
+}
+
+.site-compact .framework div,
+.site-compact .manifesto article {
+  padding: clamp(18px, 2.5vw, 24px);
+}
+
+.site-compact .quote-section {
+  padding: clamp(36px, 5vw, 52px) clamp(18px, 5vw, 40px);
+}
+
+.site-compact .quote-section blockquote {
+  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+}
+
+.site-compact .cta-band {
+  padding: clamp(36px, 5vw, 52px) clamp(18px, 5vw, 40px);
+}
+
+.site-compact .cta-band h2 {
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+}
+
+.site-compact .cta-band p {
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+}
+
+.site-compact .subscribe-band {
+  padding: clamp(32px, 5vw, 48px) clamp(18px, 5vw, 40px);
+}
+
+.site-compact .subscribe-inner {
+  gap: 24px;
+}
+
+.site-compact .subscribe-hero {
+  padding: clamp(72px, 10vw, 88px) clamp(18px, 5vw, 40px) clamp(36px, 5vw, 48px);
+}
+
+.site-compact .subscribe-hero-grid {
+  gap: clamp(24px, 4vw, 32px);
+}
+
+.site-compact .subscribe-hero .lead {
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.site-compact .world-band {
+  padding: clamp(32px, 5vw, 48px) clamp(18px, 5vw, 40px);
+}
+
+.site-compact .world-band > p {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.site-compact .character-grid.premium {
+  gap: 14px;
+}
+
+.site-compact .character-grid.premium article {
+  padding: clamp(18px, 2.5vw, 24px);
+}
+
+.site-compact .character-grid.premium p {
+  font-size: 0.9rem;
+}
+
+.site-compact .page-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.site-compact .stat-chip {
+  padding: 10px 12px;
+  text-align: center;
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+
+.site-compact .stat-chip strong {
+  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+}
+
+.site-compact .stat-chip span {
+  font-size: 0.72rem;
+  line-height: 1.25;
+}
+
+.site-compact .hero-actions {
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.site-compact .note-article {
+  padding: clamp(72px, 10vw, 88px) clamp(18px, 5vw, 40px) clamp(40px, 6vw, 56px);
+}
+
+.site-compact .note-article-header {
+  margin-bottom: 24px;
+}
+
+.site-compact .note-nav {
+  margin-top: 32px;
+  padding-top: 20px;
+}
+
+.note-article-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.site-compact .rd-banner {
+  padding: 12px clamp(18px, 5vw, 40px);
+}
+
+.site-compact .catalog-toolbar {
+  padding-top: clamp(20px, 3vw, 28px);
+}
+
+.cta-band-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.page-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.page-hero--solo {
+  display: block;
+  grid-template-columns: 1fr;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-hero.refined.page-hero--solo img {
+  display: none;
+}
+
+.page-hero-tagline {
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--terracotta);
+}
+
+.manifesto--inline,
+.framework--inline {
+  padding: 0;
+  max-width: none;
+  margin: 0;
+}
+
+.section--flush-top {
+  padding-top: 0;
+}
+
+.subscribe-perks--stacked {
+  margin: 0 0 18px;
+}
+
+.world-band-link {
+  display: block;
+  max-width: 960px;
+  margin: 0 auto;
+  transition: transform 0.2s;
+}
+
+.world-band-link:hover {
+  transform: translateY(-4px);
+}
+
+.world-band-link img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.btn--tight {
+  margin-top: 12px;
+}
+
+@media (max-width: 720px) {
+  .site-compact .page-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-compact .subscribe-inner {
+    grid-template-columns: 1fr;
+  }
+}
