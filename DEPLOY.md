@@ -36,9 +36,10 @@
 
 1. Pages → **selkid-site** → Custom domains → 添加 `story.selkid.com`
 2. DNS：`story` CNAME → `selkid-site.pages.dev`（已代理）
-3. 站点内容：`/story/` 页面展示 Emily Willow 在 Amazon 上的章节书与绘本系列
-4. 访问 `story.selkid.com` 时通过 Pages Functions 展示同一页面（URL 保持 story 子域）
-5. 旧 Substack 路径 `/p/*`、`/s/*` → 301 到 `story.selkid.com/`
+3. 访问 `story.selkid.com` → **301 跳转**到 `https://selkid.com/story/`（KDP 读者故事页）
+4. 若跳转未生效，可在 Cloudflare **Rules → Redirect Rules** 添加备用规则：
+   - When: `Hostname equals story.selkid.com`
+   - Then: Dynamic redirect → `https://selkid.com/story/`（301）
 
 书目数据维护：`src/data/kdp-books.json`（从 Amazon 作者页同步）
 
