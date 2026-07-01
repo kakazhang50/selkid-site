@@ -2214,6 +2214,15 @@ p {
   gap: 10px;
 }
 
+.ml-form-embed {
+  width: 100%;
+  max-width: 420px;
+}
+
+.ml-form-embed.subscribe-form--hero {
+  max-width: 100%;
+}
+
 .subscribe-form input[type="email"] {
   flex: 1;
   min-width: 200px;
