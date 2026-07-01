@@ -34,7 +34,7 @@ const total = catalog.totalProducts || catalog.products.length;
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
-    <nav class="nav" id="site-nav" aria-label="Main navigation">
+      <nav class="nav" id="site-nav" aria-label="Main navigation">
       {
         navItems.map((item) => {
           const active = pathname === item.href || pathname.startsWith(item.href + '/');
@@ -45,8 +45,14 @@ const total = catalog.totalProducts || catalog.products.length;
           );
         })
       }
+      <div class="nav-drawer-ctas">
+        <a class="nav-cta nav-cta--sample" href="/free-resources">Free Sample</a>
+        <a class="nav-cta" href={site.tptStore} target="_blank" rel="noopener">TPT Store</a>
+      </div>
     </nav>
-    <a class="nav-cta nav-cta--sample" href="/free-resources">Free Sample</a>
-    <a class="nav-cta" href={site.tptStore} target="_blank" rel="noopener">TPT Store</a>
+    <div class="header-ctas" aria-hidden="false">
+      <a class="nav-cta nav-cta--sample" href="/free-resources">Free Sample</a>
+      <a class="nav-cta" href={site.tptStore} target="_blank" rel="noopener">TPT Store</a>
+    </div>
   </div>
 </header>

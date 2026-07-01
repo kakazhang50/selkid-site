@@ -5,6 +5,7 @@ import SubscribeCTA from '@/components/SubscribeCTA.astro';
 
 const total = catalog.totalProducts || catalog.products.length;
 const year = new Date().getFullYear();
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/index.html';
 ---
 
 <footer class="site-footer">
@@ -32,7 +33,13 @@ const year = new Date().getFullYear();
       </div>
       <div class="footer-col footer-subscribe">
         <h4>Stay updated</h4>
-        <SubscribeCTA compact inline context="footer" />
+        {isHome ? (
+          <p class="footer-subscribe-note">
+            <a href="#subscribe">Join the list</a> for free samples and new launches.
+          </p>
+        ) : (
+          <SubscribeCTA compact inline context="footer" />
+        )}
       </div>
     </div>
     <p class="footer-copy">&copy; {year} {site.brandName} · From feelings, to thinking, to the future.</p>

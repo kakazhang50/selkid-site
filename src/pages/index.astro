@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import HeroHome from '@/components/HeroHome.astro';
-import CaselFramework from '@/components/CaselFramework.astro';
 import MatrixPreview from '@/components/MatrixPreview.astro';
 import StepsGrid from '@/components/StepsGrid.astro';
 import ProductGrid from '@/components/ProductGrid.astro';
@@ -38,8 +37,14 @@ const ogImage = site.brandLogo || '/assets/brand/selkid-logo.png';
         </p>
       </div>
       <MatrixPreview />
-      <CaselFramework compact />
-      <p style="text-align:center;margin-top:28px">
+      <div class="casel-teaser">
+        <p>
+          Built on the <strong>CASEL Framework</strong> — five competencies translated into {pillars.sel}+ classroom
+          stories.
+        </p>
+        <a class="btn btn-ghost" href="/learning-system#casel">How CASEL powers SELKID</a>
+      </div>
+      <p style="text-align:center;margin-top:20px">
         <a class="btn btn-ghost" href="/learning-system">View full learning system</a>
       </p>
     </div>
