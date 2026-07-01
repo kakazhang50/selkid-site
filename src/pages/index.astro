@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import BrandBelief from '@/components/BrandBelief.astro';
+import CaselFramework from '@/components/CaselFramework.astro';
 import MatrixPreview from '@/components/MatrixPreview.astro';
 import StepsGrid from '@/components/StepsGrid.astro';
 import ProductGrid from '@/components/ProductGrid.astro';
@@ -20,16 +22,16 @@ const pillars = catalog.pillars;
         <p class="eyebrow">SELKID · Story-based learning</p>
         <h1>Big ideas, kid-sized stories.</h1>
         <p class="hero-lead">
-          A professional SEL education matrix for K–2, thinking skills for the classroom, and an R&amp;D flagship in AI
-          cognition — all through Rex &amp; Dino in Maple Forest.
+          A professional SEL education matrix for K–2 — <strong>Scenario × Trigger × Emotion × Skill</strong>, CASEL-aligned,
+          with thinking skills and an R&amp;D flagship in AI cognition through Rex &amp; Dino in Maple Forest.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="/ai-cognition">Explore AI Cognition</a>
           <a class="btn btn-secondary" href="/learning-system">See Learning System</a>
         </div>
         <ul class="hero-proof" aria-label="Brand highlights">
-          <li>CASEL-aligned SEL domains</li>
-          <li>No-prep classroom ready</li>
+          <li>CASEL Framework aligned</li>
+          <li>Scenario × Trigger × Emotion × Skill</li>
           <li>{total}+ resources on TPT</li>
         </ul>
       </div>
@@ -49,6 +51,8 @@ const pillars = catalog.pillars;
     </div>
   </section>
 
+  <BrandBelief />
+
   <section class="trust-band trust-band--compact">
     <div class="trust-grid">
       <div class="trust-item"><strong>{total}+</strong><span>SKUs on Teachers Pay Teachers</span></div>
@@ -64,11 +68,12 @@ const pillars = catalog.pillars;
         <p class="eyebrow">Education matrix</p>
         <h2>From feelings, to thinking, to the future</h2>
         <p>
-          SELKID is not a single product line — it's a structured learning system with {pillars.sel} SEL stories,{' '}
-          {pillars.thinking} thinking skills resources, and a flagship AI cognition series in active development.
+          SELKID is not a single product line — it's a structured learning system: {pillars.sel} SEL stories cross-tagged by
+          classroom moment, {pillars.thinking} thinking skills resources, and a flagship AI cognition series.
         </p>
       </div>
       <MatrixPreview />
+      <CaselFramework compact />
       <p style="text-align:center;margin-top:28px">
         <a class="btn btn-ghost" href="/learning-system">View full learning system</a>
       </p>

@@ -1,0 +1,103 @@
+---
+import { selFramework } from '@/lib/selFramework';
+import { catalog } from '@/lib/catalog';
+
+const counts = catalog.facetCounts || {};
+const matrixDims = selFramework.dimensions;
+---
+
+<section class="sel-framework-block">
+  <div class="sel-framework-intro">
+    <p class="eyebrow">What we believe</p>
+    <p class="sel-framework-belief">{selFramework.brandBelief}</p>
+    <p class="eyebrow" style="margin-top:20px">{selFramework.subtitle}</p>
+    <h2>{selFramework.title}</h2>
+    <p class="sel-framework-philosophy">{selFramework.philosophy}</p>
+    <p class="sel-framework-casel-note">{selFramework.caselNote}</p>
+  </div>
+
+  <div class="sel-matrix-visual" aria-hidden="true">
+    {
+      matrixDims.map((dim, i) => (
+        <div class="sel-matrix-axis" style={`--axis-i: ${i}`}>
+          <span class="sel-matrix-axis-zh">{dim.labelZh}</span>
+          <span class="sel-matrix-axis-en">{dim.label}</span>
+        </div>
+      ))
+    }
+    <div class="sel-matrix-core">
+      <strong>{catalog.pillars.sel}</strong>
+      <span>cross-tagged stories</span>
+    </div>
+  </div>
+
+  <div class="sel-dimension-grid">
+    {
+      matrixDims.map((dim) => {
+        const facetKey =
+          dim.id === 'scenario'
+            ? 'scenarios'
+            : dim.id === 'trigger'
+              ? 'triggers'
+              : dim.id === 'emotion'
+                ? 'emotions'
+                : 'skills';
+        const items =
+          dim.id === 'scenario'
+            ? selFramework.scenarios
+            : dim.id === 'trigger'
+              ? selFramework.triggers
+              : dim.id === 'emotion'
+                ? selFramework.emotions
+                : selFramework.skills;
+        const facetCounts = counts[facetKey] || {};
+        const top = [...items]
+          .map((item) => ({ ...item, count: facetCounts[item.id] || 0 }))
+          .filter((item) => item.count > 0)
+          .sort((a, b) => b.count - a.count)
+          .slice(0, 5);
+
+        return (
+          <article class="sel-dimension-card">
+            <h3>
+              <span class="sel-dim-zh">{dim.labelZh}</span>
+              {dim.label}
+            </h3>
+            <p class="sel-dim-question">{dim.question}</p>
+            <ul class="sel-dim-examples">
+              {top.map((item) => (
+                <li>
+                  <a href={`/sel-stories?${dim.id}=${item.id}`}>
+                    {item.name}
+                    <span>{item.count}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </article>
+        );
+      })
+    }
+  </div>
+
+  <div class="sel-casel-row">
+    <h3>Mapped to CASEL — query by competency</h3>
+    <p class="sel-casel-hint">Each story is cross-tagged; browse the full <a href="/learning-system#casel">CASEL framework</a> or filter below.</p>
+    <div class="casel-tags">
+      {
+        selFramework.casel.map((c) => (
+          <a class="casel-tag casel-tag--link" href={`/sel-stories?casel=${c.id}`}>
+            <strong>{c.name}</strong>
+            <span>{counts.casel?.[c.id] || 0} stories</span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+
+  <p class="sel-framework-cta">
+    <a class="btn btn-primary" href="/sel-stories">Query the full SEL catalog</a>
+    <a class="btn btn-ghost" href="/sel-stories?preset=blurting-carpet">Try: Blurting at carpet</a>
+    <a class="btn btn-ghost" href="/thinking-skills">Thinking Skills catalog</a>
+  </p>
+</section>

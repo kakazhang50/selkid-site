@@ -1,40 +1,42 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import CatalogMatrixFilters from '@/components/CatalogMatrixFilters.astro';
+import SelFrameworkExplainer from '@/components/SelFrameworkExplainer.astro';
 import { catalog } from '@/lib/catalog';
+
+const caselCounts = catalog.facetCounts?.casel || {};
 ---
 
-<BaseLayout title="SEL Stories" description="208+ SELKID social-emotional learning stories for K–2 — waiting, blurting, regulation, boundaries, and more.">
+<BaseLayout
+  title="SEL Stories"
+  description="210+ CASEL-aligned SELKID social-emotional learning stories — query by competency, scenario, trigger, emotion, and skill."
+>
   <section class="page-hero refined">
     <div>
-      <p class="eyebrow">SEL Foundation · Pillar 1</p>
+      <p class="eyebrow">SEL Foundation · CASEL-aligned · Pillar 1</p>
       <h1>SEL Stories</h1>
-      <p>208 classroom-tested social-emotional stories organized by real classroom needs — emotions, self-regulation, peer skills, and safe behavior.</p>
+      <p>
+        {catalog.pillars.sel} stories built on the <strong>CASEL Framework</strong>, organized as{' '}
+        <strong>Scenario × Trigger × Emotion × Skill</strong> — professional competencies delivered through Rex &amp; Dino
+        read-alouds, not random worksheets.
+      </p>
       <div class="page-stats">
         <div class="stat-chip"><strong>{catalog.pillars.sel}</strong><span>SEL stories</span></div>
-        <div class="stat-chip"><strong>6</strong><span>Skill domains</span></div>
-        <div class="stat-chip"><strong>K–2</strong><span>Read-aloud ready</span></div>
+        <div class="stat-chip"><strong>5</strong><span>CASEL competencies</span></div>
+        <div class="stat-chip"><strong>{caselCounts['self-management'] || 0}</strong><span>Self-Management tagged</span></div>
       </div>
-      <a class="btn btn-ghost" href="/learning-system" style="margin-top:16px">View learning system</a>
+      <a class="btn btn-ghost" href="/learning-system#casel" style="margin-top:16px">How CASEL powers SELKID</a>
     </div>
     <img src="/assets/covers/sel-waiting-cover.png" alt="SELKID social story cover" />
   </section>
 
+  <section class="section light" id="sel-matrix">
+    <div class="section-inner">
+      <SelFrameworkExplainer />
+    </div>
+  </section>
+
   <section class="section white" style="padding-top:0">
-    <div class="filter-bar" data-filter-bar>
-      <div class="filter-group">
-        <span class="filter-label">Domain</span>
-        <button class="filter-btn active" type="button" data-filter-group="category" data-category="all">All</button>
-        <button class="filter-btn" type="button" data-filter-group="category" data-category="waiting">Waiting</button>
-        <button class="filter-btn" type="button" data-filter-group="category" data-category="blurting">Blurting</button>
-        <button class="filter-btn" type="button" data-filter-group="category" data-category="regulation">Regulation</button>
-        <button class="filter-btn" type="button" data-filter-group="category" data-category="body">Boundaries</button>
-        <button class="filter-btn" type="button" data-filter-group="category" data-category="friendship">Friendship</button>
-        <button class="filter-btn" type="button" data-filter-group="category" data-category="executive">Executive</button>
-      </div>
-      <input class="filter-search" type="search" data-search placeholder="Search 208 stories…" aria-label="Search SEL stories" />
-    </div>
-    <div class="catalog-wrap">
-      <div class="product-grid" data-catalog-grid data-catalog="sel" data-paginate></div>
-    </div>
+    <CatalogMatrixFilters pillar="sel" />
   </section>
 </BaseLayout>

@@ -1,32 +1,36 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import ProductGrid from '@/components/ProductGrid.astro';
-import { filterProducts, coverSrc } from '@/lib/catalog';
-import catalogData from '@/data/catalog.json';
+import CatalogMatrixFilters from '@/components/CatalogMatrixFilters.astro';
+import { catalog, coverSrc } from '@/lib/catalog';
 
-const products = filterProducts(catalogData.products, { pillar: 'thinking' });
+const products = catalog.products.filter((p) => p.pillar === 'thinking');
 const heroProduct = products.find((p) => p.coverUrl) || products[0];
 const heroImg = heroProduct ? coverSrc(heroProduct) : '/assets/covers/sel-waiting-cover.png';
 ---
 
-<BaseLayout title="Thinking Skills" description="SELKID thinking skills stories help K-2 students practice big-picture thinking, flexible thinking, and evidence habits.">
+<BaseLayout
+  title="Thinking Skills"
+  description="SELKID thinking skills stories help K-2 students practice big-picture thinking, flexible thinking, and evidence habits."
+>
   <section class="page-hero refined">
     <div>
       <p class="eyebrow">Thinking Skills · Pillar 2</p>
       <h1>From feelings to thinking</h1>
-      <p>14 Rex &amp; Dino Cognitive Fables that bridge SEL and AI-age judgment — big-picture thinking, flexible thinking, and evidence habits for K–2.</p>
-      <a class="btn btn-ghost" href="/learning-system">View learning system</a>
+      <p>
+        {catalog.pillars.thinking} Rex &amp; Dino Cognitive Fables that bridge SEL and AI-age judgment — query by thinking
+        habit, classroom scenario, and the feeling that gets in the way.
+      </p>
+      <div class="page-stats">
+        <div class="stat-chip"><strong>{catalog.pillars.thinking}</strong><span>Read-alouds</span></div>
+        <div class="stat-chip"><strong>5</strong><span>Thinking habits</span></div>
+        <div class="stat-chip"><strong>K–2</strong><span>Classroom ready</span></div>
+      </div>
+      <a class="btn btn-ghost" href="/learning-system#sel-matrix">See full learning system</a>
     </div>
     <img src={heroImg} alt="Thinking skills story cover" />
   </section>
 
-  <section class="product-section">
-    <div class="section-inner">
-      <div class="section-heading centered">
-        <p class="eyebrow">On Teachers Pay Teachers</p>
-        <h2>14 thinking skills read-alouds</h2>
-      </div>
-      <ProductGrid products={products} />
-    </div>
+  <section class="section white" style="padding-top:0">
+    <CatalogMatrixFilters pillar="thinking" />
   </section>
 </BaseLayout>

@@ -4,6 +4,10 @@ export interface SiteConfig {
   brandName: string;
   domain: string;
   tagline: string;
+  brandBeliefLead: string;
+  brandBeliefSub: string;
+  brandBeliefBody: string;
+  brandBeliefZh: string;
   description: string;
   tptStore: string;
   mailerLiteAccountId: string;

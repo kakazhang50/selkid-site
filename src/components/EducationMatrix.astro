@@ -1,5 +1,6 @@
 ---
 import { educationMatrix, catalog, pillarLink } from '@/lib/catalog';
+import { selFramework } from '@/lib/selFramework';
 
 const counts = catalog.domainCounts || {};
 ---
@@ -30,10 +31,18 @@ const counts = catalog.domainCounts || {};
   }
 </div>
 <div class="matrix-casel">
-  <h3>SEL Foundation aligns with CASEL</h3>
+  <h3>Rooted in the CASEL Framework</h3>
+  <p class="matrix-casel-lead">SEL Foundation stories map to all five U.S. SEL core competencies — then drill down by classroom domain.</p>
   <div class="casel-tags">
-    {educationMatrix.progression[0].casel?.map((c) => <span class="casel-tag">{c}</span>)}
+    {
+      selFramework.casel.map((c) => (
+        <a class="casel-tag casel-tag--link" href={`/sel-stories?casel=${c.id}`}>
+          <strong>{c.name}</strong>
+        </a>
+      ))
+    }
   </div>
+  <p class="matrix-casel-more"><a href="/learning-system#casel">See how CASEL powers SELKID →</a></p>
 </div>
 <div class="matrix-domains">
   <h3>SEL story domains</h3>

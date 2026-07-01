@@ -1,0 +1,190 @@
+---
+import { catalog } from '@/lib/catalog';
+import { selFramework } from '@/lib/selFramework';
+
+interface Props {
+  pillar?: 'sel' | 'thinking';
+  searchPlaceholder?: string;
+}
+
+const { pillar = 'sel', searchPlaceholder } = Astro.props;
+const counts = catalog.facetCounts || {};
+const presets = selFramework.presetCombinations || [];
+const thinkingSkills = selFramework.thinkingSkills || [];
+
+function facetItems(
+  items: { id: string; name: string }[],
+  countKey: string
+) {
+  const facetCounts = counts[countKey] || {};
+  return [...items]
+    .map((item) => ({ ...item, count: facetCounts[item.id] || 0 }))
+    .filter((item) => item.count > 0)
+    .sort((a, b) => b.count - a.count);
+}
+
+const scenarioItems = facetItems(selFramework.scenarios, 'scenarios');
+const triggerItems = facetItems(selFramework.triggers, 'triggers');
+const emotionItems = facetItems(selFramework.emotions, 'emotions');
+const skillItems = facetItems(selFramework.skills, 'skills');
+const thinkingItems = facetItems(thinkingSkills, 'thinkingSkills');
+
+const placeholder =
+  searchPlaceholder ||
+  (pillar === 'thinking'
+    ? `Search ${catalog.pillars.thinking} thinking stories…`
+    : `Search ${catalog.pillars.sel} stories…`);
+---
+
+<div class="catalog-toolbar" data-filter-bar data-filter-pillar={pillar} id="matrix-filters">
+  {pillar === 'sel' && presets.length > 0 && (
+    <div class="preset-row">
+      <span class="filter-label">Quick picks</span>
+      <div class="preset-chips">
+        {presets.map((preset) => (
+          <button
+            class="preset-chip"
+            type="button"
+            data-preset={preset.id}
+            data-preset-filters={JSON.stringify(preset.filters)}
+            data-preset-category={preset.category || ''}
+            title={preset.blurb}
+          >
+            {preset.name}
+          </button>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <div class="filter-row">
+    {pillar === 'sel' ? (
+      <div class="filter-group">
+        <span class="filter-label">Domain</span>
+        <button class="filter-btn active" type="button" data-filter-group="category" data-category="all">All</button>
+        <button class="filter-btn" type="button" data-filter-group="category" data-category="waiting">Waiting</button>
+        <button class="filter-btn" type="button" data-filter-group="category" data-category="blurting">Blurting</button>
+        <button class="filter-btn" type="button" data-filter-group="category" data-category="regulation">Regulation</button>
+        <button class="filter-btn" type="button" data-filter-group="category" data-category="body">Boundaries</button>
+        <button class="filter-btn" type="button" data-filter-group="category" data-category="friendship">Friendship</button>
+        <button class="filter-btn" type="button" data-filter-group="category" data-category="executive">Executive</button>
+      </div>
+    ) : (
+      <div class="filter-group">
+        <span class="filter-label">Thinking type</span>
+        <button class="filter-btn active" type="button" data-filter-group="thinkingSkill" data-thinking-skill="all">All</button>
+        {thinkingItems.map((item) => (
+          <button
+            class="filter-btn"
+            type="button"
+            data-filter-group="thinkingSkill"
+            data-thinking-skill={item.id}
+          >
+            {item.name}
+          </button>
+        ))}
+      </div>
+    )}
+    <input class="filter-search" type="search" data-search placeholder={placeholder} aria-label="Search catalog" />
+  </div>
+
+  <details class="matrix-filter-panel" open={pillar === 'sel'}>
+    <summary>
+      {pillar === 'sel'
+        ? 'Matrix filters · combine scenario, trigger, emotion & skill'
+        : 'Matrix filters · scenario, emotion & thinking habit'}
+    </summary>
+    <div class="matrix-filter-grid">
+      {scenarioItems.length > 0 && (
+        <div class="matrix-filter-col" data-facet-group="scenario">
+          <span class="filter-label">Scenario 场景</span>
+          <div class="facet-chips">
+            {scenarioItems.map((item) => (
+              <button class="facet-chip" type="button" data-facet="scenario" data-facet-id={item.id}>
+                {item.name}
+                <em>{item.count}</em>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+      {pillar === 'sel' && triggerItems.length > 0 && (
+        <div class="matrix-filter-col" data-facet-group="trigger">
+          <span class="filter-label">Trigger 触发</span>
+          <div class="facet-chips">
+            {triggerItems.map((item) => (
+              <button class="facet-chip" type="button" data-facet="trigger" data-facet-id={item.id}>
+                {item.name}
+                <em>{item.count}</em>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+      {emotionItems.length > 0 && (
+        <div class="matrix-filter-col" data-facet-group="emotion">
+          <span class="filter-label">Emotion 情绪</span>
+          <div class="facet-chips">
+            {emotionItems.map((item) => (
+              <button class="facet-chip" type="button" data-facet="emotion" data-facet-id={item.id}>
+                {item.name}
+                <em>{item.count}</em>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+      {pillar === 'sel' ? (
+        skillItems.length > 0 && (
+          <div class="matrix-filter-col" data-facet-group="skill">
+            <span class="filter-label">Skill 技能</span>
+            <div class="facet-chips">
+              {skillItems.map((item) => (
+                <button class="facet-chip" type="button" data-facet="skill" data-facet-id={item.id}>
+                  {item.name}
+                  <em>{item.count}</em>
+                </button>
+              ))}
+            </div>
+          </div>
+        )
+      ) : (
+        thinkingItems.length > 0 && (
+          <div class="matrix-filter-col" data-facet-group="thinkingSkill">
+            <span class="filter-label">Thinking habit</span>
+            <div class="facet-chips">
+              {thinkingItems.map((item) => (
+                <button class="facet-chip" type="button" data-facet="thinkingSkill" data-facet-id={item.id}>
+                  {item.name}
+                  <em>{item.count}</em>
+                </button>
+              ))}
+            </div>
+          </div>
+        )
+      )}
+      {pillar === 'sel' && (
+          <div class="matrix-filter-col matrix-filter-col--casel" data-facet-group="casel">
+            <span class="filter-label">CASEL competency · U.S. SEL standard</span>
+          <div class="facet-chips">
+            {selFramework.casel.map((item) => (
+              <button class="facet-chip facet-chip--casel" type="button" data-facet="casel" data-facet-id={item.id}>
+                {item.name}
+                <em>{counts.casel?.[item.id] || 0}</em>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </details>
+
+  <div class="filter-status" data-filter-status hidden>
+    <span data-result-count></span>
+    <button class="filter-clear" type="button" data-clear-filters>Clear filters</button>
+  </div>
+</div>
+
+<div class="catalog-wrap">
+  <div class="product-grid" data-catalog-grid data-catalog={pillar} data-paginate></div>
+</div>

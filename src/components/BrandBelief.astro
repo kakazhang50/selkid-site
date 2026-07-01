@@ -1,0 +1,17 @@
+---
+import { site } from '@/lib/site';
+
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<section class:list={['brand-belief-band', compact && 'brand-belief-band--compact']} aria-label="SELKID brand belief">
+  <blockquote class="brand-belief-quote">
+    <p class="brand-belief-lead">{site.brandBeliefLead}</p>
+    <p class="brand-belief-sub">{site.brandBeliefSub}</p>
+  </blockquote>
+  {!compact && <p class="brand-belief-body">{site.brandBeliefBody}</p>}
+</section>

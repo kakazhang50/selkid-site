@@ -1,0 +1,216 @@
+{
+  "title": "SELKID SEL Matrix",
+  "subtitle": "Scenario × Trigger × Emotion × Skill",
+  "brandBelief": "For every child, emotional struggle isn't a mistake — it's a skill waiting to be taught.",
+  "philosophy": "SELKID starts from a simple belief: big feelings aren't bad behavior; they're skills still learning to grow. From there we use the CASEL Framework — the professional standard for SEL in U.S. schools — and map each competency into classroom scenarios, triggers, emotions, and teachable skills. That is how 200+ stories form one queryable system.",
+  "caselNote": "Every SELKID story maps to one or more CASEL core competencies — the same framework used by schools and districts across the United States.",
+  "caselFramework": {
+    "name": "CASEL Framework",
+    "shortName": "CASEL",
+    "tagline": "The professional standard for SEL in U.S. schools",
+    "attribution": "SELKID is built around the five core competencies defined by the Collaborative for Academic, Social, and Emotional Learning (CASEL) — then translated into kid-sized stories for real K–2 classrooms.",
+    "referenceLabel": "Learn about CASEL",
+    "referenceUrl": "https://casel.org/fundamentals-of-sel/what-is-the-casel-framework/",
+    "methodology": [
+      {
+        "step": "1",
+        "title": "Start with CASEL",
+        "text": "Each resource targets an evidence-based competency — self-awareness, self-management, social awareness, relationship skills, or responsible decision-making."
+      },
+      {
+        "step": "2",
+        "title": "Find the classroom moment",
+        "text": "We break competencies into scenarios, triggers, emotions, and teachable skills — the moments teachers actually see on the carpet, in line, or at recess."
+      },
+      {
+        "step": "3",
+        "title": "Deliver through story",
+        "text": "Rex & Dino social stories give children a narrative mirror, discussion prompts, and practice — Story → Discussion → Activity → Reflection."
+      }
+    ]
+  },
+  "casel": [
+    {
+      "id": "self-awareness",
+      "name": "Self-Awareness",
+      "nameZh": "自我意识",
+      "order": 1,
+      "description": "The abilities to understand one's own emotions, thoughts, and values and how they influence behavior across contexts.",
+      "classroomFocus": "Naming feelings, noticing body signals, recognizing strengths and limits",
+      "storyApproach": "Stories help children pause and identify what is happening inside before they act — the Feeling Thermometer, calm-down cues, and \"name it to tame it\" moments.",
+      "exampleMoments": ["Big feelings at carpet", "Noticing when volume rises", "Knowing when you need a break"],
+      "keywords": ["notice", "feeling", "body signal", "name the feeling", "aware"]
+    },
+    {
+      "id": "self-management",
+      "name": "Self-Management",
+      "nameZh": "自我管理",
+      "order": 2,
+      "description": "The abilities to manage one's emotions, thoughts, and behaviors effectively in different situations and to achieve goals.",
+      "classroomFocus": "Impulse control, waiting, transitions, calming strategies, task persistence",
+      "storyApproach": "Our largest story lane — waiting tokens, raise-hand routines, safe hands, and finish-what-you-start scripts for independent work.",
+      "exampleMoments": ["Blurting during sharing", "Waiting in line", "Stopping when the timer rings"],
+      "keywords": ["calm", "wait", "impulse", "regulat", "self control", "volume", "safe hands", "focus", "transition"]
+    },
+    {
+      "id": "social-awareness",
+      "name": "Social Awareness",
+      "nameZh": "社会意识",
+      "order": 3,
+      "description": "The abilities to understand the perspectives of and empathize with others, including those from diverse backgrounds and cultures.",
+      "classroomFocus": "Personal space, reading others' feelings, inclusion, fairness",
+      "storyApproach": "Stories place Rex in group situations where he must notice how his body and words land on classmates — space bubbles, listening faces, and left-out moments.",
+      "exampleMoments": ["Personal space on the rug", "A friend looks sad", "Game rules feel unfair"],
+      "keywords": ["personal space", "perspective", "others", "empathy", "include", "left out"]
+    },
+    {
+      "id": "relationship-skills",
+      "name": "Relationship Skills",
+      "nameZh": "人际关系",
+      "order": 4,
+      "description": "The abilities to establish and maintain healthy and supportive relationships and to navigate settings with diverse individuals and groups.",
+      "classroomFocus": "Cooperation, turn-taking, apologies, repair after conflict, communication",
+      "storyApproach": "Friendship repair stories, fair-turn games, and apologize-and-fix scripts — because peer relationships are where SEL is tested every day.",
+      "exampleMoments": ["Saying sorry after grabbing", "Sharing materials fairly", "Rejoining group work"],
+      "keywords": ["friend", "apolog", "sorry", "share", "repair", "fair", "turn", "cooperat"]
+    },
+    {
+      "id": "responsible-decision-making",
+      "name": "Responsible Decision-Making",
+      "nameZh": "负责任决策",
+      "order": 5,
+      "description": "The abilities to make caring and constructive choices about personal behavior and social interactions across situations.",
+      "classroomFocus": "Choices and consequences, flexible thinking, trying again after mistakes",
+      "storyApproach": "When plans change or mistakes happen, stories model a next-step choice — flexible thinking, problem-solving, and our Thinking Skills bridge into judgment.",
+      "exampleMoments": ["Hearing \"no\" calmly", "Trying a new way", "Fixing a mistake after blurting"],
+      "keywords": ["choice", "decision", "try again", "mistake", "flexible", "plan", "problem solv"]
+    }
+  ],
+  "dimensions": [
+    { "id": "scenario", "label": "Scenario", "labelZh": "场景", "question": "Where does this happen?" },
+    { "id": "trigger", "label": "Trigger", "labelZh": "触发", "question": "What sets the moment off?" },
+    { "id": "emotion", "label": "Emotion", "labelZh": "情绪", "question": "What does the child feel?" },
+    { "id": "skill", "label": "Skill", "labelZh": "技能", "question": "What habit are we building?" }
+  ],
+  "scenarios": [
+    { "id": "carpet", "name": "Carpet / Circle Time", "keywords": ["carpet", "circle", "morning meeting", "group time", "lesson", "called on", "instruction"] },
+    { "id": "transitions", "name": "Transitions & Lines", "keywords": ["transition", "hallway", "line", "moving", "centers", "unpack", "pack up", "arrival", "dismissal"] },
+    { "id": "independent-work", "name": "Independent Work", "keywords": ["independent", "desk work", "worksheet", "task", "work time", "too hard", "focus"] },
+    { "id": "lunch", "name": "Lunch & Cafeteria", "keywords": ["lunch", "cafeteria", "table"] },
+    { "id": "recess", "name": "Recess & Playground", "keywords": ["recess", "playground", "game", "play"] },
+    { "id": "morning", "name": "Morning Routines", "keywords": ["morning", "arrival", "unpack", "backpack", "cubby"] },
+    { "id": "group-work", "name": "Group Work & Games", "keywords": ["group", "partner", "game", "turn taking", "board"] },
+    { "id": "conflict", "name": "Peer Conflict", "keywords": ["friend", "argument", "hit", "push", "grab", "exclude", "fair"] }
+  ],
+  "triggers": [
+    { "id": "impulse-speak", "name": "Impulse to speak", "keywords": ["blurting", "interrupt", "calling out", "call out", "raise hand", "speak too fast", "speaking too fast", "urge to interrupt"] },
+    { "id": "impulse-body", "name": "Impulse to move / act", "keywords": ["hitting", "hit ", "grab", "push", "safe hands", "unsafe hands", "impulse control", "hands to self"] },
+    { "id": "waiting", "name": "Waiting too long", "keywords": ["waiting", "wait turn", "wait for", "patience", "waiting token", "wait in line", "bored waiting"] },
+    { "id": "frustration", "name": "Frustration / mistake", "keywords": ["frustrat", "mistake", "hard", "giving up", "tower", "wrong"] },
+    { "id": "disappointment", "name": "Disappointment / hearing no", "keywords": ["disappoint", "no calmly", "not chosen", "unfair", "plan change"] },
+    { "id": "overwhelm", "name": "Overwhelm / too much", "keywords": ["overwhelm", "too loud", "too many", "big feeling", "explosion"] },
+    { "id": "excitement", "name": "High excitement", "keywords": ["over-excited", "too excited", "silly energy", "wiggly", "cannot sit still", "hyper"] },
+    { "id": "transition-shift", "name": "Routine change", "keywords": ["transition", "change", "switch", "stop", "new center"] }
+  ],
+  "emotions": [
+    { "id": "angry", "name": "Angry / mad", "keywords": ["angry", "mad", "furious"] },
+    { "id": "frustrated", "name": "Frustrated", "keywords": ["frustrat", "stuck", "hard"] },
+    { "id": "disappointed", "name": "Disappointed", "keywords": ["disappoint", "hearing no", "accepting no", "not chosen", "no-storm", "hear the word no"] },
+    { "id": "embarrassed", "name": "Embarrassed / shy", "keywords": ["embarrass", "shy", "ashamed"] },
+    { "id": "worried", "name": "Worried / anxious", "keywords": ["worry", "anxious", "nervous", "scared"] },
+    { "id": "impatient", "name": "Impatient", "keywords": ["impatient", "hurry", "want it now", "cannot wait"] },
+    { "id": "overwhelmed", "name": "Overwhelmed", "keywords": ["overwhelm", "too much", "big feeling"] },
+    { "id": "excited", "name": "Over-excited", "keywords": ["excited", "silly", "hyper"] }
+  ],
+  "skills": [
+    { "id": "wait-turn", "name": "Wait for a turn", "casel": ["self-management", "relationship-skills"], "keywords": ["waiting", "turn", "patience", "token"] },
+    { "id": "raise-hand", "name": "Raise hand / stop blurting", "casel": ["self-management"], "keywords": ["blurting", "interrupt", "calling out", "raise hand", "speak"] },
+    { "id": "calm-body", "name": "Calm body & volume", "casel": ["self-management", "self-awareness"], "keywords": ["calm", "volume", "breathe", "regulat", "quiet"] },
+    { "id": "safe-hands", "name": "Safe hands & boundaries", "casel": ["self-management", "social-awareness"], "keywords": ["safe hands", "hitting", "personal space", "touch", "boundary", "consent"] },
+    { "id": "repair", "name": "Apologize & repair", "casel": ["relationship-skills", "responsible-decision-making"], "keywords": ["apolog", "sorry", "repair", "mistake", "fix"] },
+    { "id": "flexible-thinking", "name": "Flexible thinking", "casel": ["responsible-decision-making"], "keywords": ["flexible", "new way", "plan change", "try again"] },
+    { "id": "task-start", "name": "Start & finish tasks", "casel": ["self-management", "responsible-decision-making"], "keywords": ["start", "finish", "focus", "independent", "executive"] },
+    { "id": "perspective", "name": "See others' view", "casel": ["social-awareness", "relationship-skills"], "keywords": ["perspective", "friend", "fair", "include", "others"] }
+  ],
+  "domainCaselMap": {
+    "waiting": ["self-management", "relationship-skills"],
+    "blurting": ["self-management"],
+    "regulation": ["self-awareness", "self-management"],
+    "body": ["self-management", "social-awareness", "responsible-decision-making"],
+    "friendship": ["relationship-skills", "social-awareness"],
+    "executive": ["self-management", "responsible-decision-making"],
+    "general": ["self-awareness", "responsible-decision-making"]
+  },
+  "domainInference": {
+    "waiting": { "skills": ["wait-turn"], "triggers": ["waiting"], "emotions": ["impatient"] },
+    "blurting": { "skills": ["raise-hand"], "triggers": ["impulse-speak"] },
+    "regulation": { "skills": ["calm-body"], "triggers": ["overwhelm", "frustration"], "emotions": ["angry", "overwhelmed"] },
+    "body": { "skills": ["safe-hands"], "triggers": ["impulse-body"] },
+    "friendship": { "skills": ["repair", "perspective"], "triggers": ["disappointment"], "emotions": ["disappointed"] },
+    "executive": { "skills": ["task-start"], "triggers": ["frustration", "transition-shift"], "scenarios": ["independent-work", "transitions"] }
+  },
+  "presetCombinations": [
+    {
+      "id": "morning-meltdown",
+      "name": "Morning meltdown",
+      "blurb": "Arrival routines, unpacking, big feelings",
+      "filters": { "scenario": "morning", "trigger": "transition-shift", "emotion": "overwhelmed" }
+    },
+    {
+      "id": "blurting-carpet",
+      "name": "Blurting at carpet",
+      "blurb": "Circle time, calling out, raise hand",
+      "filters": { "scenario": "carpet", "trigger": "impulse-speak", "skill": "raise-hand" },
+      "category": "blurting"
+    },
+    {
+      "id": "waiting-in-line",
+      "name": "Waiting in line",
+      "blurb": "Hallway, turns, patience tokens",
+      "filters": { "scenario": "transitions", "trigger": "waiting", "skill": "wait-turn" },
+      "category": "waiting"
+    },
+    {
+      "id": "hearing-no",
+      "name": "Hearing \"no\"",
+      "blurb": "Disappointment, limits, calm body",
+      "filters": { "trigger": "disappointment", "emotion": "disappointed", "skill": "calm-body" },
+      "category": "regulation"
+    },
+    {
+      "id": "recess-conflict",
+      "name": "Recess conflict",
+      "blurb": "Playground, unsafe hands, repair",
+      "filters": { "scenario": "recess", "trigger": "impulse-body", "skill": "safe-hands" },
+      "category": "body"
+    },
+    {
+      "id": "wont-start-work",
+      "name": "Won't start work",
+      "blurb": "Independent work, frustration, task start",
+      "filters": { "scenario": "independent-work", "trigger": "frustration", "skill": "task-start" },
+      "category": "executive"
+    },
+    {
+      "id": "friend-repair",
+      "name": "Friendship repair",
+      "blurb": "Conflict, apologize, see others' view",
+      "filters": { "scenario": "conflict", "skill": "repair" },
+      "category": "friendship"
+    },
+    {
+      "id": "too-loud",
+      "name": "Too loud & wiggly",
+      "blurb": "Volume, body regulation, carpet or group",
+      "filters": { "trigger": "excitement", "emotion": "excited", "skill": "calm-body" },
+      "category": "regulation"
+    }
+  ],
+  "thinkingSkills": [
+    { "id": "big-picture", "name": "Big Picture Thinking", "casel": ["responsible-decision-making", "social-awareness"], "keywords": ["big picture", "whole picture", "bigger idea", "more than one side", "investigate before"] },
+    { "id": "flexible-thinking", "name": "Flexible Thinking", "casel": ["responsible-decision-making"], "keywords": ["flexible thinking", "new way", "try a new", "check if the clue"] },
+    { "id": "evidence-clues", "name": "Evidence & Clues", "casel": ["responsible-decision-making"], "keywords": ["clue", "look for more", "look past", "connect clue", "evidence", "first clue"] },
+    { "id": "slow-down", "name": "Slow Down & Pause", "casel": ["self-management", "responsible-decision-making"], "keywords": ["slow down", "pause", "before you assume", "before you decide"] },
+    { "id": "perspective-taking", "name": "Perspective Taking", "casel": ["social-awareness", "relationship-skills"], "keywords": ["one side", "my view", "feeling clues", "listen to more", "perspective"] }
+  ]
+}

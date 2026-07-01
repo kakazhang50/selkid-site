@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import BrandBelief from '@/components/BrandBelief.astro';
+import CaselFramework from '@/components/CaselFramework.astro';
 import EducationMatrix from '@/components/EducationMatrix.astro';
+import SelFrameworkExplainer from '@/components/SelFrameworkExplainer.astro';
 import StepsGrid from '@/components/StepsGrid.astro';
 import SubscribeCTA from '@/components/SubscribeCTA.astro';
 import { catalog } from '@/lib/catalog';
@@ -13,15 +16,17 @@ const total = catalog.totalProducts || catalog.products.length;
     <div>
       <p class="eyebrow">Learning System</p>
       <h1>One brand. Three pillars. A clear path forward.</h1>
-      <p>SELKID is a story-based education brand with a published SEL matrix for K–2 and a flagship AI cognition series for Grades 3–6 — built on Rex &amp; Dino in Maple Forest.</p>
+      <p>SELKID is a <strong>CASEL-aligned</strong> story-based education brand — professional competencies translated into a published SEL matrix for K–2, plus a flagship AI cognition series for Grades 3–6.</p>
       <div class="page-stats">
+        <div class="stat-chip"><strong>5</strong><span>CASEL competencies</span></div>
         <div class="stat-chip"><strong>{total}+</strong><span>Resources on TPT</span></div>
         <div class="stat-chip"><strong>{catalog.pillars.ai}</strong><span>AI Cognition units</span></div>
-        <div class="stat-chip"><strong>4-step</strong><span>Delivery model</span></div>
       </div>
     </div>
     <img src="/assets/hero-maple-forest.png" alt="Rex and Dino in Maple Forest" />
   </section>
+
+  <BrandBelief />
 
   <section class="section white">
     <div class="section-inner">
@@ -30,6 +35,26 @@ const total = catalog.totalProducts || catalog.products.length;
         <h2>From feelings, to thinking, to the future</h2>
       </div>
       <EducationMatrix />
+    </div>
+  </section>
+
+  <section class="section white" id="casel">
+    <div class="section-inner">
+      <CaselFramework />
+    </div>
+  </section>
+
+  <section class="section light" id="sel-matrix">
+    <div class="section-inner">
+      <div class="section-heading centered">
+        <p class="eyebrow">SEL methodology</p>
+        <h2>From CASEL competency to classroom moment</h2>
+        <p>
+          Once you know the CASEL lane, SELKID's matrix helps you find the exact story — by scenario, trigger, emotion,
+          and skill.
+        </p>
+      </div>
+      <SelFrameworkExplainer />
     </div>
   </section>
 

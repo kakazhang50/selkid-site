@@ -1,19 +1,21 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import BrandBelief from '@/components/BrandBelief.astro';
 import { site } from '@/lib/site';
 import { catalog } from '@/lib/catalog';
 ---
 
-<BaseLayout title="About" description="SELKID is a children's education brand built on 200+ SEL resources and expanding into Rex & Dino AI cognition stories.">
+<BaseLayout title="About" description="SELKID believes emotional struggle isn't a mistake — it's a skill waiting to be taught. 200+ CASEL-aligned stories for K–6.">
   <section class="about-hero">
     <p class="eyebrow">About SELKID</p>
-    <h1>Built on SEL trust. Growing toward AI-age learning.</h1>
-    <p>SELKID began with social-emotional learning stories and a broad TPT catalog for real classroom needs. Its next chapter is AI cognition: helping children understand the relationship between AI and human beings through stories, comics, characters, and classroom-ready thinking experiences.</p>
+    <h1>Skills, not shame.</h1>
+    <BrandBelief compact />
+    <p style="margin-top:24px">SELKID began with social-emotional learning stories for real classroom moments — blurting, waiting, big feelings, friendship repair. Its next chapter is AI cognition: helping children understand how technology learns, fails, and still needs human judgment.</p>
     <p style="margin-top:16px;font-family:var(--font-display);font-size:1.2rem;color:var(--terracotta)">{site.tagline}</p>
   </section>
 
   <section class="manifesto">
-    <article><span>01</span><h2>SEL foundation</h2><p>The brand's first credibility layer is a large library of child-centered SEL resources used for classroom behavior, regulation, and thinking habits.</p></article>
+    <article><span>01</span><h2>Belief first</h2><p>We treat emotional struggle as a teachable moment, not a character flaw. Stories give children language, Rex &amp; Dino give them a mirror, and teachers get a no-prep path from feeling to skill.</p></article>
     <article><span>02</span><h2>AI future</h2><p>AI is treated as a powerful tool with limits, not as magic, authority, or a replacement for responsibility.</p></article>
     <article><span>03</span><h2>IP-centered</h2><p>Rex &amp; Dino are built to become a durable learning world across comics, books, audio, animation, and educational products.</p></article>
   </section>

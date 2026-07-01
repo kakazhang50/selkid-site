@@ -1,0 +1,101 @@
+---
+import { selFramework } from '@/lib/selFramework';
+import { catalog } from '@/lib/catalog';
+
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+const cf = selFramework.caselFramework;
+const counts = catalog.facetCounts?.casel || {};
+const competencies = [...selFramework.casel].sort((a, b) => (a.order || 0) - (b.order || 0));
+---
+
+<section class:list={['casel-framework', compact && 'casel-framework--compact']} id="casel">
+  <div class="casel-framework-header">
+    <p class="eyebrow">{cf.shortName} · {cf.tagline}</p>
+    <h2>{compact ? 'Built on CASEL' : 'Professional SEL, translated into stories'}</h2>
+    <p class="casel-attribution">{cf.attribution}</p>
+    {!compact && (
+      <a class="casel-ref-link" href={cf.referenceUrl} target="_blank" rel="noopener noreferrer">
+        {cf.referenceLabel} ↗
+      </a>
+    )}
+  </div>
+
+  {!compact && (
+    <div class="casel-methodology">
+      {cf.methodology.map((step) => (
+        <article class="casel-method-step">
+          <span class="casel-method-num">{step.step}</span>
+          <h3>{step.title}</h3>
+          <p>{step.text}</p>
+        </article>
+      ))}
+    </div>
+  )}
+
+  <div class="casel-stack" aria-hidden={compact}>
+    <div class="casel-stack-layer casel-stack-layer--top">
+      <strong>CASEL</strong>
+      <span>5 core competencies</span>
+    </div>
+    <div class="casel-stack-arrow">↓ classroom moments</div>
+    <div class="casel-stack-layer">
+      <strong>SELKID matrix</strong>
+      <span>Scenario × Trigger × Emotion × Skill</span>
+    </div>
+    <div class="casel-stack-arrow">↓ story delivery</div>
+    <div class="casel-stack-layer casel-stack-layer--bottom">
+      <strong>{catalog.pillars.sel}+ stories</strong>
+      <span>read-alouds &amp; activities</span>
+    </div>
+  </div>
+
+  <div class="casel-competency-grid">
+    {
+      competencies.map((c) => (
+        <article class="casel-competency-card">
+          <div class="casel-competency-head">
+            <span class="casel-competency-order">{c.order}</span>
+            <div>
+              <h3>{c.name}</h3>
+              {c.nameZh && <span class="casel-competency-zh">{c.nameZh}</span>}
+            </div>
+            <a class="casel-competency-count" href={`/sel-stories?casel=${c.id}`}>
+              {counts[c.id] || 0} stories
+            </a>
+          </div>
+          {!compact && <p class="casel-competency-desc">{c.description}</p>}
+          <p class="casel-competency-focus">
+            <strong>In K–2:</strong> {c.classroomFocus}
+          </p>
+          {!compact && (
+            <>
+              <p class="casel-competency-approach">
+                <strong>SELKID approach:</strong> {c.storyApproach}
+              </p>
+              {c.exampleMoments && (
+                <ul class="casel-examples">
+                  {c.exampleMoments.map((ex) => (
+                    <li>{ex}</li>
+                  ))}
+                </ul>
+              )}
+            </>
+          )}
+          <a class="casel-competency-link" href={`/sel-stories?casel=${c.id}`}>
+            Browse {c.name} stories
+          </a>
+        </article>
+      ))
+    }
+  </div>
+
+  {compact && (
+    <p class="casel-framework-footer">
+      <a class="btn btn-ghost" href="/learning-system#casel">How CASEL powers SELKID</a>
+    </p>
+  )}
+</section>
