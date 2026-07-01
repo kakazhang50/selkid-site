@@ -1,5 +1,5 @@
 ---
-import { site } from '@/lib/site';
+import { site, freeSample } from '@/lib/site';
 import { catalog } from '@/lib/catalog';
 import SubscribeForm from '@/components/SubscribeForm.astro';
 
@@ -33,15 +33,17 @@ const logo = site.brandLogo || '/assets/brand/selkid-logo.png';
         <div class="hero-home-subscribe" id="subscribe">
           <div class="hero-home-subscribe-head">
             <p class="eyebrow">Free for educators</p>
-            <h2>Get Unit 1: Training Data</h2>
+            <h2>Get {freeSample.unitTitle}</h2>
             <p class="hero-home-subscribe-lead">
-              A free AI cognition sample — plus new story launches and classroom-ready downloads.
+              {freeSample.heroLead}
             </p>
           </div>
           <ul class="subscribe-perks subscribe-perks--inline" aria-label="What's included">
-            <li>4-page comic PDF</li>
-            <li>Read-aloud educator script</li>
-            <li>Discussion prompts</li>
+            {
+              freeSample.perks.map((perk) => (
+                <li>{perk}</li>
+              ))
+            }
           </ul>
           <SubscribeForm
             class="hero-home-form"

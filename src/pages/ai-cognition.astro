@@ -2,7 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import AiUnitsGrid from '@/components/AiUnitsGrid.astro';
 import SubscribeCTA from '@/components/SubscribeCTA.astro';
-import { site } from '@/lib/site';
+import { site, freeSample } from '@/lib/site';
 import { catalog } from '@/lib/catalog';
 
 const total = catalog.totalProducts || catalog.products.length;
@@ -22,6 +22,7 @@ const total = catalog.totalProducts || catalog.products.length;
         <a class="btn btn-primary" href="/free-resources">Get free sample</a>
         <a class="btn btn-secondary" href={site.tptStore} target="_blank" rel="noopener">Shop on TPT</a>
       </div>
+      <p class="page-hero-note">{freeSample.shortLead}</p>
     </div>
     <img src="/assets/ai/unit6-cover.png" alt="Human Judgment — AI cognition cover" />
   </section>
@@ -53,5 +54,5 @@ const total = catalog.totalProducts || catalog.products.length;
     <blockquote>Children should not grow up believing AI is magic, neutral, or always right. They should grow up with stories that make AI understandable, questionable, and human-centered.</blockquote>
   </section>
 
-  <SubscribeCTA dark context="ai-cognition" title="Be first to get new AI units" description="Get the free Training Data sample and launch updates for Rex &amp; Dino's AI cognition series." buttonLabel="Get free sample" eyebrow="" />
+  <SubscribeCTA dark context="ai-cognition" title="Be first to get new AI units" description={freeSample.ctaDescription} buttonLabel="Get free sample" eyebrow="" />
 </BaseLayout>

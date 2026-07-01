@@ -6,7 +6,7 @@ import SelFrameworkExplainer from '@/components/SelFrameworkExplainer.astro';
 import StepsGrid from '@/components/StepsGrid.astro';
 import SubscribeCTA from '@/components/SubscribeCTA.astro';
 import { catalog } from '@/lib/catalog';
-import { site } from '@/lib/site';
+import { site, freeSample } from '@/lib/site';
 
 const total = catalog.totalProducts || catalog.products.length;
 ---
@@ -76,7 +76,7 @@ const total = catalog.totalProducts || catalog.products.length;
     context="learning-system"
     eyebrow="For educators"
     title="Get new stories &amp; free samples"
-    description="Join the SELKID list for Training Data free samples, new unit launches, and classroom tips."
+    description={`Join the SELKID list for the free ${freeSample.unitTitle} sample — full 16-panel comic plus partial lesson guides.`}
     buttonLabel="Get free sample"
   />
 </BaseLayout>

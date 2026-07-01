@@ -1,22 +1,30 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SubscribeForm from '@/components/SubscribeForm.astro';
+import { freeSample } from '@/lib/site';
 import { catalog } from '@/lib/catalog';
 
 const total = catalog.totalProducts || catalog.products.length;
 ---
 
-<BaseLayout title="Free Resources" description="Get a free Training Data sample from Rex & Dino's Big AI Ideas — SELKID's flagship AI cognition series for Grades 3–6.">
+<BaseLayout
+  title="Free Resources"
+  description={`Get ${freeSample.unitTitle} free — the full 16-panel comic plus partial lesson guides from Rex & Dino's Big AI Ideas.`}
+>
   <section class="subscribe-hero">
     <div class="subscribe-hero-grid">
       <div>
         <p class="eyebrow">Free Resources</p>
         <h1>Start with Training Data</h1>
-        <p class="lead">The first unit of <strong>Rex &amp; Dino's Big AI Ideas</strong> — a kid-sized introduction to how AI learns from examples, not magic.</p>
+        <p class="lead">
+          The first unit of <strong>Rex &amp; Dino's Big AI Ideas</strong> — {freeSample.shortLead}
+        </p>
         <ul class="subscribe-perks">
-          <li>Free comic sample from Unit 1</li>
-          <li>Early access to new AI cognition units</li>
-          <li>Classroom tips from SELKID</li>
+          {
+            freeSample.listPerks.map((perk) => (
+              <li>{perk}</li>
+            ))
+          }
         </ul>
         <SubscribeForm
           id="subscribe"
@@ -26,6 +34,7 @@ const total = catalog.totalProducts || catalog.products.length;
           buttonLabel="Get free sample"
         />
         <p class="form-fine">No spam. Unsubscribe anytime.</p>
+        <p class="form-fine free-sample-full-note">{freeSample.fullEditionNote}</p>
       </div>
       <div class="subscribe-hero-art">
         <img src="/assets/ai/unit1-cover.png" alt="Training Data unit cover" />
@@ -37,14 +46,20 @@ const total = catalog.totalProducts || catalog.products.length;
   <section class="steps section light">
     <div class="section-inner">
       <div class="section-heading centered">
-        <p class="eyebrow">What's in the sample</p>
-        <h2>A complete learning experience preview</h2>
+        <p class="eyebrow">What's in the free sample</p>
+        <h2>Full Unit 1 comic + partial lesson guides</h2>
+        <p>{freeSample.fullEditionNote}</p>
       </div>
       <div class="steps-grid">
-        <article class="step-card"><span class="step-num">📖</span><h3>4-page comic</h3><p>Rex &amp; Dino discover a Smart Trail that only learned from rabbit footprints.</p></article>
-        <article class="step-card"><span class="step-num">🎤</span><h3>Read-aloud</h3><p>Educator script for guided classroom discussion.</p></article>
-        <article class="step-card"><span class="step-num">✏️</span><h3>Activity</h3><p>Sort examples — notice what happens with limited data.</p></article>
-        <article class="step-card"><span class="step-num">💭</span><h3>Reflection</h3><p>"What did the Smart Trail learn from?"</p></article>
+        {
+          freeSample.sampleIncludes.map((item) => (
+            <article class="step-card">
+              <span class="step-num">{item.icon}</span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>

@@ -1,5 +1,5 @@
 ---
-import { site } from '@/lib/site';
+import { site, freeSample } from '@/lib/site';
 import SubscribeForm from '@/components/SubscribeForm.astro';
 
 interface Props {
@@ -21,8 +21,8 @@ const {
   context = 'form',
   id,
   eyebrow = 'Free for educators',
-  title = 'Get Unit 1: Training Data',
-  description = 'Get the free Training Data sample, new story launches, and classroom-ready downloads.',
+  title = `Get ${freeSample.unitTitle}`,
+  description = freeSample.ctaDescription,
   buttonLabel = compact ? 'Get sample' : 'Get free sample',
 } = Astro.props;
 

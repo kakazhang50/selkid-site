@@ -9,11 +9,17 @@ interface Props {
 const { hero = false } = Astro.props;
 
 const navItems = [
+  { href: '/', label: 'Home' },
   { href: '/learning-system', label: 'Learning System' },
   { href: '/ai-cognition', label: 'AI Cognition' },
   { href: '/sel-stories', label: 'SEL Stories' },
   { href: '/educator-notes', label: 'Educator Notes' },
 ];
+
+function isNavActive(href: string, pathname: string): boolean {
+  if (href === '/') return pathname === '/' || pathname === '/index.html';
+  return pathname === href || pathname.startsWith(href + '/');
+}
 
 const pathname = Astro.url.pathname;
 const total = catalog.totalProducts || catalog.products.length;
@@ -37,7 +43,7 @@ const total = catalog.totalProducts || catalog.products.length;
       <nav class="nav" id="site-nav" aria-label="Main navigation">
       {
         navItems.map((item) => {
-          const active = pathname === item.href || pathname.startsWith(item.href + '/');
+          const active = isNavActive(item.href, pathname);
           return (
             <a href={item.href} class:list={[active && 'active']} aria-current={active ? 'page' : undefined}>
               {item.label}

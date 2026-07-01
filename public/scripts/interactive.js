@@ -65,7 +65,15 @@
     });
   }
 
-  function submitMailerLite(url, email, onSuccess, onFail) {
+  function showFormNote(note, html, type) {
+    if (!note) return;
+    note.innerHTML = html;
+    note.classList.remove('is-success', 'is-error');
+    if (type) note.classList.add(type);
+    note.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function submitMailerLite(url, email) {
     var body = 'fields[email]=' + encodeURIComponent(email);
     return fetch(url, {
       method: 'POST',
@@ -76,28 +84,53 @@
         return res.json();
       })
       .then(function (data) {
-        if (data && data.success) onSuccess();
-        else throw new Error('fail');
+        if (data && data.success) return data;
+        throw new Error('fail');
       })
       .catch(function () {
         return new Promise(function (resolve, reject) {
           var cb = 'ml_cb_' + Date.now();
           var script = document.createElement('script');
-          window[cb] = function (data) {
+          var settled = false;
+          var finish = function (ok) {
+            if (settled) return;
+            settled = true;
             delete window[cb];
             if (script.parentNode) script.parentNode.removeChild(script);
-            if (data && data.success) resolve();
+            if (ok) resolve({ success: true });
             else reject(new Error('fail'));
+          };
+          window[cb] = function (data) {
+            finish(Boolean(data && data.success));
           };
           script.src = url + '?callback=' + cb + '&' + body;
           script.onerror = function () {
-            delete window[cb];
-            if (script.parentNode) script.parentNode.removeChild(script);
-            reject(new Error('fail'));
+            finish(false);
           };
           document.body.appendChild(script);
-        }).then(onSuccess);
+          window.setTimeout(function () {
+            finish(false);
+          }, 10000);
+        });
       });
+  }
+
+  function successMessage(sample, mode) {
+    if (sample) {
+      var external = sample.indexOf('http') === 0;
+      var attrs = external ? ' target="_blank" rel="noopener"' : '';
+      return (
+        '<strong>You\'re on the list!</strong> <a href="' +
+        sample +
+        '"' +
+        attrs +
+        '>Get your free sample</a>'
+      );
+    }
+    if (mode === 'local') {
+      return "<strong>You're on the list!</strong> Open your free sample — full 16-panel comic and partial lesson guides.";
+    }
+    return "<strong>You're on the list!</strong> Check your inbox for updates from SELKID.";
   }
 
   function initEmailForms() {
@@ -124,34 +157,26 @@
           page: window.location.pathname,
         };
         var done = function (mode) {
-          if (sample) {
-            note.innerHTML =
-              'You\'re on the list! <a href="' +
-              sample +
-              '" target="_blank" rel="noopener">Download your free sample</a>.';
-          } else if (mode === 'local') {
-            note.textContent =
-              "You're on the list! We'll email your free Training Data sample when delivery is live.";
-          } else {
-            note.textContent = "You're on the list! Check your inbox for updates from SELKID.";
-          }
+          showFormNote(note, successMessage(sample, mode), 'is-success');
           input.value = '';
-        };
-        var fail = function () {
-          note.textContent = 'Something went wrong. Please try again.';
-        };
-        var resetBtn = function () {
           if (btn) {
             btn.disabled = false;
-            btn.textContent = btn.getAttribute('data-label') || 'Join';
+            btn.textContent = 'Subscribed ✓';
+          }
+        };
+        var fail = function () {
+          showFormNote(note, 'Something went wrong. Please try again.', 'is-error');
+          if (btn) {
+            btn.disabled = false;
+            btn.textContent = btn.getAttribute('data-label') || 'Get free sample';
           }
         };
         if (mlUrl) {
-          submitMailerLite(mlUrl, email, function () {
-            done('remote');
-          }, fail)
-            .catch(fail)
-            .finally(resetBtn);
+          submitMailerLite(mlUrl, email)
+            .then(function () {
+              done('remote');
+            })
+            .catch(fail);
           return;
         }
         if (!endpoint) {
@@ -161,7 +186,6 @@
             localStorage.setItem(WAITLIST_KEY, JSON.stringify(list));
           } catch (e) {}
           done('local');
-          resetBtn();
           return;
         }
         fetch(endpoint, {
@@ -173,8 +197,7 @@
             if (!res.ok) throw new Error('fail');
             done('remote');
           })
-          .catch(fail)
-          .finally(resetBtn);
+          .catch(fail);
       });
       var btn = form.querySelector('button[type="submit"]');
       if (btn && !btn.getAttribute('data-label')) btn.setAttribute('data-label', btn.textContent);

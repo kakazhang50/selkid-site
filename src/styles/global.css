@@ -585,8 +585,17 @@ p {
 
 .hero-home-form .form-note {
   grid-column: 1 / -1;
-  margin: 4px 0 0;
-  color: var(--forest);
+  margin: 8px 0 0;
+  color: var(--forest-dark);
+  min-height: 0;
+}
+
+.hero-home-form .form-note.is-success,
+.hero-home-form .form-note.is-error {
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 0.92rem;
+  line-height: 1.45;
 }
 
 .hero-home-subscribe .hero-home-form.subscribe-form input[type="email"] {
@@ -2879,10 +2888,37 @@ p {
   margin: 8px 0 0;
   font-size: 0.88rem;
   font-weight: 700;
+  color: var(--forest-dark);
+}
+
+.form-note.is-success {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(61, 107, 82, 0.12);
+  border: 1px solid rgba(61, 107, 82, 0.35);
+  color: var(--forest-dark);
+}
+
+.form-note.is-error {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(184, 92, 114, 0.1);
+  border: 1px solid rgba(184, 92, 114, 0.35);
+  color: var(--berry);
+}
+
+.form-note.is-success a,
+.hero-home-form .form-note a {
+  color: var(--forest-dark);
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.subscribe-band .form-note {
   color: var(--sunshine);
 }
 
-.form-note a {
+.subscribe-band .form-note a {
   color: white;
   text-decoration: underline;
 }
@@ -2931,6 +2967,20 @@ p {
   left: 0;
   color: var(--forest);
   font-weight: 800;
+}
+
+.free-sample-full-note {
+  margin-top: 6px;
+  max-width: 42ch;
+  line-height: 1.45;
+}
+
+.page-hero-note {
+  margin: 14px 0 0;
+  max-width: 520px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--muted);
 }
 
 .subscribe-hero-art {

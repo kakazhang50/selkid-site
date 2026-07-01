@@ -21,4 +21,4 @@ SELKID starts with **story** because children need a character moment they recog
 
 You are not buying "behavior management." You are buying **repeatable language** children can use tomorrow — the same language whether you are teaching waiting, regulation, or (in older grades) how AI learns from examples.
 
-New SEL stories and AI cognition units land on [Free Resources](/free-resources) first. [Join the list](/free-resources#subscribe) for the Training Data sample.
+New SEL stories and AI cognition units land on [Free Resources](/free-resources) first. [Get the free sample](/free-resources#subscribe) — the full 16-panel Unit 1 comic plus partial lesson guides.
