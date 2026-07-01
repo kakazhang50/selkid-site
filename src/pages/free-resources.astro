@@ -1,0 +1,65 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { site } from '@/lib/site';
+import { catalog } from '@/lib/catalog';
+
+const total = catalog.totalProducts || catalog.products.length;
+---
+
+<BaseLayout title="Free Resources" description="Get a free Training Data sample from Rex & Dino's Big AI Ideas — SELKID's flagship AI cognition series for Grades 3–6.">
+  <section class="subscribe-hero">
+    <div class="subscribe-hero-grid">
+      <div>
+        <p class="eyebrow">Free Resources</p>
+        <h1>Start with Training Data</h1>
+        <p class="lead">The first unit of <strong>Rex &amp; Dino's Big AI Ideas</strong> — a kid-sized introduction to how AI learns from examples, not magic.</p>
+        <ul class="subscribe-perks">
+          <li>Free comic sample from Unit 1</li>
+          <li>Early access to new AI cognition units</li>
+          <li>Classroom tips from SELKID</li>
+        </ul>
+        <form
+          id="subscribe"
+          class="email-form subscribe-form subscribe-form--hero"
+          data-email-form
+          data-form-context="free-resources"
+          data-free-sample={site.freeSampleUrl || ''}
+          data-endpoint={site.subscribeEndpoint || ''}
+        >
+          <input type="email" name="email" placeholder="Teacher or parent email" required aria-label="Email" />
+          <button class="btn btn-primary" type="submit">Join &amp; get sample</button>
+          <p class="form-note"></p>
+        </form>
+        <p class="form-fine">No spam. Unsubscribe anytime.</p>
+      </div>
+      <div class="subscribe-hero-art">
+        <img src="/assets/ai/unit1-cover.png" alt="Training Data unit cover" />
+        <img class="subscribe-comic-inset" src="/assets/comics/training-data-p1.png" alt="Training Data comic preview" />
+      </div>
+    </div>
+  </section>
+
+  <section class="steps section light">
+    <div class="section-inner">
+      <div class="section-heading centered">
+        <p class="eyebrow">What's in the sample</p>
+        <h2>A complete learning experience preview</h2>
+      </div>
+      <div class="steps-grid">
+        <article class="step-card"><span class="step-num">📖</span><h3>4-page comic</h3><p>Rex &amp; Dino discover a Smart Trail that only learned from rabbit footprints.</p></article>
+        <article class="step-card"><span class="step-num">🎤</span><h3>Read-aloud</h3><p>Educator script for guided classroom discussion.</p></article>
+        <article class="step-card"><span class="step-num">✏️</span><h3>Activity</h3><p>Sort examples — notice what happens with limited data.</p></article>
+        <article class="step-card"><span class="step-num">💭</span><h3>Reflection</h3><p>"What did the Smart Trail learn from?"</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2>Ready for the full series?</h2>
+    <p>Explore all six AI cognition units or browse {total}+ SEL resources on TPT.</p>
+    <div class="hero-actions" style="justify-content:center">
+      <a class="btn btn-primary" href="/ai-cognition">AI Cognition Series</a>
+      <a class="btn btn-secondary" href="/sel-stories">SEL Stories</a>
+    </div>
+  </section>
+</BaseLayout>

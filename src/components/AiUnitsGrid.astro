@@ -1,0 +1,24 @@
+---
+import { aiSeries } from '@/lib/catalog';
+---
+
+<div class="product-grid">
+  {
+    aiSeries.units.map((unit) => (
+      <article class="unit-card">
+        <a class="unit-link" href="/free-resources">
+          <div class="unit-cover">
+            <img src={`/${unit.cover.replace(/^\//, '')}`} alt={`Unit ${unit.number} — ${unit.title}`} loading="lazy" />
+            <span class="unit-badge">Unit {unit.number}</span>
+          </div>
+          <div class="unit-body">
+            <h3>{unit.title}</h3>
+            <p class="unit-subtitle">{unit.subtitle}</p>
+            <p>{unit.description}</p>
+            <span class="unit-cta">Learn more</span>
+          </div>
+        </a>
+      </article>
+    ))
+  }
+</div>

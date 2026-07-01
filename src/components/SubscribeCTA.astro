@@ -1,0 +1,87 @@
+---
+import { site } from '@/lib/site';
+
+interface Props {
+  compact?: boolean;
+  dark?: boolean;
+  inline?: boolean;
+  context?: string;
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  buttonLabel?: string;
+}
+
+const {
+  compact = false,
+  dark = false,
+  inline = false,
+  context = 'form',
+  id,
+  eyebrow = 'Free for educators',
+  title = 'Get Unit 1: Training Data',
+  description = 'Join the list for the free AI cognition sample, new story launches, and classroom-ready downloads.',
+  buttonLabel = compact ? 'Join' : 'Get free sample',
+} = Astro.props;
+
+const hasMailerLite = Boolean(site.mailerLiteFormId?.trim());
+const hasFormspree = Boolean(site.subscribeEndpoint?.trim());
+const showHeader = !inline && (eyebrow || title || description);
+---
+
+{
+  inline ? (
+    hasMailerLite ? (
+      <div class="ml-form-embed subscribe-form">
+        <div class="ml-embedded" data-form={site.mailerLiteFormId} />
+      </div>
+    ) : (
+      <form
+        class:list={['email-form', 'subscribe-form', 'footer-email-form']}
+        data-email-form
+        data-form-context={context}
+        data-free-sample={site.freeSampleUrl || ''}
+        data-endpoint={site.subscribeEndpoint || ''}
+      >
+        <input type="email" name="email" placeholder={compact ? 'Teacher email' : 'your@email.com'} required aria-label="Email" />
+        <button class:list={['btn', 'btn-primary', compact && 'btn-sm']} type="submit">
+          {buttonLabel}
+        </button>
+        <p class="form-note" />
+      </form>
+    )
+  ) : (
+    <section class:list={['subscribe-band', dark && 'subscribe-band--dark']} id={id}>
+      <div class="subscribe-inner">
+        {showHeader && (
+          <div>
+            {!compact && eyebrow && <p class="eyebrow">{eyebrow}</p>}
+            {title && <h2>{title}</h2>}
+            {description && <p>{description}</p>}
+          </div>
+        )}
+        {hasMailerLite ? (
+          <div class="ml-form-embed subscribe-form">
+            <div class="ml-embedded" data-form={site.mailerLiteFormId} />
+          </div>
+        ) : (
+          <form
+            class="email-form subscribe-form"
+            data-email-form
+            data-form-context={context}
+            data-free-sample={site.freeSampleUrl || ''}
+            data-endpoint={site.subscribeEndpoint || ''}
+          >
+            <input type="email" name="email" placeholder={compact ? 'Teacher email' : 'your@email.com'} required aria-label="Email" />
+            <button class:list={['btn', 'btn-primary', compact && 'btn-sm']} type="submit">
+              {buttonLabel}
+            </button>
+            <p class="form-note" />
+            {!compact && !hasFormspree && <p class="form-fine">No spam. Unsubscribe anytime.</p>}
+          </form>
+        )}
+      </div>
+    </section>
+  )
+}

@@ -1,0 +1,40 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { catalog } from '@/lib/catalog';
+---
+
+<BaseLayout title="SEL Stories" description="208+ SELKID social-emotional learning stories for K–2 — waiting, blurting, regulation, boundaries, and more.">
+  <section class="page-hero refined">
+    <div>
+      <p class="eyebrow">SEL Foundation · Pillar 1</p>
+      <h1>SEL Stories</h1>
+      <p>208 classroom-tested social-emotional stories organized by real classroom needs — emotions, self-regulation, peer skills, and safe behavior.</p>
+      <div class="page-stats">
+        <div class="stat-chip"><strong>{catalog.pillars.sel}</strong><span>SEL stories</span></div>
+        <div class="stat-chip"><strong>6</strong><span>Skill domains</span></div>
+        <div class="stat-chip"><strong>K–2</strong><span>Read-aloud ready</span></div>
+      </div>
+      <a class="btn btn-ghost" href="/learning-system" style="margin-top:16px">View learning system</a>
+    </div>
+    <img src="/assets/covers/sel-waiting-cover.png" alt="SELKID social story cover" />
+  </section>
+
+  <section class="section white" style="padding-top:0">
+    <div class="filter-bar" data-filter-bar>
+      <div class="filter-group">
+        <span class="filter-label">Domain</span>
+        <button class="filter-btn active" type="button" data-filter-group="category" data-category="all">All</button>
+        <button class="filter-btn" type="button" data-filter-group="category" data-category="waiting">Waiting</button>
+        <button class="filter-btn" type="button" data-filter-group="category" data-category="blurting">Blurting</button>
+        <button class="filter-btn" type="button" data-filter-group="category" data-category="regulation">Regulation</button>
+        <button class="filter-btn" type="button" data-filter-group="category" data-category="body">Boundaries</button>
+        <button class="filter-btn" type="button" data-filter-group="category" data-category="friendship">Friendship</button>
+        <button class="filter-btn" type="button" data-filter-group="category" data-category="executive">Executive</button>
+      </div>
+      <input class="filter-search" type="search" data-search placeholder="Search 208 stories…" aria-label="Search SEL stories" />
+    </div>
+    <div class="catalog-wrap">
+      <div class="product-grid" data-catalog-grid data-catalog="sel" data-paginate></div>
+    </div>
+  </section>
+</BaseLayout>

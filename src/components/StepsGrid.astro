@@ -1,0 +1,17 @@
+---
+import { educationMatrix } from '@/lib/catalog';
+
+const steps = educationMatrix.deliveryModel.steps;
+---
+
+<div class="steps-grid">
+  {
+    steps.map((step, i) => (
+      <article class="step-card">
+        <span class="step-num">{i + 1}</span>
+        <h3>{step.step}</h3>
+        <p>{step.text}</p>
+      </article>
+    ))
+  }
+</div>

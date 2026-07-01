@@ -1,0 +1,131 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import MatrixPreview from '@/components/MatrixPreview.astro';
+import StepsGrid from '@/components/StepsGrid.astro';
+import ProductGrid from '@/components/ProductGrid.astro';
+import SubscribeCTA from '@/components/SubscribeCTA.astro';
+import { site } from '@/lib/site';
+import { catalog, filterProducts } from '@/lib/catalog';
+
+const total = catalog.totalProducts || catalog.products.length;
+const featured = filterProducts(catalog.products, { featured: true }).slice(0, 8);
+const pillars = catalog.pillars;
+---
+
+<BaseLayout heroHeader>
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">SELKID · Story-based learning</p>
+        <h1>Big ideas, kid-sized stories.</h1>
+        <p class="hero-lead">
+          A professional SEL education matrix for K–2, thinking skills for the classroom, and an R&amp;D flagship in AI
+          cognition — all through Rex &amp; Dino in Maple Forest.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/ai-cognition">Explore AI Cognition</a>
+          <a class="btn btn-secondary" href="/learning-system">See Learning System</a>
+        </div>
+        <ul class="hero-proof" aria-label="Brand highlights">
+          <li>CASEL-aligned SEL domains</li>
+          <li>No-prep classroom ready</li>
+          <li>{total}+ resources on TPT</li>
+        </ul>
+      </div>
+      <div class="hero-art hero-art--brand">
+        <img
+          src="/assets/hero-maple-forest.png"
+          alt="Rex and Dino in Maple Forest"
+          width="640"
+          height="480"
+          fetchpriority="high"
+        />
+        <a class="hero-sample-card" href="/free-resources">
+          <img src="/assets/comics/training-data-p1.png" alt="Training Data comic preview" width="120" height="160" loading="lazy" />
+          <span><strong>Free sample</strong>Unit 1: Training Data</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-band trust-band--compact">
+    <div class="trust-grid">
+      <div class="trust-item"><strong>{total}+</strong><span>SKUs on Teachers Pay Teachers</span></div>
+      <div class="trust-item"><strong>3</strong><span>Learning pillars</span></div>
+      <div class="trust-item"><strong>{pillars.sel}+</strong><span>SEL foundation stories</span></div>
+      <div class="trust-item"><strong>{pillars.ai}</strong><span>AI cognition units (R&amp;D)</span></div>
+    </div>
+  </section>
+
+  <section class="section white">
+    <div class="section-inner reveal">
+      <div class="section-heading centered">
+        <p class="eyebrow">Education matrix</p>
+        <h2>From feelings, to thinking, to the future</h2>
+        <p>
+          SELKID is not a single product line — it's a structured learning system with {pillars.sel} SEL stories,{' '}
+          {pillars.thinking} thinking skills resources, and a flagship AI cognition series in active development.
+        </p>
+      </div>
+      <MatrixPreview />
+      <p style="text-align:center;margin-top:28px">
+        <a class="btn btn-ghost" href="/learning-system">View full learning system</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="unit-timeline">
+    <div class="section-inner">
+      <div class="section-heading centered">
+        <p class="eyebrow">R&amp;D flagship · AI Cognition</p>
+        <h2>Rex &amp; Dino's Big AI Ideas</h2>
+        <p>Season 1: AI Mistakes &amp; Human Judgment — six comic units helping children understand how AI learns, fails, and still needs people.</p>
+      </div>
+      <div class="unit-scroll">
+        <a class="unit-scroll-item" href="/ai-cognition"><img src="/assets/ai/unit1-cover.png" alt="Unit 1 — Training Data" loading="lazy" /><span>Training Data</span></a>
+        <a class="unit-scroll-item" href="/ai-cognition"><img src="/assets/ai/unit2-cover.png" alt="Unit 2 — Data Quality" loading="lazy" /><span>Data Quality</span></a>
+        <a class="unit-scroll-item" href="/ai-cognition"><img src="/assets/ai/unit3-cover.png" alt="Unit 3 — AI Bias" loading="lazy" /><span>AI Bias</span></a>
+        <a class="unit-scroll-item" href="/ai-cognition"><img src="/assets/ai/unit4-cover.png" alt="Unit 4 — Hallucination" loading="lazy" /><span>Hallucination</span></a>
+        <a class="unit-scroll-item" href="/ai-cognition"><img src="/assets/ai/unit5-cover.png" alt="Unit 5 — Model Collapse" loading="lazy" /><span>Model Collapse</span></a>
+        <a class="unit-scroll-item" href="/ai-cognition"><img src="/assets/ai/unit6-cover.png" alt="Unit 6 — Human Judgment" loading="lazy" /><span>Human Judgment</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps section light">
+    <div class="section-inner">
+      <div class="section-heading centered">
+        <p class="eyebrow">How SELKID works</p>
+        <h2>Story → Discussion → Activity → Reflection</h2>
+      </div>
+      <StepsGrid />
+    </div>
+  </section>
+
+  <SubscribeCTA context="homepage" />
+
+  <section class="section light">
+    <div class="characters-preview">
+      <div>
+        <p class="eyebrow">Rex &amp; Dino IP</p>
+        <h2>Characters children remember</h2>
+        <p>Maple Forest is SELKID's long-term story world — built to grow across comics, animation, audiobooks, and classroom media.</p>
+        <a class="btn btn-ghost" href="/rex-dino">Meet the cast</a>
+      </div>
+      <img src="/assets/hero-maple-forest.png" alt="Rex and Dino in Maple Forest" />
+    </div>
+  </section>
+
+  <section class="product-section">
+    <div class="section-inner">
+      <div class="section-heading centered">
+        <p class="eyebrow">Classroom favorites</p>
+        <h2>Featured on TPT</h2>
+      </div>
+      <ProductGrid products={featured} />
+      <p style="text-align:center;margin-top:32px">
+        <a class="btn btn-secondary" href={site.tptStore} target="_blank" rel="noopener">Browse all {total}+ on TPT</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

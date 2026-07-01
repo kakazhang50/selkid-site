@@ -1,0 +1,19 @@
+---
+import { educationMatrix, catalog, pillarLink } from '@/lib/catalog';
+---
+
+<div class="matrix-preview-grid">
+  {
+    educationMatrix.progression.map((p) => {
+      const count = catalog.pillars[p.pillar as keyof typeof catalog.pillars] || 0;
+      return (
+        <a class="matrix-preview-card reveal" href={pillarLink(p.link)}>
+          <span class="matrix-preview-num">0{p.order}</span>
+          <h3>{p.name}</h3>
+          <p>{p.tagline}</p>
+          <span class="matrix-preview-stat">{count}+ SKUs</span>
+        </a>
+      );
+    })
+  }
+</div>

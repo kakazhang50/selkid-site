@@ -1,0 +1,73 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const notes = (await getCollection('educatorNotes')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const featured = notes.filter((n) => n.data.featured);
+const rest = notes.filter((n) => !n.data.featured);
+---
+
+<BaseLayout
+  title="Educator Notes"
+  description="Classroom ideas, SEL practice, and AI cognition context from SELKID — for teachers and parents who want story-first learning."
+>
+  <section class="page-hero refined">
+    <div>
+      <p class="eyebrow">Educator Notes</p>
+      <h1>Ideas from the Maple Forest desk</h1>
+      <p>Short essays on SEL rhythm, classroom use, and why Rex &amp; Dino carry big ideas in kid-sized stories. No fluff — practical notes you can use this week.</p>
+    </div>
+    <img src="/assets/comics/training-data-p1.png" alt="Rex and Dino comic" />
+  </section>
+
+  <section class="section white">
+    <div class="section-inner note-index">
+      <p class="note-index-intro">
+        <strong>For educators:</strong> product news stays on <a href="/free-resources">Free Resources</a>; deep classroom
+        context lives here. Subscribe for samples and launch updates.
+      </p>
+
+      {featured.length > 0 && (
+        <>
+          <h2 class="note-section-title">Featured</h2>
+          <ul class="note-list">
+            {featured.map((note) => (
+              <li class="note-card note-card--featured">
+                <p class="eyebrow">{note.data.category}</p>
+                <h3><a href={`/educator-notes/${note.slug}`}>{note.data.title}</a></h3>
+                <p>{note.data.description}</p>
+                <time datetime={note.data.pubDate.toISOString()}>
+                  {note.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+
+      {rest.length > 0 && (
+        <>
+          <h2 class="note-section-title">More notes</h2>
+          <ul class="note-list">
+            {rest.map((note) => (
+              <li class="note-card">
+                <h3><a href={`/educator-notes/${note.slug}`}>{note.data.title}</a></h3>
+                <p>{note.data.description}</p>
+                <time datetime={note.data.pubDate.toISOString()}>
+                  {note.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+
+      <div class="hero-actions" style="margin-top:32px">
+        <a class="btn btn-primary" href="/free-resources#subscribe">Get free sample</a>
+        <a class="btn btn-ghost" href="/learning-system">Learning System</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

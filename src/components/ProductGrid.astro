@@ -1,0 +1,35 @@
+---
+import type { Product } from '@/lib/catalog';
+import { coverSrc } from '@/lib/catalog';
+
+interface Props {
+  products: Product[];
+}
+
+const { products } = Astro.props;
+---
+
+<div class="product-grid">
+  {
+    products.length === 0 ? (
+      <p class="grid-empty">No resources match this filter.</p>
+    ) : (
+      products.map((product) => (
+        <article class="product-card">
+          <a class="product-link" href={product.tptUrl} target="_blank" rel="noopener">
+            <div class="product-cover">
+              <img src={coverSrc(product)} alt={product.title} loading="lazy" />
+            </div>
+            <div class="product-body">
+              {product.grades && <span class="product-grade">{product.grades}</span>}
+              {product.category && <span class="product-cat">{product.category}</span>}
+              <h3>{product.title}</h3>
+              {product.price && <span class="product-price">{product.price}</span>}
+              <span class="product-cta">View on TPT</span>
+            </div>
+          </a>
+        </article>
+      ))
+    )
+  }
+</div>

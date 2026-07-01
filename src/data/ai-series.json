@@ -1,0 +1,61 @@
+{
+  "series": "Rex & Dino's Big AI Ideas",
+  "tagline": "Season One — six stories from examples to judgment",
+  "store": "https://www.teacherspayteachers.com/store/selkid",
+  "units": [
+    {
+      "id": "unit1",
+      "number": 1,
+      "title": "Training Data",
+      "subtitle": "How AI learns from examples",
+      "description": "Rex and Dino discover that a smart trail only understands the examples it has seen.",
+      "cover": "assets/ai/unit1-cover.png",
+      "status": "available"
+    },
+    {
+      "id": "unit2",
+      "number": 2,
+      "title": "Data Quality",
+      "subtitle": "When examples go wrong",
+      "description": "A clever berry basket learns the wrong lesson when examples become rotten, fake, old, or mislabeled.",
+      "cover": "assets/ai/unit2-cover.png",
+      "status": "available"
+    },
+    {
+      "id": "unit3",
+      "number": 3,
+      "title": "AI Bias",
+      "subtitle": "Unfair patterns in the data",
+      "description": "A polite mirror seems smart, but its recommendations become unfair because the examples are unbalanced.",
+      "cover": "assets/ai/unit3-cover.png",
+      "status": "available"
+    },
+    {
+      "id": "unit4",
+      "number": 4,
+      "title": "AI Hallucination",
+      "subtitle": "Confidence is not evidence",
+      "description": "Echo Cave answers with confidence, but Rex and Dino learn that sounding sure is not the same as being right.",
+      "cover": "assets/ai/unit4-cover.png",
+      "status": "available"
+    },
+    {
+      "id": "unit5",
+      "number": 5,
+      "title": "Model Collapse",
+      "subtitle": "When copies drift from truth",
+      "description": "Copied maps slowly lose contact with the real forest, showing how repeated copies can drift from truth.",
+      "cover": "assets/ai/unit5-cover.png",
+      "status": "available"
+    },
+    {
+      "id": "unit6",
+      "number": 6,
+      "title": "Human Judgment",
+      "subtitle": "Why people still matter",
+      "description": "Atlas Tortoise checks the fastest path against real conditions, proving that useful tools still need people.",
+      "cover": "assets/ai/unit6-cover.png",
+      "status": "available"
+    }
+  ]
+}

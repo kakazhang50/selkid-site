@@ -1,0 +1,39 @@
+---
+import { site } from '@/lib/site';
+import { catalog } from '@/lib/catalog';
+import SubscribeCTA from '@/components/SubscribeCTA.astro';
+
+const total = catalog.totalProducts || catalog.products.length;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>{site.brandName}</strong>
+        <p>{site.tagline}</p>
+        <p class="footer-tag">Story-based SEL · Thinking Skills · AI Cognition</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="/learning-system">Learning System</a>
+        <a href="/ai-cognition">AI Cognition</a>
+        <a href="/sel-stories">SEL Stories</a>
+        <a href="/rex-dino">Rex & Dino</a>
+        <a href="/educator-notes">Educator Notes</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="/free-resources">Free Sample</a>
+        <a href={site.tptStore} target="_blank" rel="noopener">TPT Store ({total}+)</a>
+        <a href="/about">About</a>
+      </div>
+      <div class="footer-col footer-subscribe">
+        <h4>Stay updated</h4>
+        <SubscribeCTA compact inline context="footer" />
+      </div>
+    </div>
+    <p class="footer-copy">&copy; {year} {site.brandName} · From feelings, to thinking, to the future.</p>
+  </div>
+</footer>

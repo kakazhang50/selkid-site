@@ -1,0 +1,83 @@
+{
+  "title": "SELKID Learning System",
+  "subtitle": "From feelings, to thinking, to the AI future.",
+  "progression": [
+    {
+      "order": 1,
+      "pillar": "sel",
+      "name": "SEL Foundation",
+      "tagline": "From feelings",
+      "grades": "K–2",
+      "description": "Social-emotional stories grounded in classroom reality — emotions, self-regulation, peer skills, and safe behavior.",
+      "link": "/sel-stories",
+      "casel": ["Self-Awareness", "Self-Management", "Social Awareness", "Relationship Skills", "Responsible Decision-Making"]
+    },
+    {
+      "order": 2,
+      "pillar": "thinking",
+      "name": "Thinking Skills",
+      "tagline": "To thinking",
+      "grades": "K–2",
+      "description": "Cognitive fables that bridge SEL and judgment — gather clues, slow down, listen to more than one side, see the whole picture.",
+      "link": "/thinking-skills",
+      "skills": ["Big Picture Thinking", "Flexible Thinking", "Evidence Gathering", "Perspective Taking"]
+    },
+    {
+      "order": 3,
+      "pillar": "ai",
+      "name": "AI Cognition",
+      "tagline": "To the future",
+      "grades": "3–6",
+      "description": "Rex & Dino's Big AI Ideas — flagship R&D series on how AI learns, why it fails, and why human judgment still matters.",
+      "link": "/ai-cognition",
+      "status": "Flagship · Season 1 live",
+      "themes": ["Training Data", "Data Quality", "AI Bias", "Hallucination", "Model Collapse", "Human Judgment"]
+    }
+  ],
+  "selDomains": [
+    {
+      "id": "waiting",
+      "name": "Waiting & Turn-Taking",
+      "focus": "Patience, boredom, transitions, going first",
+      "keywords": ["waiting", "turn", "first", "patience", "line", "hallway", "lunch line"]
+    },
+    {
+      "id": "blurting",
+      "name": "Speaking & Blurting",
+      "focus": "Interrupting, calling out, impulse to speak",
+      "keywords": ["blurting", "interrupt", "calling out", "speaking", "talking", "raise", "hand", "shout"]
+    },
+    {
+      "id": "regulation",
+      "name": "Emotional Regulation",
+      "focus": "Big feelings, anger, volume, calming down",
+      "keywords": ["angry", "mad", "loud", "volume", "calm", "feeling", "emotion", "upset", "disappointment", "no calmly"]
+    },
+    {
+      "id": "body",
+      "name": "Body Boundaries & Safety",
+      "focus": "Hands, hitting, personal space, consent",
+      "keywords": ["hitting", "hands", "touch", "hug", "personal space", "boundary", "grab", "push", "safe"]
+    },
+    {
+      "id": "friendship",
+      "name": "Friendship & Repair",
+      "focus": "Apologies, conflict, fairness, inclusion",
+      "keywords": ["friend", "apolog", "sorry", "fair", "share", "exclude", "left out", "repair"]
+    },
+    {
+      "id": "executive",
+      "name": "Task & Executive Function",
+      "focus": "Starting work, transitions, finishing tasks",
+      "keywords": ["work", "task", "start", "finish", "transition", "focus", "independent"]
+    }
+  ],
+  "deliveryModel": {
+    "steps": [
+      { "step": "Story", "text": "Comic or read-aloud introduces the skill through Rex & Dino in Maple Forest." },
+      { "step": "Discussion", "text": "Guiding questions help children name the problem in their own words." },
+      { "step": "Activity", "text": "Printable practice turns the idea into something students can try." },
+      { "step": "Reflection", "text": "Exit prompts connect the story to classroom and home life." }
+    ]
+  }
+}

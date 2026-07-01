@@ -1,0 +1,30 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ProductGrid from '@/components/ProductGrid.astro';
+import { filterProducts } from '@/lib/catalog';
+import catalogData from '@/data/catalog.json';
+
+const products = filterProducts(catalogData.products, { pillar: 'thinking' });
+---
+
+<BaseLayout title="Thinking Skills" description="SELKID thinking skills stories help K-2 students practice big-picture thinking, flexible thinking, and evidence habits.">
+  <section class="page-hero refined">
+    <div>
+      <p class="eyebrow">Thinking Skills · Pillar 2</p>
+      <h1>From feelings to thinking</h1>
+      <p>14 Rex &amp; Dino Cognitive Fables that bridge SEL and AI-age judgment — big-picture thinking, flexible thinking, and evidence habits for K–2.</p>
+      <a class="btn btn-ghost" href="/learning-system">View learning system</a>
+    </div>
+    <img src="/assets/covers/sel-waiting-cover.png" alt="Thinking skills story cover" />
+  </section>
+
+  <section class="product-section">
+    <div class="section-inner">
+      <div class="section-heading centered">
+        <p class="eyebrow">On Teachers Pay Teachers</p>
+        <h2>14 thinking skills read-alouds</h2>
+      </div>
+      <ProductGrid products={products} />
+    </div>
+  </section>
+</BaseLayout>

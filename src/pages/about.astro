@@ -1,0 +1,29 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { site } from '@/lib/site';
+import { catalog } from '@/lib/catalog';
+---
+
+<BaseLayout title="About" description="SELKID is a children's education brand built on 200+ SEL resources and expanding into Rex & Dino AI cognition stories.">
+  <section class="about-hero">
+    <p class="eyebrow">About SELKID</p>
+    <h1>Built on SEL trust. Growing toward AI-age learning.</h1>
+    <p>SELKID began with social-emotional learning stories and a broad TPT catalog for real classroom needs. Its next chapter is AI cognition: helping children understand the relationship between AI and human beings through stories, comics, characters, and classroom-ready thinking experiences.</p>
+    <p style="margin-top:16px;font-family:var(--font-display);font-size:1.2rem;color:var(--terracotta)">{site.tagline}</p>
+  </section>
+
+  <section class="manifesto">
+    <article><span>01</span><h2>SEL foundation</h2><p>The brand's first credibility layer is a large library of child-centered SEL resources used for classroom behavior, regulation, and thinking habits.</p></article>
+    <article><span>02</span><h2>AI future</h2><p>AI is treated as a powerful tool with limits, not as magic, authority, or a replacement for responsibility.</p></article>
+    <article><span>03</span><h2>IP-centered</h2><p>Rex &amp; Dino are built to become a durable learning world across comics, books, audio, animation, and educational products.</p></article>
+  </section>
+
+  <section class="cta-band">
+    <h2>Explore the SELKID world</h2>
+    <p>{catalog.pillars.sel} SEL stories, {catalog.pillars.thinking} thinking skills kits, and a growing AI cognition series—all on Teachers Pay Teachers.</p>
+    <div class="hero-actions" style="justify-content:center">
+      <a class="btn btn-primary" href="/sel-stories">SEL Stories</a>
+      <a class="btn btn-secondary" href={site.tptStore} target="_blank" rel="noopener">TPT Store</a>
+    </div>
+  </section>
+</BaseLayout>

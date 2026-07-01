@@ -1,0 +1,51 @@
+---
+import { educationMatrix, catalog, pillarLink } from '@/lib/catalog';
+
+const counts = catalog.domainCounts || {};
+---
+
+<div class="matrix-progression">
+  {
+    educationMatrix.progression.map((p) => {
+      const count = catalog.pillars[p.pillar as keyof typeof catalog.pillars] || 0;
+      return (
+        <article class="matrix-pillar">
+          <span class="matrix-order">{p.order}</span>
+          <p class="matrix-tagline">{p.tagline}</p>
+          <h3>{p.name}</h3>
+          <p class="matrix-grades">
+            {p.grades}
+            {'status' in p && p.status ? ` · ${p.status}` : ''}
+          </p>
+          <p>{p.description}</p>
+          <p class="matrix-count">
+            <strong>{count}+</strong> resources
+          </p>
+          <a class="pillar-link" href={pillarLink(p.link)}>
+            Explore {p.name}
+          </a>
+        </article>
+      );
+    })
+  }
+</div>
+<div class="matrix-casel">
+  <h3>SEL Foundation aligns with CASEL</h3>
+  <div class="casel-tags">
+    {educationMatrix.progression[0].casel?.map((c) => <span class="casel-tag">{c}</span>)}
+  </div>
+</div>
+<div class="matrix-domains">
+  <h3>SEL story domains</h3>
+  <div class="domain-grid">
+    {
+      educationMatrix.selDomains.map((d) => (
+        <a class="domain-chip" href={`/sel-stories?category=${d.id}`}>
+          <strong>{d.name}</strong>
+          <span>{counts[d.id] || 0} stories</span>
+          <em>{d.focus}</em>
+        </a>
+      ))
+    }
+  </div>
+</div>

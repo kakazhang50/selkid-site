@@ -1,0 +1,54 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import EducationMatrix from '@/components/EducationMatrix.astro';
+import StepsGrid from '@/components/StepsGrid.astro';
+import SubscribeCTA from '@/components/SubscribeCTA.astro';
+import { catalog } from '@/lib/catalog';
+
+const total = catalog.totalProducts || catalog.products.length;
+---
+
+<BaseLayout title="Learning System" description="SELKID's three-pillar learning system: SEL Foundation, Thinking Skills, and AI Cognition — 228+ classroom-ready story resources.">
+  <section class="page-hero refined">
+    <div>
+      <p class="eyebrow">Learning System</p>
+      <h1>One brand. Three pillars. A clear path forward.</h1>
+      <p>SELKID is a story-based education brand with a published SEL matrix for K–2 and a flagship AI cognition series for Grades 3–6 — built on Rex &amp; Dino in Maple Forest.</p>
+      <div class="page-stats">
+        <div class="stat-chip"><strong>{total}+</strong><span>Resources on TPT</span></div>
+        <div class="stat-chip"><strong>{catalog.pillars.ai}</strong><span>AI Cognition units</span></div>
+        <div class="stat-chip"><strong>4-step</strong><span>Delivery model</span></div>
+      </div>
+    </div>
+    <img src="/assets/hero-maple-forest.png" alt="Rex and Dino in Maple Forest" />
+  </section>
+
+  <section class="section white">
+    <div class="section-inner">
+      <div class="section-heading centered">
+        <p class="eyebrow">Brand progression</p>
+        <h2>From feelings, to thinking, to the future</h2>
+      </div>
+      <EducationMatrix />
+    </div>
+  </section>
+
+  <section class="steps section light">
+    <div class="section-inner">
+      <div class="section-heading centered">
+        <p class="eyebrow">Delivery model</p>
+        <h2>Story → Discussion → Activity → Reflection</h2>
+        <p>Every SELKID resource follows the same classroom rhythm teachers can use immediately.</p>
+      </div>
+      <StepsGrid />
+    </div>
+  </section>
+
+  <SubscribeCTA
+    context="learning-system"
+    eyebrow="For educators"
+    title="Get new stories &amp; free samples"
+    description="Join the SELKID list for Training Data free samples, new unit launches, and classroom tips."
+    buttonLabel="Join the list"
+  />
+</BaseLayout>

@@ -1,0 +1,12 @@
+# Legacy .html URLs → clean routes
+/learning-system.html  /learning-system  301
+/ai-cognition.html     /ai-cognition     301
+/sel-stories.html      /sel-stories      301
+/thinking-skills.html  /thinking-skills  301
+/rex-dino.html         /rex-dino         301
+/free-resources.html   /free-resources   301
+/about.html            /about            301
+/index.html            /                 301
+/sel-library.html      /sel-stories      301
+/for-educators.html    /about            301
+/resources.html        /free-resources   301
