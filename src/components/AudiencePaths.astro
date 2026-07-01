@@ -1,0 +1,47 @@
+---
+const paths = [
+  {
+    eyebrow: 'Classroom teacher',
+    title: 'SEL Stories',
+    description: '210+ CASEL-aligned read-alouds for real classroom moments — blurting, waiting, regulation, and more.',
+    href: '/sel-stories',
+    cta: 'Browse SEL stories',
+  },
+  {
+    eyebrow: 'Thinking habits',
+    title: 'Thinking Skills',
+    description: 'Big-picture thinking, flexible thinking, and evidence habits — story-first, not worksheet-first.',
+    href: '/thinking-skills',
+    cta: 'Explore thinking skills',
+  },
+  {
+    eyebrow: 'AI literacy',
+    title: 'AI Cognition',
+    description: 'Rex & Dino explain how AI learns, fails, and still needs people — built for Grades 3–6.',
+    href: '/ai-cognition',
+    cta: 'See AI units',
+  },
+];
+---
+
+<section class="audience-paths section light" aria-label="Choose your path">
+  <div class="section-inner">
+    <div class="section-heading centered">
+      <p class="eyebrow">Start here</p>
+      <h2>What are you looking for?</h2>
+      <p>SELKID is one learning system with three doors in — pick the path that matches your classroom need.</p>
+    </div>
+    <div class="audience-paths-grid">
+      {
+        paths.map((path) => (
+          <a class="audience-path-card reveal" href={path.href}>
+            <p class="eyebrow">{path.eyebrow}</p>
+            <h3>{path.title}</h3>
+            <p>{path.description}</p>
+            <span class="audience-path-cta">{path.cta} →</span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

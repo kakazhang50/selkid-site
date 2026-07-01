@@ -1,0 +1,45 @@
+---
+const steps = [
+  {
+    num: '1',
+    title: 'Pick a classroom moment',
+    body: 'Find a SEL story, thinking skill, or AI unit that matches what your students are struggling with today.',
+    href: '/sel-stories',
+    link: 'Browse stories',
+  },
+  {
+    num: '2',
+    title: 'Get the free sample',
+    body: 'Download Unit 1: Training Data — comic pages, read-aloud script, and discussion prompts.',
+    href: '/free-resources',
+    link: 'Get free sample',
+  },
+  {
+    num: '3',
+    title: 'Teach with Story → Discussion → Activity → Reflection',
+    body: 'Open, read aloud, discuss, practice — the same rhythm across every SELKID resource.',
+    href: '/learning-system',
+    link: 'See the learning system',
+  },
+];
+---
+
+<section class="visitor-path" aria-label="New to SELKID">
+  <div class="visitor-path-inner">
+    <p class="visitor-path-label">New here? Start in 3 steps</p>
+    <ol class="visitor-path-steps">
+      {
+        steps.map((step) => (
+          <li class="visitor-path-step">
+            <span class="visitor-path-num">{step.num}</span>
+            <div>
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
+              <a href={step.href}>{step.link} →</a>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

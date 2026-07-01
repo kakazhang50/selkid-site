@@ -1,12 +1,13 @@
 ---
 import type { Product } from '@/lib/catalog';
-import { coverSrc } from '@/lib/catalog';
+import { coverSrc, productInternalUrl } from '@/lib/catalog';
 
 interface Props {
   products: Product[];
+  preferInternal?: boolean;
 }
 
-const { products } = Astro.props;
+const { products, preferInternal = false } = Astro.props;
 ---
 
 <div class="product-grid">
@@ -14,22 +15,38 @@ const { products } = Astro.props;
     products.length === 0 ? (
       <p class="grid-empty">No resources match this filter.</p>
     ) : (
-      products.map((product) => (
-        <article class="product-card">
-          <a class="product-link" href={product.tptUrl} target="_blank" rel="noopener">
-            <div class="product-cover">
-              <img src={coverSrc(product)} alt={product.title} loading="lazy" />
-            </div>
-            <div class="product-body">
-              {product.grades && <span class="product-grade">{product.grades}</span>}
-              {product.category && <span class="product-cat">{product.category}</span>}
-              <h3 class="product-title">{product.title}</h3>
-              {product.price && <span class="product-price">{product.price}</span>}
-              <span class="product-cta">View on TPT</span>
-            </div>
-          </a>
-        </article>
-      ))
+      products.map((product) => {
+        const href = preferInternal ? productInternalUrl(product) : product.tptUrl;
+        const external = !preferInternal;
+        return (
+          <article class="product-card">
+            <a
+              class="product-link"
+              href={href}
+              target={external ? '_blank' : undefined}
+              rel={external ? 'noopener' : undefined}
+            >
+              <div class="product-cover">
+                <img src={coverSrc(product)} alt={product.title} loading="lazy" />
+              </div>
+              <div class="product-body">
+                {product.grades && <span class="product-grade">{product.grades}</span>}
+                {product.category && <span class="product-cat">{product.category}</span>}
+                <h3 class="product-title">{product.title}</h3>
+                {product.price && <span class="product-price">{product.price}</span>}
+                <span class="product-cta">{preferInternal ? 'Explore' : 'View on TPT'}</span>
+              </div>
+            </a>
+            {
+              preferInternal && (
+                <a class="product-tpt-link" href={product.tptUrl} target="_blank" rel="noopener">
+                  Buy on TPT
+                </a>
+              )
+            }
+          </article>
+        );
+      })
     )
   }
 </div>

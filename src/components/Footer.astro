@@ -27,7 +27,7 @@ const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/index.html
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
-        <a href="/free-resources">Free Sample</a>
+        <a href="/free-resources#subscribe">Get free sample</a>
         <a href={site.tptStore} target="_blank" rel="noopener">TPT Store ({total}+)</a>
         <a href="/about">About</a>
       </div>
@@ -35,7 +35,7 @@ const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/index.html
         <h4>Stay updated</h4>
         {isHome ? (
           <p class="footer-subscribe-note">
-            <a href="#subscribe">Join the list</a> for free samples and new launches.
+        <a href="/free-resources#subscribe">Get free sample</a> for new launches and classroom downloads.
           </p>
         ) : (
           <SubscribeCTA compact inline context="footer" />

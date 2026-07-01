@@ -1,0 +1,37 @@
+---
+import testimonials from '@/data/homepage-testimonials.json';
+---
+
+<section class="social-proof section white" aria-label="Teacher reviews">
+  <div class="section-inner">
+    <div class="section-heading centered">
+      <p class="eyebrow">From real classrooms</p>
+      <h2>Teachers use SELKID stories the same day</h2>
+      <p>No-prep read-alouds with scripts, discussion prompts, and a simple activity — open and teach.</p>
+    </div>
+    <div class="testimonial-grid">
+      {
+        testimonials.map((item) => (
+          <article class="testimonial-card reveal">
+            <div class="testimonial-stars" aria-label={`${item.rating} out of 5 stars`}>
+              {'★'.repeat(item.rating)}
+            </div>
+            <blockquote>
+              <p>"{item.quote}"</p>
+            </blockquote>
+            <footer class="testimonial-footer">
+              <img src={item.coverUrl} alt="" width="48" height="48" loading="lazy" />
+              <div>
+                <cite>{item.author}</cite>
+                <span>{item.detail}</span>
+                <a href={item.tptUrl} target="_blank" rel="noopener">
+                  {item.productTitle}
+                </a>
+              </div>
+            </footer>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

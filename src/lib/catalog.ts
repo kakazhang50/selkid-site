@@ -77,6 +77,12 @@ export function pickHomepageFeatured(products: Product[], limit = 8): Product[] 
   return picked.slice(0, limit);
 }
 
+export function productInternalUrl(product: Product): string {
+  if (product.pillar === 'thinking') return '/thinking-skills';
+  if (product.pillar === 'ai') return '/ai-cognition';
+  return '/sel-stories';
+}
+
 export function filterProducts(
   products: Product[],
   options: {

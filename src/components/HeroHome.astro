@@ -22,27 +22,27 @@ const logo = site.brandLogo || '/assets/brand/selkid-logo.png';
         <p class="eyebrow">SELKID · Story-based learning</p>
         <h1>{site.tagline}</h1>
         <p class="hero-home-deck">
-          CASEL-aligned SEL for K–2 — plus thinking skills and Rex &amp; Dino's AI cognition series.
+          SEL for K–2 · Thinking skills for K–2 · AI literacy for Grades 3–6 — all through Rex &amp; Dino in Maple
+          Forest.
         </p>
       </div>
     </div>
 
-    <div class="hero-home-grid">
-      <div class="hero-home-main">
-        <blockquote class="hero-home-belief" aria-label="SELKID brand belief">
-          <p class="brand-belief-lead">{site.brandBeliefLead}</p>
-          <p class="brand-belief-sub">{site.brandBeliefSub}</p>
-          <p class="brand-belief-body">{site.brandBeliefBody}</p>
-        </blockquote>
-
+    <div class="hero-home-body">
+      <div class="hero-home-primary">
         <div class="hero-home-subscribe" id="subscribe">
           <div class="hero-home-subscribe-head">
             <p class="eyebrow">Free for educators</p>
             <h2>Get Unit 1: Training Data</h2>
             <p class="hero-home-subscribe-lead">
-              Free AI cognition sample · new story launches · classroom-ready downloads.
+              A free AI cognition sample — plus new story launches and classroom-ready downloads.
             </p>
           </div>
+          <ul class="subscribe-perks subscribe-perks--inline" aria-label="What's included">
+            <li>4-page comic PDF</li>
+            <li>Read-aloud educator script</li>
+            <li>Discussion prompts</li>
+          </ul>
           <SubscribeForm
             class="hero-home-form"
             context="homepage-hero"
@@ -52,29 +52,38 @@ const logo = site.brandLogo || '/assets/brand/selkid-logo.png';
           <p class="form-fine">No spam. Unsubscribe anytime.</p>
         </div>
 
+        <div class="hero-home-actions">
+          <a class="btn btn-secondary" href="/sel-stories">Browse SEL stories</a>
+          <a class="btn btn-ghost" href="/learning-system">See how it works</a>
+        </div>
+
         <div class="hero-home-meta">
           <ul class="hero-proof hero-proof--chips" aria-label="Brand highlights">
             <li>CASEL aligned</li>
             <li>Scenario × Trigger × Emotion × Skill</li>
-            <li>{total}+ on TPT</li>
+            <li>{total}+ classroom-ready stories</li>
           </ul>
-          <div class="hero-home-links">
-            <a href="/learning-system">Learning System</a>
-            <span aria-hidden="true">·</span>
-            <a href="/ai-cognition">AI Cognition</a>
-          </div>
         </div>
       </div>
 
       <aside class="hero-home-visual" aria-label="Rex and Dino comic preview">
-        <img
-          src="/assets/comics/training-data-p1.png"
-          alt="Rex and Dino — Training Data comic page"
-          width="480"
-          height="620"
-          loading="eager"
-        />
+        <a class="hero-visual-link" href="/free-resources">
+          <span class="hero-visual-badge">Unit 1 · Free sample</span>
+          <img
+            src="/assets/comics/training-data-p1.png"
+            alt="Rex and Dino — Training Data comic page"
+            width="480"
+            height="620"
+            loading="eager"
+          />
+        </a>
       </aside>
     </div>
+
+    <blockquote class="hero-home-belief reveal" aria-label="SELKID brand belief">
+      <p class="brand-belief-lead">{site.brandBeliefLead}</p>
+      <p class="brand-belief-sub">{site.brandBeliefSub}</p>
+      <p class="brand-belief-body">{site.brandBeliefBody}</p>
+    </blockquote>
   </div>
 </section>
