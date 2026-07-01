@@ -36,10 +36,8 @@
 
 1. Pages → **selkid-site** → Custom domains → 添加 `story.selkid.com`
 2. DNS：`story` CNAME → `selkid-site.pages.dev`（已代理）
-3. 访问 `story.selkid.com` → **301 跳转**到 `https://selkid.com/story/`（KDP 读者故事页）
-4. 若跳转未生效，可在 Cloudflare **Rules → Redirect Rules** 添加备用规则：
-   - When: `Hostname equals story.selkid.com`
-   - Then: Dynamic redirect → `https://selkid.com/story/`（301）
+3. `story.selkid.com` → **301 到主站** `https://selkid.com/`（与 www 相同，保留路径）
+4. KDP 书目页仍在 **`https://selkid.com/story/`**（需从站内链接进入，不自动跳转）
 
 书目数据维护：`src/data/kdp-books.json`（从 Amazon 作者页同步）
 

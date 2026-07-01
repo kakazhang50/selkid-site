@@ -11,7 +11,7 @@
 /for-educators.html    /about            301
 /resources.html        /free-resources   301
 
-# Legacy Substack paths (story.selkid.com custom domain)
-/p/*       /story/            301
-/s/*       /story/            301
-/archive   /story/            301
+# Legacy Substack paths → main site
+/p/*       /                  301
+/s/*       /free-resources/   301
+/archive   /educator-notes/   301
