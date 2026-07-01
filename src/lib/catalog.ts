@@ -17,6 +17,66 @@ export function coverSrc(product: Product): string {
   return '/assets/covers/sel-waiting-cover.png';
 }
 
+/** Stable key so duplicate TPT artwork does not repeat on the homepage. */
+export function coverKey(product: Product): string {
+  const src = coverSrc(product);
+  const idMatch = src.match(/original-(\d+)-/);
+  if (idMatch) return `tpt-${idMatch[1]}`;
+  const thumbMatch = product.coverUrl?.match(/thumbitem\/([^/]+)/);
+  if (thumbMatch) return `thumb-${thumbMatch[1]}`;
+  return src;
+}
+
+function productScore(product: Product): number {
+  let score = 0;
+  if (product.featured) score += 2;
+  if (product.price) score += 1;
+  if (product.pillar === 'thinking') score += 4;
+  if (product.pillar === 'ai') score += 4;
+  if (product.coverUrl) score += 1;
+  return score;
+}
+
+/** Homepage showcase: unique covers + spread across SEL domains and pillars. */
+export function pickHomepageFeatured(products: Product[], limit = 8): Product[] {
+  const pool = [...products]
+    .filter((p) => p.coverUrl || p.localImage)
+    .sort((a, b) => productScore(b) - productScore(a));
+
+  const picked: Product[] = [];
+  const seenCovers = new Set<string>();
+  const seenCategories = new Set<string>();
+
+  function tryAdd(product: Product, requireNewCategory = false): boolean {
+    if (picked.length >= limit || picked.includes(product)) return false;
+    const key = coverKey(product);
+    if (seenCovers.has(key)) return false;
+    const cat = product.categoryId || 'general';
+    if (requireNewCategory && seenCategories.has(cat)) return false;
+    seenCovers.add(key);
+    seenCategories.add(cat);
+    picked.push(product);
+    return true;
+  }
+
+  for (const pillar of ['thinking', 'ai', 'sel'] as const) {
+    const match = pool.find((p) => p.pillar === pillar);
+    if (match) tryAdd(match, false);
+  }
+
+  for (const p of pool) {
+    if (picked.length >= limit) break;
+    tryAdd(p, true);
+  }
+
+  for (const p of pool) {
+    if (picked.length >= limit) break;
+    tryAdd(p, false);
+  }
+
+  return picked.slice(0, limit);
+}
+
 export function filterProducts(
   products: Product[],
   options: {

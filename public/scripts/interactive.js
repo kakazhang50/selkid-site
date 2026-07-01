@@ -152,7 +152,7 @@
       '" loading="lazy"></div><div class="product-body">' +
       (product.grades ? '<span class="product-grade">' + product.grades + '</span>' : '') +
       (product.category ? '<span class="product-cat">' + product.category + '</span>' : '') +
-      '<h3>' +
+      '<h3 class="product-title">' +
       product.title +
       '</h3>' +
       (product.price ? '<span class="product-price">' + product.price + '</span>' : '') +

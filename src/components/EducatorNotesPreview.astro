@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+
+const notes = (await getCollection('educatorNotes'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 2);
+---
+
+{
+  notes.length > 0 && (
+    <section class="section white educator-notes-preview">
+      <div class="section-inner">
+        <div class="section-heading centered">
+          <p class="eyebrow">Educator Notes</p>
+          <h2>Classroom ideas from Maple Forest</h2>
+          <p>Short essays on story-first SEL, thinking habits, and kid-sized AI literacy.</p>
+        </div>
+        <ul class="note-list note-list--home">
+          {notes.map((note) => (
+            <li class="note-card">
+              <p class="eyebrow">{note.data.category}</p>
+              <h3>
+                <a href={`/educator-notes/${note.slug}`}>{note.data.title}</a>
+              </h3>
+              <p>{note.data.description}</p>
+            </li>
+          ))}
+        </ul>
+        <p style="text-align:center;margin-top:24px">
+          <a class="btn btn-ghost" href="/educator-notes">Read all notes</a>
+        </p>
+      </div>
+    </section>
+  )
+}

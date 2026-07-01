@@ -5,10 +5,11 @@ import StepsGrid from '@/components/StepsGrid.astro';
 import ProductGrid from '@/components/ProductGrid.astro';
 import SubscribeCTA from '@/components/SubscribeCTA.astro';
 import { site } from '@/lib/site';
-import { catalog, filterProducts } from '@/lib/catalog';
+import EducatorNotesPreview from '@/components/EducatorNotesPreview.astro';
+import { catalog, pickHomepageFeatured } from '@/lib/catalog';
 
 const total = catalog.totalProducts || catalog.products.length;
-const featured = filterProducts(catalog.products, { featured: true }).slice(0, 8);
+const featured = pickHomepageFeatured(catalog.products, 8);
 const pillars = catalog.pillars;
 ---
 
@@ -102,6 +103,8 @@ const pillars = catalog.pillars;
     </div>
   </section>
 
+  <EducatorNotesPreview />
+
   <SubscribeCTA context="homepage" />
 
   <section class="section light">
@@ -110,9 +113,12 @@ const pillars = catalog.pillars;
         <p class="eyebrow">Rex &amp; Dino IP</p>
         <h2>Characters children remember</h2>
         <p>Maple Forest is SELKID's long-term story world — built to grow across comics, animation, audiobooks, and classroom media.</p>
-        <a class="btn btn-ghost" href="/rex-dino">Meet the cast</a>
+        <div class="hero-actions">
+          <a class="btn btn-ghost" href="/rex-dino">Meet the cast</a>
+          <a class="btn btn-secondary" href="/thinking-skills">Thinking Skills</a>
+        </div>
       </div>
-      <img src="/assets/hero-maple-forest.png" alt="Rex and Dino in Maple Forest" />
+      <img src="/assets/comics/training-data-p1.png" alt="Rex and Dino — Training Data comic" />
     </div>
   </section>
 
@@ -120,7 +126,8 @@ const pillars = catalog.pillars;
     <div class="section-inner">
       <div class="section-heading centered">
         <p class="eyebrow">Classroom favorites</p>
-        <h2>Featured on TPT</h2>
+        <h2>Popular on TPT</h2>
+        <p>One highlight per skill area — browse {total}+ stories in the full catalog.</p>
       </div>
       <ProductGrid products={featured} />
       <p style="text-align:center;margin-top:32px">

@@ -12,11 +12,7 @@ const navItems = [
   { href: '/learning-system', label: 'Learning System' },
   { href: '/ai-cognition', label: 'AI Cognition' },
   { href: '/sel-stories', label: 'SEL Stories' },
-  { href: '/thinking-skills', label: 'Thinking Skills' },
-  { href: '/rex-dino', label: 'Rex & Dino' },
   { href: '/educator-notes', label: 'Educator Notes' },
-  { href: '/free-resources', label: 'Free Resources' },
-  { href: '/about', label: 'About' },
 ];
 
 const pathname = Astro.url.pathname;
@@ -44,6 +40,7 @@ const total = catalog.totalProducts || catalog.products.length;
         })
       }
     </nav>
-    <a class="nav-cta" href={site.tptStore} target="_blank" rel="noopener">Shop on TPT</a>
+    <a class="nav-cta nav-cta--sample" href="/free-resources">Free Sample</a>
+    <a class="nav-cta" href={site.tptStore} target="_blank" rel="noopener">TPT Store</a>
   </div>
 </header>

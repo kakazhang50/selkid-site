@@ -192,6 +192,16 @@ p {
   transition: background 0.2s, transform 0.2s;
 }
 
+.nav-cta--sample {
+  background: white;
+  color: var(--forest);
+  border: 2px solid var(--forest);
+}
+
+.nav-cta--sample:hover {
+  background: var(--cream);
+}
+
 .nav-cta:hover {
   background: var(--forest-dark);
   transform: translateY(-1px);
@@ -621,6 +631,16 @@ p {
 .product-body,
 .unit-body {
   padding: 16px 18px 20px;
+}
+
+.product-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  margin-bottom: 8px;
 }
 
 .product-grade {
@@ -1896,4 +1916,34 @@ p {
 .note-nav a {
   color: var(--forest);
   text-decoration: none;
+}
+
+.note-list--home {
+  max-width: 900px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: grid;
+  gap: 16px;
+}
+
+.educator-notes-preview .note-card {
+  height: 100%;
+}
+
+@media (max-width: 960px) {
+  .header-inner .nav-cta--sample {
+    order: 5;
+    width: calc(50% - 6px);
+    margin-top: 8px;
+  }
+
+  .header-inner .nav-cta:not(.nav-cta--sample) {
+    order: 6;
+    width: calc(50% - 6px);
+    margin-top: 8px;
+  }
+
+  .site-header.nav-open .header-inner {
+    flex-wrap: wrap;
+  }
 }
