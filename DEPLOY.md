@@ -36,8 +36,8 @@
 
 1. Pages → **selkid-site** → Custom domains → 添加 `story.selkid.com`
 2. DNS：`story` CNAME → `selkid-site.pages.dev`（已代理）
-3. `story.selkid.com` → **301 到主站** `https://selkid.com/`（与 www 相同，保留路径）
-4. KDP 书目页仍在 **`https://selkid.com/story/`**（需从站内链接进入，不自动跳转）
+3. `story.selkid.com` 与主站共用同一 Pages 部署，**直接显示首页**（不重定向、无需额外 Redirect Rule）
+4. 若 story 子域 404：在 Custom domains **删除后重新添加** `story.selkid.com`，DNS 保持 CNAME → `selkid-site.pages.dev`
 
 书目数据维护：`src/data/kdp-books.json`（从 Amazon 作者页同步）
 
