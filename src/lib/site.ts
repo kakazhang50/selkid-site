@@ -7,7 +7,6 @@ export interface SiteConfig {
   brandBeliefLead: string;
   brandBeliefSub: string;
   brandBeliefBody: string;
-  brandBeliefZh: string;
   description: string;
   tptStore: string;
   mailerLiteAccountId: string;

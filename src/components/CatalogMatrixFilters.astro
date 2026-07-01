@@ -97,7 +97,7 @@ const placeholder =
     <div class="matrix-filter-grid">
       {scenarioItems.length > 0 && (
         <div class="matrix-filter-col" data-facet-group="scenario">
-          <span class="filter-label">Scenario 场景</span>
+          <span class="filter-label">Scenario</span>
           <div class="facet-chips">
             {scenarioItems.map((item) => (
               <button class="facet-chip" type="button" data-facet="scenario" data-facet-id={item.id}>
@@ -110,7 +110,7 @@ const placeholder =
       )}
       {pillar === 'sel' && triggerItems.length > 0 && (
         <div class="matrix-filter-col" data-facet-group="trigger">
-          <span class="filter-label">Trigger 触发</span>
+          <span class="filter-label">Trigger</span>
           <div class="facet-chips">
             {triggerItems.map((item) => (
               <button class="facet-chip" type="button" data-facet="trigger" data-facet-id={item.id}>
@@ -123,7 +123,7 @@ const placeholder =
       )}
       {emotionItems.length > 0 && (
         <div class="matrix-filter-col" data-facet-group="emotion">
-          <span class="filter-label">Emotion 情绪</span>
+          <span class="filter-label">Emotion</span>
           <div class="facet-chips">
             {emotionItems.map((item) => (
               <button class="facet-chip" type="button" data-facet="emotion" data-facet-id={item.id}>
@@ -137,7 +137,7 @@ const placeholder =
       {pillar === 'sel' ? (
         skillItems.length > 0 && (
           <div class="matrix-filter-col" data-facet-group="skill">
-            <span class="filter-label">Skill 技能</span>
+            <span class="filter-label">Skill</span>
             <div class="facet-chips">
               {skillItems.map((item) => (
                 <button class="facet-chip" type="button" data-facet="skill" data-facet-id={item.id}>

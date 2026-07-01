@@ -20,7 +20,6 @@ const matrixDims = selFramework.dimensions;
     {
       matrixDims.map((dim, i) => (
         <div class="sel-matrix-axis" style={`--axis-i: ${i}`}>
-          <span class="sel-matrix-axis-zh">{dim.labelZh}</span>
           <span class="sel-matrix-axis-en">{dim.label}</span>
         </div>
       ))
@@ -59,10 +58,7 @@ const matrixDims = selFramework.dimensions;
 
         return (
           <article class="sel-dimension-card">
-            <h3>
-              <span class="sel-dim-zh">{dim.labelZh}</span>
-              {dim.label}
-            </h3>
+            <h3>{dim.label}</h3>
             <p class="sel-dim-question">{dim.question}</p>
             <ul class="sel-dim-examples">
               {top.map((item) => (

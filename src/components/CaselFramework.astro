@@ -61,7 +61,6 @@ const competencies = [...selFramework.casel].sort((a, b) => (a.order || 0) - (b.
             <span class="casel-competency-order">{c.order}</span>
             <div>
               <h3>{c.name}</h3>
-              {c.nameZh && <span class="casel-competency-zh">{c.nameZh}</span>}
             </div>
             <a class="casel-competency-count" href={`/sel-stories?casel=${c.id}`}>
               {counts[c.id] || 0} stories

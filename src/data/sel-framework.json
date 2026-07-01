@@ -33,7 +33,6 @@
     {
       "id": "self-awareness",
       "name": "Self-Awareness",
-      "nameZh": "自我意识",
       "order": 1,
       "description": "The abilities to understand one's own emotions, thoughts, and values and how they influence behavior across contexts.",
       "classroomFocus": "Naming feelings, noticing body signals, recognizing strengths and limits",
@@ -44,7 +43,6 @@
     {
       "id": "self-management",
       "name": "Self-Management",
-      "nameZh": "自我管理",
       "order": 2,
       "description": "The abilities to manage one's emotions, thoughts, and behaviors effectively in different situations and to achieve goals.",
       "classroomFocus": "Impulse control, waiting, transitions, calming strategies, task persistence",
@@ -55,7 +53,6 @@
     {
       "id": "social-awareness",
       "name": "Social Awareness",
-      "nameZh": "社会意识",
       "order": 3,
       "description": "The abilities to understand the perspectives of and empathize with others, including those from diverse backgrounds and cultures.",
       "classroomFocus": "Personal space, reading others' feelings, inclusion, fairness",
@@ -66,7 +63,6 @@
     {
       "id": "relationship-skills",
       "name": "Relationship Skills",
-      "nameZh": "人际关系",
       "order": 4,
       "description": "The abilities to establish and maintain healthy and supportive relationships and to navigate settings with diverse individuals and groups.",
       "classroomFocus": "Cooperation, turn-taking, apologies, repair after conflict, communication",
@@ -77,7 +73,6 @@
     {
       "id": "responsible-decision-making",
       "name": "Responsible Decision-Making",
-      "nameZh": "负责任决策",
       "order": 5,
       "description": "The abilities to make caring and constructive choices about personal behavior and social interactions across situations.",
       "classroomFocus": "Choices and consequences, flexible thinking, trying again after mistakes",
@@ -87,10 +82,10 @@
     }
   ],
   "dimensions": [
-    { "id": "scenario", "label": "Scenario", "labelZh": "场景", "question": "Where does this happen?" },
-    { "id": "trigger", "label": "Trigger", "labelZh": "触发", "question": "What sets the moment off?" },
-    { "id": "emotion", "label": "Emotion", "labelZh": "情绪", "question": "What does the child feel?" },
-    { "id": "skill", "label": "Skill", "labelZh": "技能", "question": "What habit are we building?" }
+    { "id": "scenario", "label": "Scenario", "question": "Where does this happen?" },
+    { "id": "trigger", "label": "Trigger", "question": "What sets the moment off?" },
+    { "id": "emotion", "label": "Emotion", "question": "What does the child feel?" },
+    { "id": "skill", "label": "Skill", "question": "What habit are we building?" }
   ],
   "scenarios": [
     { "id": "carpet", "name": "Carpet / Circle Time", "keywords": ["carpet", "circle", "morning meeting", "group time", "lesson", "called on", "instruction"] },

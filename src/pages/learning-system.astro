@@ -1,22 +1,27 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import BrandBelief from '@/components/BrandBelief.astro';
 import CaselFramework from '@/components/CaselFramework.astro';
 import EducationMatrix from '@/components/EducationMatrix.astro';
 import SelFrameworkExplainer from '@/components/SelFrameworkExplainer.astro';
 import StepsGrid from '@/components/StepsGrid.astro';
 import SubscribeCTA from '@/components/SubscribeCTA.astro';
 import { catalog } from '@/lib/catalog';
+import { site } from '@/lib/site';
 
 const total = catalog.totalProducts || catalog.products.length;
 ---
 
-<BaseLayout title="Learning System" description="SELKID's three-pillar learning system: SEL Foundation, Thinking Skills, and AI Cognition — 228+ classroom-ready story resources.">
+<BaseLayout title="Learning System" description="SELKID's CASEL-aligned learning system: emotional struggle is a skill gap, not a mistake — 228+ story resources for K–6.">
   <section class="page-hero refined">
     <div>
       <p class="eyebrow">Learning System</p>
-      <h1>One brand. Three pillars. A clear path forward.</h1>
-      <p>SELKID is a <strong>CASEL-aligned</strong> story-based education brand — professional competencies translated into a published SEL matrix for K–2, plus a flagship AI cognition series for Grades 3–6.</p>
+      <h1>{site.brandBeliefLead}</h1>
+      <p class="page-hero-belief-sub">{site.brandBeliefSub}</p>
+      <p>{site.brandBeliefBody}</p>
+      <p>
+        Built on the <strong>CASEL Framework</strong> and delivered through Rex &amp; Dino stories — a published SEL
+        matrix for K–2, thinking skills, and a flagship AI cognition series for Grades 3–6.
+      </p>
       <div class="page-stats">
         <div class="stat-chip"><strong>5</strong><span>CASEL competencies</span></div>
         <div class="stat-chip"><strong>{total}+</strong><span>Resources on TPT</span></div>
@@ -25,8 +30,6 @@ const total = catalog.totalProducts || catalog.products.length;
     </div>
     <img src="/assets/hero-maple-forest.png" alt="Rex and Dino in Maple Forest" />
   </section>
-
-  <BrandBelief />
 
   <section class="section white">
     <div class="section-inner">
