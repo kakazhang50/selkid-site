@@ -22,7 +22,13 @@ const total = catalog.totalProducts || catalog.products.length;
 <header class:list={['site-header', hero && 'site-header--hero']}>
   <div class="header-inner">
     <a class="brand" href="/" aria-label="SELKID home">
-      <span class="brand-mark">SK</span>
+      <img
+        class="brand-logo"
+        src={site.brandLogo || '/assets/brand/selkid-logo.png'}
+        alt=""
+        width="48"
+        height="48"
+      />
       <span><strong>{site.brandName}</strong><small>{site.tagline}</small></span>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">

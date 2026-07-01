@@ -1,0 +1,82 @@
+---
+import { site } from '@/lib/site';
+import { catalog } from '@/lib/catalog';
+
+const total = catalog.totalProducts || catalog.products.length;
+const hasMailerLite = Boolean(site.mailerLiteFormId?.trim());
+const logo = site.brandLogo || '/assets/brand/selkid-logo.png';
+---
+
+<section class="hero hero--home">
+  <div class="hero-home-grid">
+    <div class="hero-home-main">
+      <img
+        class="hero-home-logo"
+        src={logo}
+        alt="SELKID — Social Emotional Learning"
+        width="220"
+        height="220"
+        fetchpriority="high"
+      />
+
+      <div class="hero-home-belief" aria-label="SELKID brand belief">
+        <p class="brand-belief-lead">{site.brandBeliefLead}</p>
+        <p class="brand-belief-sub">{site.brandBeliefSub}</p>
+        <p class="brand-belief-body">{site.brandBeliefBody}</p>
+      </div>
+
+      <div class="hero-home-subscribe" id="subscribe">
+        <p class="eyebrow">Free for educators</p>
+        <h2>Get Unit 1: Training Data</h2>
+        <p class="hero-home-subscribe-lead">
+          Join for the free AI cognition sample, new story launches, and classroom-ready downloads.
+        </p>
+        {
+          hasMailerLite ? (
+            <div class="ml-form-embed hero-home-form">
+              <div class="ml-embedded" data-form={site.mailerLiteFormId} />
+            </div>
+          ) : (
+            <form
+              class="email-form subscribe-form hero-home-form"
+              data-email-form
+              data-form-context="homepage-hero"
+              data-free-sample={site.freeSampleUrl || ''}
+              data-endpoint={site.subscribeEndpoint || ''}
+            >
+              <input type="email" name="email" placeholder="your@email.com" required aria-label="Email" />
+              <button class="btn btn-primary" type="submit">Get free sample</button>
+              <p class="form-note" />
+            </form>
+          )
+        }
+        <p class="form-fine">No spam. Unsubscribe anytime.</p>
+      </div>
+
+      <div class="hero-home-actions">
+        <a class="btn btn-secondary" href="/learning-system">See Learning System</a>
+        <a class="btn btn-ghost" href="/ai-cognition">AI Cognition</a>
+      </div>
+
+      <ul class="hero-proof" aria-label="Brand highlights">
+        <li>CASEL Framework aligned</li>
+        <li>Scenario × Trigger × Emotion × Skill</li>
+        <li>{total}+ resources on TPT</li>
+      </ul>
+    </div>
+
+    <div class="hero-home-visual">
+      <img
+        src="/assets/comics/training-data-p1.png"
+        alt="Rex and Dino — Training Data comic page"
+        width="520"
+        height="680"
+        loading="eager"
+      />
+      <a class="hero-sample-card" href="/free-resources">
+        <img src="/assets/ai/unit1-cover.png" alt="Unit 1 cover" width="72" height="96" loading="lazy" />
+        <span><strong>Free sample</strong>Unit 1: Training Data</span>
+      </a>
+    </div>
+  </div>
+</section>

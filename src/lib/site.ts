@@ -16,6 +16,9 @@ export interface SiteConfig {
   subscribeTags: string;
   freeSampleUrl: string;
   cloudflareWebAnalyticsToken: string;
+  kdpAmazonStoreUrl?: string;
+  storyDomain?: string;
+  brandLogo: string;
 }
 
 export const site = siteConfig as SiteConfig;

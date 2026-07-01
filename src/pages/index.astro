@@ -1,11 +1,10 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import BrandBelief from '@/components/BrandBelief.astro';
+import HeroHome from '@/components/HeroHome.astro';
 import CaselFramework from '@/components/CaselFramework.astro';
 import MatrixPreview from '@/components/MatrixPreview.astro';
 import StepsGrid from '@/components/StepsGrid.astro';
 import ProductGrid from '@/components/ProductGrid.astro';
-import SubscribeCTA from '@/components/SubscribeCTA.astro';
 import { site } from '@/lib/site';
 import EducatorNotesPreview from '@/components/EducatorNotesPreview.astro';
 import { catalog, pickHomepageFeatured } from '@/lib/catalog';
@@ -13,45 +12,11 @@ import { catalog, pickHomepageFeatured } from '@/lib/catalog';
 const total = catalog.totalProducts || catalog.products.length;
 const featured = pickHomepageFeatured(catalog.products, 8);
 const pillars = catalog.pillars;
+const ogImage = site.brandLogo || '/assets/brand/selkid-logo.png';
 ---
 
-<BaseLayout heroHeader>
-  <section class="hero">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">SELKID · Story-based learning</p>
-        <h1>Big ideas, kid-sized stories.</h1>
-        <p class="hero-lead">
-          A professional SEL education matrix for K–2 — <strong>Scenario × Trigger × Emotion × Skill</strong>, CASEL-aligned,
-          with thinking skills and an R&amp;D flagship in AI cognition through Rex &amp; Dino in Maple Forest.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="/ai-cognition">Explore AI Cognition</a>
-          <a class="btn btn-secondary" href="/learning-system">See Learning System</a>
-        </div>
-        <ul class="hero-proof" aria-label="Brand highlights">
-          <li>CASEL Framework aligned</li>
-          <li>Scenario × Trigger × Emotion × Skill</li>
-          <li>{total}+ resources on TPT</li>
-        </ul>
-      </div>
-      <div class="hero-art hero-art--brand">
-        <img
-          src="/assets/hero-maple-forest.png"
-          alt="Rex and Dino in Maple Forest"
-          width="640"
-          height="480"
-          fetchpriority="high"
-        />
-        <a class="hero-sample-card" href="/free-resources">
-          <img src="/assets/comics/training-data-p1.png" alt="Training Data comic preview" width="120" height="160" loading="lazy" />
-          <span><strong>Free sample</strong>Unit 1: Training Data</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <BrandBelief />
+<BaseLayout heroHeader ogImage={ogImage}>
+  <HeroHome />
 
   <section class="trust-band trust-band--compact">
     <div class="trust-grid">
@@ -109,8 +74,6 @@ const pillars = catalog.pillars;
   </section>
 
   <EducatorNotesPreview />
-
-  <SubscribeCTA context="homepage" />
 
   <section class="section light">
     <div class="characters-preview">
