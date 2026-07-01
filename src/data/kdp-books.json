@@ -1,0 +1,140 @@
+{
+  "author": {
+    "name": "Emily Willow",
+    "penNameNote": "KDP author name for SELKID chapter books and picture books.",
+    "amazonStoreUrl": "https://www.amazon.com/stores/Emily-Willow/author/B0FPD5F5GQ",
+    "bio": "Chapter books and read-aloud stories for curious kids — SEL adventures, cozy mysteries, and Rex & Dino expeditions beyond the classroom."
+  },
+  "series": [
+    {
+      "id": "magic-map",
+      "title": "Rex & Dino and the Magic Map Adventures",
+      "tagline": "Survival, animal rescue, and big-world chapter adventures for ages 6–8.",
+      "brandLink": "/rex-dino",
+      "books": [
+        {
+          "id": "rainforest-rescue",
+          "title": "Rainforest Rescue",
+          "subtitle": "A Rainforest Adventure Chapter Book | Survival & Animal Rescue Story",
+          "ages": "6–8",
+          "volume": 1,
+          "formats": ["Kindle", "Paperback"],
+          "amazonUrl": "https://www.amazon.com/dp/B0GXSP3X3H",
+          "cover": "/assets/hero-maple-forest.png"
+        }
+      ]
+    },
+    {
+      "id": "poppy",
+      "title": "Poppy's Everyday Adventures",
+      "tagline": "Funny SEL chapter books about patience, problem-solving, and big feelings for ages 6–9.",
+      "books": [
+        {
+          "id": "poppy-pancake",
+          "title": "Poppy and the Great Pancake Catastrophe",
+          "subtitle": "Book 1 — patience, problem-solving, and big feelings",
+          "ages": "6–9",
+          "volume": 1,
+          "formats": ["Kindle"],
+          "amazonSearch": "Emily+Willow+Poppy+Great+Pancake+Catastrophe"
+        },
+        {
+          "id": "poppy-shadow",
+          "title": "Poppy and the Shadow with Too Many Feelings",
+          "subtitle": "Naming emotions, self-awareness, and coping with big feelings",
+          "ages": "6–9",
+          "volume": 2,
+          "formats": ["Kindle"],
+          "amazonSearch": "Emily+Willow+Poppy+Shadow+Too+Many+Feelings"
+        },
+        {
+          "id": "poppy-library",
+          "title": "Poppy and the Giant Library Mystery",
+          "subtitle": "Thoughtful questions, teamwork, and the magic of slowing down",
+          "ages": "6–9",
+          "volume": 4,
+          "formats": ["Kindle"],
+          "amazonSearch": "Emily+Willow+Poppy+Giant+Library+Mystery"
+        },
+        {
+          "id": "poppy-decision",
+          "title": "Poppy and the Big Decision Day",
+          "subtitle": "Responsible choices, listening to every voice, and leading with kindness",
+          "ages": "6–9",
+          "formats": ["Kindle"],
+          "amazonSearch": "Emily+Willow+Poppy+Big+Decision+Day"
+        },
+        {
+          "id": "poppy-whispering",
+          "title": "Poppy and the Whispering Forest",
+          "subtitle": "Patience, problem-solving, and big feelings in the forest",
+          "ages": "6–9",
+          "formats": ["Kindle"],
+          "amazonSearch": "Emily+Willow+Poppy+Whispering+Forest"
+        },
+        {
+          "id": "poppy-box",
+          "title": "Poppy's Everyday Adventures: 5-in-1 Box Set",
+          "subtitle": "Five stories for empathy, patience, and emotional growth",
+          "ages": "6–9",
+          "formats": ["Kindle"],
+          "amazonSearch": "Emily+Willow+Poppy+Everyday+Adventures+Box+Set"
+        }
+      ]
+    },
+    {
+      "id": "dinosaur-academy",
+      "title": "Dinosaur Academy: Everyday Adventures",
+      "tagline": "School mysteries about friendship, honesty, and trust.",
+      "books": [
+        {
+          "id": "missing-lunchbox",
+          "title": "The Mystery of the Missing Lunchbox",
+          "subtitle": "A school mystery about friendship, honesty & trust",
+          "ages": "6–10",
+          "formats": ["Kindle"],
+          "amazonSearch": "Emily+Willow+Mystery+Missing+Lunchbox+Dinosaur+Academy"
+        }
+      ]
+    },
+    {
+      "id": "benny",
+      "title": "Benny's Good Habits",
+      "tagline": "Picture books about responsibility and everyday routines.",
+      "books": [
+        {
+          "id": "benny-cleanup",
+          "title": "Benny, the Champion of Cleaning Up Toys",
+          "subtitle": "Responsibility, cleaning up, and good habits",
+          "ages": "3–6",
+          "volume": 1,
+          "formats": ["Kindle"],
+          "amazonSearch": "Emily+Willow+Benny+Champion+Cleaning+Up+Toys"
+        }
+      ]
+    },
+    {
+      "id": "seasonal",
+      "title": "Seasonal & Collections",
+      "tagline": "Cozy holiday reads and bundled libraries.",
+      "books": [
+        {
+          "id": "poppy-christmas",
+          "title": "Poppy's Christmas Dream Calendar",
+          "subtitle": "25 nights of cozy Christmas bedtime stories",
+          "ages": "6–9",
+          "formats": ["Kindle"],
+          "amazonSearch": "Emily+Willow+Poppy+Christmas+Dream+Calendar"
+        },
+        {
+          "id": "emma-library",
+          "title": "Emma's Big Feelings Library",
+          "subtitle": "A collection of stories about naming and navigating emotions",
+          "ages": "6–9",
+          "formats": ["Kindle"],
+          "amazonSearch": "Emily+Willow+Emma+Big+Feelings+Library"
+        }
+      ]
+    }
+  ]
+}

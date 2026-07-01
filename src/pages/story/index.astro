@@ -1,0 +1,79 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import KdpBookGrid from '@/components/KdpBookGrid.astro';
+import { kdp } from '@/lib/kdp-books';
+
+const { author, series } = kdp;
+const totalBooks = series.reduce((n, s) => n + s.books.length, 0);
+---
+
+<BaseLayout
+  title="Stories for Young Readers"
+  description="Chapter books and read-aloud stories by Emily Willow on Amazon — Rex & Dino adventures, Poppy's SEL stories, and more from the SELKID story world."
+  canonical="https://story.selkid.com/"
+  ogImage="/assets/hero-maple-forest.png"
+>
+  <section class="page-hero refined">
+    <div>
+      <p class="eyebrow">story.selkid.com · KDP</p>
+      <h1>Stories for young readers</h1>
+      <p>
+        Chapter books and picture books published on Amazon as <strong>{author.name}</strong> — the same story
+        world as SELKID, written for bedtime, independent reading, and family read-alouds.
+      </p>
+      <div class="page-stats">
+        <div class="stat-chip"><strong>{totalBooks}+</strong><span>titles on Amazon</span></div>
+        <div class="stat-chip"><strong>{series.length}</strong><span>story series</span></div>
+      </div>
+      <div class="hero-actions" style="margin-top:20px">
+        <a class="btn btn-primary" href={author.amazonStoreUrl} target="_blank" rel="noopener noreferrer">
+          Browse on Amazon
+        </a>
+        <a class="btn btn-ghost" href="https://selkid.com/">SELKID classroom resources</a>
+      </div>
+    </div>
+    <img src="/assets/hero-maple-forest.png" alt="Rex and Dino story world" />
+  </section>
+
+  <section class="section light">
+    <div class="section-inner story-author-note">
+      <p class="eyebrow">About {author.name}</p>
+      <p>{author.bio}</p>
+      <p class="story-bridge">
+        Looking for classroom read-alouds, CASEL-aligned SEL packs, and TPT resources?
+        <a href="https://selkid.com/sel-stories/">Explore SEL Stories on SELKID.com</a>
+        — same heart, built for educators.
+      </p>
+    </div>
+  </section>
+
+  {
+    series.map((s) => (
+      <section class="section white" id={s.id}>
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Series</p>
+            <h2>{s.title}</h2>
+            <p>{s.tagline}</p>
+            {s.brandLink && (
+              <a class="btn btn-ghost" href={s.brandLink} style="margin-top:12px">
+                Meet Rex &amp; Dino on SELKID
+              </a>
+            )}
+          </div>
+          <KdpBookGrid books={s.books} storeUrl={author.amazonStoreUrl} />
+        </div>
+      </section>
+    ))
+  }
+
+  <section class="section light">
+    <div class="section-inner centered-cta">
+      <h2>Read a story tonight</h2>
+      <p>All titles are available on Amazon Kindle and select print editions.</p>
+      <a class="btn btn-primary" href={author.amazonStoreUrl} target="_blank" rel="noopener noreferrer">
+        Visit {author.name} on Amazon
+      </a>
+    </div>
+  </section>
+</BaseLayout>

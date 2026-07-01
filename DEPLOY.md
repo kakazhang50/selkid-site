@@ -17,7 +17,32 @@
 1. Push 本仓库到 GitHub  
 2. Cloudflare Pages → 项目 **Settings → Builds** → 更新上表  
 3. **Retry deployment**  
-4. 绑定 `selkid.com`
+4. 绑定自定义域（三个都要加）：
+   - `selkid.com`
+   - `www.selkid.com`
+   - `story.selkid.com`（KDP / Pinterest 旧链接）
+
+## Custom domains & DNS
+
+| 主机 | DNS 记录 | Pages 自定义域 |
+|------|----------|----------------|
+| `@` / `selkid.com` | CNAME → `selkid-site.pages.dev`（已代理） | ✅ 必须 Active |
+| `www` | CNAME → `selkid-site.pages.dev`（已代理） | ✅ 必须 Active |
+| `story` | CNAME → `selkid-site.pages.dev`（已代理） | ✅ 必须 Active |
+
+> **DNS 写对不够**：每个域名都要在 Pages → **Custom domains** 里单独添加，否则会出现 522 / 404。
+
+### story.selkid.com（KDP 读者入口 · KDP / Pinterest 旧链接）
+
+1. Pages → **selkid-site** → Custom domains → 添加 `story.selkid.com`
+2. DNS：`story` CNAME → `selkid-site.pages.dev`（已代理）
+3. 站点内容：`/story/` 页面展示 Emily Willow 在 Amazon 上的章节书与绘本系列
+4. 访问 `story.selkid.com` 时通过 Pages Functions 展示同一页面（URL 保持 story 子域）
+5. 旧 Substack 路径 `/p/*`、`/s/*` → 301 到 `story.selkid.com/`
+
+书目数据维护：`src/data/kdp-books.json`（从 Amazon 作者页同步）
+
+> **注意**：`/sel-stories/` 是 TPT 课堂资源目录，与 KDP 读者故事页不同。
 
 ## Every update
 

@@ -2608,3 +2608,54 @@ p {
     flex-wrap: wrap;
   }
 }
+
+/* KDP story hub (story.selkid.com) */
+
+.story-author-note {
+  max-width: 720px;
+}
+
+.story-bridge {
+  margin-top: 16px;
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  background: var(--cream);
+  border: 1px solid var(--line);
+}
+
+.story-bridge a {
+  color: var(--forest);
+  font-weight: 700;
+}
+
+.kdp-book-subtitle {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.kdp-formats {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.centered-cta {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.centered-cta h2 {
+  margin-bottom: 12px;
+}
+
+.centered-cta p {
+  color: var(--muted);
+  margin-bottom: 20px;
+}

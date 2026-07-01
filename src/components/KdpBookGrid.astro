@@ -1,0 +1,40 @@
+---
+import type { KdpBook } from '@/lib/kdp-books';
+import { amazonLink, bookCover } from '@/lib/kdp-books';
+
+interface Props {
+  books: KdpBook[];
+  storeUrl: string;
+}
+
+const { books, storeUrl } = Astro.props;
+---
+
+<div class="product-grid kdp-book-grid">
+  {
+    books.map((book) => (
+      <article class="product-card kdp-book-card">
+        <a
+          class="product-link"
+          href={amazonLink(book, storeUrl)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="product-cover">
+            <img src={bookCover(book)} alt={book.title} loading="lazy" />
+          </div>
+          <div class="product-body">
+            {book.ages && <span class="product-grade">Ages {book.ages}</span>}
+            {book.volume && <span class="product-cat">Book {book.volume}</span>}
+            <h3 class="product-title">{book.title}</h3>
+            {book.subtitle && <p class="kdp-book-subtitle">{book.subtitle}</p>}
+            {book.formats && (
+              <span class="kdp-formats">{book.formats.join(' · ')}</span>
+            )}
+            <span class="product-cta">View on Amazon</span>
+          </div>
+        </a>
+      </article>
+    ))
+  }
+</div>
