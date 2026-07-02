@@ -2,17 +2,27 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PageCTA from '@/components/PageCTA.astro';
 import { getCollection } from 'astro:content';
+import { pageJsonLdExtra } from '@/lib/seo';
 
 const notes = (await getCollection('educatorNotes')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 const featured = notes.filter((n) => n.data.featured);
 const rest = notes.filter((n) => !n.data.featured);
+const breadcrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Educator Notes', href: '/educator-notes' },
+];
 ---
 
 <BaseLayout
   title="Educator Notes"
-  description="Classroom ideas, SEL practice, and AI cognition context from SELKID — for teachers and parents who want story-first learning."
+  description="Classroom ideas, SEL practice, and AI cognition context from SELKID — practical essays for teachers using story-first learning."
+  ogImage="/assets/comics/training-data-p1.png"
+  ogImageAlt="Rex and Dino comic — Educator Notes"
+  pageType="CollectionPage"
+  breadcrumbs={breadcrumbs}
+  jsonLdExtra={pageJsonLdExtra({ breadcrumbs })}
 >
   <section class="page-hero refined">
     <div>

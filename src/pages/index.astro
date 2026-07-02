@@ -10,14 +10,23 @@ import SocialProof from '@/components/SocialProof.astro';
 import { site } from '@/lib/site';
 import EducatorNotesPreview from '@/components/EducatorNotesPreview.astro';
 import { catalog, pickHomepageFeatured } from '@/lib/catalog';
+import { pageJsonLdExtra, siteFaqs } from '@/lib/seo';
 
 const total = catalog.totalProducts || catalog.products.length;
 const featured = pickHomepageFeatured(catalog.products, 4);
 const pillars = catalog.pillars;
 const ogImage = site.brandLogo || '/assets/brand/selkid-logo.png';
+const homeDescription = `SELKID offers ${total}+ CASEL-aligned SEL stories, thinking skills read-alouds, and Rex & Dino AI cognition comics for K–6 educators. Get a free Unit 1 sample.`;
 ---
 
-<BaseLayout heroHeader ogImage={ogImage} siteCompact={false}>
+<BaseLayout
+  heroHeader
+  ogImage={ogImage}
+  ogImageAlt="SELKID logo — story-based SEL and AI cognition for K–6"
+  siteCompact={false}
+  description={homeDescription}
+  jsonLdExtra={pageJsonLdExtra({ faqs: siteFaqs.slice(0, 5) })}
+>
   <div class="home-compact">
     <HeroHome />
 

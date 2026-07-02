@@ -4,13 +4,23 @@ import SubscribeForm from '@/components/SubscribeForm.astro';
 import PageCTA from '@/components/PageCTA.astro';
 import { freeSample } from '@/lib/site';
 import { catalog } from '@/lib/catalog';
+import { pageJsonLdExtra } from '@/lib/seo';
 
 const total = catalog.totalProducts || catalog.products.length;
+const breadcrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Free Resources', href: '/free-resources' },
+];
+const pageDescription = `Get ${freeSample.unitTitle} free — the full 16-panel Rex & Dino comic plus partial lesson guides. Free sample for K–6 educators and parents.`;
 ---
 
 <BaseLayout
   title="Free Resources"
-  description={`Get ${freeSample.unitTitle} free — the full 16-panel comic plus partial lesson guides from Rex & Dino's Big AI Ideas.`}
+  description={pageDescription}
+  ogImage="/assets/ai/unit1-cover.png"
+  ogImageAlt="Rex and Dino Training Data — free Unit 1 sample cover"
+  breadcrumbs={breadcrumbs}
+  jsonLdExtra={pageJsonLdExtra({ breadcrumbs })}
 >
   <section class="subscribe-hero">
     <div class="subscribe-hero-grid">

@@ -3,15 +3,25 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import CatalogMatrixFilters from '@/components/CatalogMatrixFilters.astro';
 import PageCTA from '@/components/PageCTA.astro';
 import { catalog, coverSrc } from '@/lib/catalog';
+import { pageJsonLdExtra } from '@/lib/seo';
 
 const products = catalog.products.filter((p) => p.pillar === 'thinking');
 const heroProduct = products.find((p) => p.coverUrl) || products[0];
 const heroImg = heroProduct ? coverSrc(heroProduct) : '/assets/covers/sel-waiting-cover.png';
+const breadcrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Thinking Skills', href: '/thinking-skills' },
+];
 ---
 
 <BaseLayout
   title="Thinking Skills"
-  description="SELKID thinking skills stories help K-2 students practice big-picture thinking, flexible thinking, and evidence habits."
+  description={`${catalog.pillars.thinking} Rex & Dino thinking skills read-alouds for K–2 — big-picture thinking, flexible thinking, and evidence habits through story.`}
+  ogImage={heroImg}
+  ogImageAlt="SELKID thinking skills story cover"
+  pageType="CollectionPage"
+  breadcrumbs={breadcrumbs}
+  jsonLdExtra={pageJsonLdExtra({ breadcrumbs })}
 >
   <section class="page-hero refined">
     <div>

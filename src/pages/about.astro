@@ -4,9 +4,22 @@ import BrandBelief from '@/components/BrandBelief.astro';
 import PageCTA from '@/components/PageCTA.astro';
 import { site } from '@/lib/site';
 import { catalog } from '@/lib/catalog';
+import { pageJsonLdExtra, siteFaqs } from '@/lib/seo';
+
+const total = catalog.totalProducts || catalog.products.length;
+const breadcrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+];
 ---
 
-<BaseLayout title="About" description="SELKID believes emotional struggle isn't a mistake — it's a skill waiting to be taught. 200+ CASEL-aligned stories for K–6.">
+<BaseLayout
+  title="About"
+  description={`${site.brandName} teaches social-emotional learning through story — ${total}+ CASEL-aligned read-alouds, thinking skills, and Rex & Dino AI cognition for K–6.`}
+  pageType="AboutPage"
+  breadcrumbs={breadcrumbs}
+  jsonLdExtra={pageJsonLdExtra({ breadcrumbs, faqs: siteFaqs.slice(0, 4) })}
+>
   <section class="page-hero refined page-hero--solo">
     <div>
       <p class="eyebrow">About SELKID</p>
@@ -18,6 +31,32 @@ import { catalog } from '@/lib/catalog';
         learns, fails, and still needs human judgment.
       </p>
       <p class="page-hero-tagline">{site.tagline}</p>
+      <dl class="entity-facts">
+        <div>
+          <dt>Brand</dt>
+          <dd>{site.brandName}</dd>
+        </div>
+        <div>
+          <dt>Focus</dt>
+          <dd>SEL, thinking skills, AI cognition for K–6</dd>
+        </div>
+        <div>
+          <dt>Resources</dt>
+          <dd>{total}+ classroom stories on Teachers Pay Teachers</dd>
+        </div>
+        <div>
+          <dt>Characters</dt>
+          <dd>Rex, Dino, Atlas, Mayor Owl, Mimi Rabbit · Maple Forest</dd>
+        </div>
+        <div>
+          <dt>Teaching model</dt>
+          <dd>Story → Discussion → Activity → Reflection</dd>
+        </div>
+        <div>
+          <dt>Free sample</dt>
+          <dd><a href="/free-resources">Unit 1: Training Data — 16-panel comic + lesson guides</a></dd>
+        </div>
+      </dl>
     </div>
   </section>
 

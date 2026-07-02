@@ -4,14 +4,25 @@ import AiUnitsGrid from '@/components/AiUnitsGrid.astro';
 import SubscribeCTA from '@/components/SubscribeCTA.astro';
 import { site, freeSample } from '@/lib/site';
 import { catalog } from '@/lib/catalog';
+import { pageJsonLdExtra, siteFaqs } from '@/lib/seo';
 
 const total = catalog.totalProducts || catalog.products.length;
+const breadcrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'AI Cognition', href: '/ai-cognition' },
+];
+const aiFaqs = siteFaqs.filter((faq) =>
+  /Big AI Ideas|free sample|grade levels/i.test(faq.question)
+);
 ---
 
 <BaseLayout
   title="AI Cognition"
-  description="SELKID's flagship AI cognition series for Grades 3–6. Six stories on training data, bias, hallucination, and human judgment."
+  description="Rex & Dino's Big AI Ideas — a comic-first AI cognition series for Grades 3–6. Six units on training data, bias, hallucination, and human judgment."
   ogImage="/assets/ai/unit6-cover.png"
+  ogImageAlt="Rex and Dino AI Cognition — Human Judgment unit cover"
+  breadcrumbs={breadcrumbs}
+  jsonLdExtra={pageJsonLdExtra({ breadcrumbs, faqs: aiFaqs })}
 >
   <section class="page-hero refined ai-hero">
     <div>

@@ -1,0 +1,37 @@
+---
+import type { FaqItem } from '@/lib/seo';
+
+interface Props {
+  title?: string;
+  lead?: string;
+  faqs: FaqItem[];
+  id?: string;
+}
+
+const {
+  title = 'Frequently asked questions',
+  lead = 'Clear answers for educators, parents, and search tools exploring SELKID.',
+  faqs,
+  id = 'faq',
+} = Astro.props;
+---
+
+<section class="seo-faq section light" id={id} aria-labelledby={`${id}-heading`}>
+  <div class="section-inner">
+    <div class="section-heading centered section-heading--compact">
+      <p class="eyebrow">FAQ</p>
+      <h2 id={`${id}-heading`}>{title}</h2>
+      <p>{lead}</p>
+    </div>
+    <div class="seo-faq-list">
+      {
+        faqs.map((faq) => (
+          <details class="seo-faq-item">
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

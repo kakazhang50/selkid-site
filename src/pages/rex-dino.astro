@@ -1,9 +1,22 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import PageCTA from '@/components/PageCTA.astro';
+import { pageJsonLdExtra } from '@/lib/seo';
+
+const breadcrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Rex & Dino', href: '/rex-dino' },
+];
 ---
 
-<BaseLayout title="Rex & Dino" description="Meet Rex, Dino, Atlas, and the full SELKID cast in Maple Forest — story-led learning characters for K-2.">
+<BaseLayout
+  title="Rex & Dino"
+  description="Meet Rex, Dino, Atlas, and the SELKID cast in Maple Forest — story-led characters for SEL, thinking skills, and AI cognition in K–6."
+  ogImage="/assets/hero-maple-forest.png"
+  ogImageAlt="Rex and Dino in Maple Forest"
+  breadcrumbs={breadcrumbs}
+  jsonLdExtra={pageJsonLdExtra({ breadcrumbs })}
+>
   <section class="page-hero refined">
     <div>
       <p class="eyebrow">Character-led learning</p>

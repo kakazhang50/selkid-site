@@ -3,16 +3,25 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import KdpBookGrid from '@/components/KdpBookGrid.astro';
 import PageCTA from '@/components/PageCTA.astro';
 import { kdp } from '@/lib/kdp-books';
+import { pageJsonLdExtra } from '@/lib/seo';
 
 const { author, series } = kdp;
 const totalBooks = series.reduce((n, s) => n + s.books.length, 0);
+const breadcrumbs = [
+  { name: 'Home', href: 'https://selkid.com/' },
+  { name: 'Stories for Young Readers', href: '/story/' },
+];
 ---
 
 <BaseLayout
   title="Stories for Young Readers"
-  description="Chapter books and read-aloud stories by Emily Willow on Amazon — Rex & Dino adventures, Poppy's SEL stories, and more from the SELKID story world."
+  description={`Chapter books and read-aloud stories by ${author.name} on Amazon — Rex & Dino adventures and SEL stories from the SELKID world.`}
   canonical="https://story.selkid.com/"
   ogImage="/assets/hero-maple-forest.png"
+  ogImageAlt="SELKID story world — Rex and Dino"
+  pageType="CollectionPage"
+  breadcrumbs={breadcrumbs}
+  jsonLdExtra={pageJsonLdExtra({ breadcrumbs })}
 >
   <section class="page-hero refined">
     <div>

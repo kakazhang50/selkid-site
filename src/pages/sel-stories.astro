@@ -4,13 +4,23 @@ import CatalogMatrixFilters from '@/components/CatalogMatrixFilters.astro';
 import SelFrameworkExplainer from '@/components/SelFrameworkExplainer.astro';
 import PageCTA from '@/components/PageCTA.astro';
 import { catalog } from '@/lib/catalog';
+import { pageJsonLdExtra } from '@/lib/seo';
 
 const caselCounts = catalog.facetCounts?.casel || {};
+const breadcrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'SEL Stories', href: '/sel-stories' },
+];
 ---
 
 <BaseLayout
   title="SEL Stories"
-  description="210+ CASEL-aligned SELKID social-emotional learning stories — query by competency, scenario, trigger, emotion, and skill."
+  description={`Browse ${catalog.pillars.sel}+ CASEL-aligned SEL read-alouds for K–2 — filter by scenario, trigger, emotion, and skill. Rex & Dino social-emotional learning stories.`}
+  ogImage="/assets/covers/sel-waiting-cover.png"
+  ogImageAlt="SELKID social-emotional learning story cover"
+  pageType="CollectionPage"
+  breadcrumbs={breadcrumbs}
+  jsonLdExtra={pageJsonLdExtra({ breadcrumbs })}
 >
   <section class="page-hero refined">
     <div>

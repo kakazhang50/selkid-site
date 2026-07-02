@@ -5,14 +5,25 @@ import EducationMatrix from '@/components/EducationMatrix.astro';
 import SelFrameworkExplainer from '@/components/SelFrameworkExplainer.astro';
 import StepsGrid from '@/components/StepsGrid.astro';
 import BeliefBand from '@/components/BeliefBand.astro';
+import SeoFaq from '@/components/SeoFaq.astro';
 import SubscribeCTA from '@/components/SubscribeCTA.astro';
 import { catalog } from '@/lib/catalog';
 import { site, freeSample } from '@/lib/site';
+import { pageJsonLdExtra, siteFaqs } from '@/lib/seo';
 
 const total = catalog.totalProducts || catalog.products.length;
+const breadcrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Learning System', href: '/learning-system' },
+];
 ---
 
-<BaseLayout title="Learning System" description="SELKID's CASEL-aligned learning system: emotional struggle is a skill gap, not a mistake — 228+ story resources for K–6.">
+<BaseLayout
+  title="Learning System"
+  description={`SELKID's CASEL-aligned learning system: ${total}+ story resources, scenario-based SEL matrix, and Story → Discussion → Activity → Reflection for K–6 classrooms.`}
+  breadcrumbs={breadcrumbs}
+  jsonLdExtra={pageJsonLdExtra({ breadcrumbs, faqs: siteFaqs })}
+>
   <section class="page-hero refined">
     <div>
       <p class="eyebrow">Learning System</p>
@@ -77,6 +88,8 @@ const total = catalog.totalProducts || catalog.products.length;
   </section>
 
   <BeliefBand />
+
+  <SeoFaq faqs={siteFaqs} />
 
   <SubscribeCTA
     context="learning-system"

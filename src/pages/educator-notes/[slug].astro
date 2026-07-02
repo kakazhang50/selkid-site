@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { absoluteUrl, pageJsonLdExtra } from '@/lib/seo';
 
 export async function getStaticPaths() {
   const notes = await getCollection('educatorNotes');
@@ -18,15 +19,41 @@ const all = (await getCollection('educatorNotes')).sort(
 const idx = all.findIndex((n) => n.slug === note.slug);
 const prev = idx > 0 ? all[idx - 1] : null;
 const next = idx < all.length - 1 ? all[idx + 1] : null;
+
+const articleUrl = absoluteUrl(`/educator-notes/${note.slug}`);
+const publishedTime = note.data.pubDate.toISOString();
+const breadcrumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Educator Notes', href: '/educator-notes' },
+  { name: note.data.title, href: `/educator-notes/${note.slug}` },
+];
 ---
 
-<BaseLayout title={note.data.title} description={note.data.description}>
-  <article class="note-article">
+<BaseLayout
+  title={note.data.title}
+  description={note.data.description}
+  ogType="article"
+  ogImage="/assets/comics/training-data-p1.png"
+  ogImageAlt={`Educator Note: ${note.data.title}`}
+  publishedTime={publishedTime}
+  breadcrumbs={breadcrumbs}
+  jsonLdExtra={pageJsonLdExtra({
+    breadcrumbs,
+    article: {
+      title: note.data.title,
+      description: note.data.description,
+      url: articleUrl,
+      datePublished: publishedTime,
+      category: note.data.category,
+    },
+  })}
+>
+  <article class="note-article" itemscope itemtype="https://schema.org/Article">
     <header class="note-article-header">
       <p class="eyebrow">Educator Note · {note.data.category}</p>
-      <h1>{note.data.title}</h1>
-      <p class="note-lead">{note.data.description}</p>
-      <time datetime={note.data.pubDate.toISOString()}>
+      <h1 itemprop="headline">{note.data.title}</h1>
+      <p class="note-lead" itemprop="description">{note.data.description}</p>
+      <time datetime={publishedTime} itemprop="datePublished">
         {
           note.data.pubDate.toLocaleDateString('en-US', {
             year: 'numeric',
@@ -36,7 +63,7 @@ const next = idx < all.length - 1 ? all[idx + 1] : null;
         }
       </time>
     </header>
-    <div class="note-prose">
+    <div class="note-prose" itemprop="articleBody">
       <Content />
     </div>
     <nav class="note-nav" aria-label="Educator notes">
