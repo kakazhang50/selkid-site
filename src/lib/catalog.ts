@@ -22,12 +22,12 @@ function normalizeLocalPath(localImage?: string | null): string | null {
   return `/${path}`;
 }
 
-/** Prefer site-hosted cover; TPT URL is fallback only. */
+/** Prefer TPT CDN cover (accurate listing art); local file only when no URL (e.g. AI units). */
 export function coverSrc(product: Product): string {
-  const local = normalizeLocalPath(product.localImage);
-  if (local) return local;
   const url = (product.coverUrl || '').trim();
   if (url.startsWith('http')) return url;
+  const local = normalizeLocalPath(product.localImage);
+  if (local) return local;
   return COVER_FALLBACK;
 }
 
