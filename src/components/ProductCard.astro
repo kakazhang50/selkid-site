@@ -1,0 +1,90 @@
+---
+import type { Product } from '@/lib/catalog';
+import {
+  coverSrc,
+  COVER_FALLBACK,
+  productCardTitle,
+  productUrl,
+} from '@/lib/catalog';
+
+interface Props {
+  product: Product;
+  catalogMode?: boolean;
+}
+
+const { product, catalogMode = false } = Astro.props;
+
+const title = productCardTitle(product);
+const tags = product.selTags || {};
+const searchBlob = [
+  title,
+  product.title,
+  product.description,
+  product.category,
+  product.categoryId,
+].filter(Boolean).join(' ').toLowerCase();
+
+function tagJoin(key: keyof NonNullable<Product['selTags']>): string {
+  const arr = tags[key];
+  return Array.isArray(arr) ? arr.join('|') : '';
+}
+
+function excerpt(text: string, max = 120): string {
+  const t = (text || '').trim();
+  if (t.length <= max) return t;
+  return t.slice(0, max).replace(/\s+\S*$/, '') + '…';
+}
+
+const price = product.price || 'TPT';
+const detailUrl = productUrl(product);
+---
+
+<article
+  class="product-card product-card--catalog"
+  data-product-card={catalogMode ? '' : undefined}
+  data-category-id={catalogMode ? product.categoryId || '' : undefined}
+  data-pillar={catalogMode ? product.pillar || '' : undefined}
+  data-scenarios={catalogMode ? tagJoin('scenarios') : undefined}
+  data-triggers={catalogMode ? tagJoin('triggers') : undefined}
+  data-emotions={catalogMode ? tagJoin('emotions') : undefined}
+  data-skills={catalogMode ? tagJoin('skills') : undefined}
+  data-casel={catalogMode ? tagJoin('casel') : undefined}
+  data-thinking-skills={catalogMode ? tagJoin('thinkingSkills') : undefined}
+  data-search={catalogMode ? searchBlob : undefined}
+>
+  <a class="product-cover-link" href={detailUrl}>
+    <div class="product-cover">
+      <img
+        src={coverSrc(product)}
+        alt={title}
+        loading="lazy"
+        decoding="async"
+        referrerpolicy="no-referrer"
+        data-fallback={COVER_FALLBACK}
+      />
+      <span class="product-cover-badge">{price}</span>
+    </div>
+  </a>
+  <div class="product-body">
+    <div class="product-meta-row">
+      {product.grades && <span class="product-meta-pill">{product.grades}</span>}
+      {product.category && <span class="product-meta-pill product-meta-pill--cat">{product.category}</span>}
+    </div>
+    <h3 class="product-title">
+      <a href={detailUrl}>{title}</a>
+    </h3>
+    {
+      product.description ? (
+        <p class="product-desc">{excerpt(product.description)}</p>
+      ) : (
+        <p class="product-desc product-desc--muted">Preview the full classroom resource on the detail page.</p>
+      )
+    }
+    <div class="product-card-actions">
+      <a class="btn btn-primary product-detail-btn" href={detailUrl}>View details</a>
+      <a class="btn btn-secondary product-buy-btn" href={product.tptUrl} target="_blank" rel="noopener noreferrer">
+        Buy on TPT →
+      </a>
+    </div>
+  </div>
+</article>

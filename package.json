@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "python ../selkid-tools/scripts/enrich_catalog_meta.py",
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",

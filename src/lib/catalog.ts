@@ -91,6 +91,42 @@ export function pickHomepageFeatured(products: Product[], limit = 8): Product[] 
   return picked.slice(0, limit);
 }
 
+export function productCardTitle(product: Product): string {
+  const p = product as Product & { displayTitle?: string };
+  return (p.displayTitle || product.title || '').trim();
+}
+
+export function productUrl(product: Product): string {
+  const p = product as Product & { slug?: string };
+  if (p.slug) return `/resources/${p.slug}`;
+  const tid = String(product.tptId || '').trim();
+  if (tid) return `/resources/${tid}`;
+  return productInternalUrl(product);
+}
+
+export function getProductBySlug(slug: string): Product | undefined {
+  return catalog.products.find((p) => (p as Product & { slug?: string }).slug === slug);
+}
+
+export function relatedProducts(product: Product, limit = 4): Product[] {
+  const cat = product.categoryId;
+  const pillar = product.pillar;
+  return catalog.products
+    .filter((p) => p.tptId !== product.tptId && p.pillar === pillar)
+    .sort((a, b) => {
+      const aMatch = a.categoryId === cat ? 1 : 0;
+      const bMatch = b.categoryId === cat ? 1 : 0;
+      return bMatch - aMatch;
+    })
+    .slice(0, limit);
+}
+
+export function productsByPillar(pillar: string): Product[] {
+  return catalog.products
+    .filter((p) => p.pillar === pillar)
+    .sort((a, b) => productCardTitle(a).localeCompare(productCardTitle(b)));
+}
+
 export function productInternalUrl(product: Product): string {
   if (product.pillar === 'thinking') return '/thinking-skills';
   if (product.pillar === 'ai') return '/ai-cognition';

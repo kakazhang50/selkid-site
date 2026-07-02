@@ -39,7 +39,9 @@
         "formats": [
           "comic"
         ]
-      }
+      },
+      "displayTitle": "FREE AI Literacy Lesson",
+      "slug": "free-ai-literacy-lesson-16863863"
     },
     {
       "id": "AI-S1-U1",
@@ -71,7 +73,9 @@
         "formats": [
           "comic"
         ]
-      }
+      },
+      "displayTitle": "Rex & Dino's Big AI Ideas",
+      "slug": "rex-dinos-big-ai-ideas-ai-s1-u1"
     },
     {
       "id": "AI-S1-U2",
@@ -103,7 +107,9 @@
         "formats": [
           "comic"
         ]
-      }
+      },
+      "displayTitle": "Rex & Dino's Big AI Ideas",
+      "slug": "rex-dinos-big-ai-ideas-ai-s1-u2"
     },
     {
       "id": "AI-S1-U3",
@@ -135,7 +141,9 @@
         "formats": [
           "comic"
         ]
-      }
+      },
+      "displayTitle": "Rex & Dino's Big AI Ideas",
+      "slug": "rex-dinos-big-ai-ideas-ai-s1-u3"
     },
     {
       "id": "AI-S1-U4",
@@ -167,7 +175,9 @@
         "formats": [
           "comic"
         ]
-      }
+      },
+      "displayTitle": "Rex & Dino's Big AI Ideas",
+      "slug": "rex-dinos-big-ai-ideas-ai-s1-u4"
     },
     {
       "id": "AI-S1-U5",
@@ -199,7 +209,9 @@
         "formats": [
           "comic"
         ]
-      }
+      },
+      "displayTitle": "Rex & Dino's Big AI Ideas",
+      "slug": "rex-dinos-big-ai-ideas-ai-s1-u5"
     },
     {
       "id": "AI-S1-U6",
@@ -231,7 +243,9 @@
         "formats": [
           "comic"
         ]
-      }
+      },
+      "displayTitle": "Rex & Dino's Big AI Ideas",
+      "slug": "rex-dinos-big-ai-ideas-ai-s1-u6"
     },
     {
       "id": "TPT15665003",
@@ -307,7 +321,9 @@
           "Wanting to Act Now",
           "Being Corrected"
         ]
-      }
+      },
+      "displayTitle": "Accepting “No” Calmly Social Story for K–2",
+      "slug": "accepting-no-calmly-social-story-for-k-2-15665003"
     },
     {
       "id": "TPT15476575",
@@ -368,7 +384,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "After Getting Really Mad –",
+      "slug": "after-getting-really-mad-15476575"
     },
     {
       "id": "TPT15665173",
@@ -441,7 +459,9 @@
           "Classroom",
           "Strong Emotions"
         ]
-      }
+      },
+      "displayTitle": "Apologizing the Right Way Social Story for K–2",
+      "slug": "apologizing-the-right-way-social-story-for-k-2-15665173"
     },
     {
       "id": "TPT15665243",
@@ -510,7 +530,9 @@
           "Feeling Excited",
           "Peer Conflict"
         ]
-      }
+      },
+      "displayTitle": "Asking Before I Hug Social Story for K–2",
+      "slug": "asking-before-i-hug-social-story-for-k-2-15665243"
     },
     {
       "id": "TPT15725756",
@@ -575,7 +597,9 @@
           "worksheet"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Asking for Help Instead of Hitting Social Story K–2",
+      "slug": "asking-for-help-instead-of-hitting-social-story-k-2-15725756"
     },
     {
       "id": "TPT15664741",
@@ -644,7 +668,9 @@
           "Strong Emotions",
           "Overwhelmed"
         ]
-      }
+      },
+      "displayTitle": "Asking for a Break Social Story for K–2",
+      "slug": "asking-for-a-break-social-story-for-k-2-15664741"
     },
     {
       "id": "TPT16083971",
@@ -693,7 +719,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Big Feelings When Friend Problems Feel Unfair",
+      "slug": "big-feelings-when-friend-problems-feel-unfair-16083971"
     },
     {
       "id": "TPT16083916",
@@ -764,7 +792,9 @@
           "Noise Disturbance"
         ],
         "matchScore": 0.56
-      }
+      },
+      "displayTitle": "Big Feelings When Independent Work Feels Too Hard",
+      "slug": "big-feelings-when-independent-work-feels-too-hard-16083916"
     },
     {
       "id": "TPT16083872",
@@ -810,7 +840,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Big Feelings When It’s Time to Stop Playing",
+      "slug": "big-feelings-when-it-s-time-to-stop-playing-16083872"
     },
     {
       "id": "TPT16084025",
@@ -881,7 +913,9 @@
           "Noise Disturbance"
         ],
         "matchScore": 0.59
-      }
+      },
+      "displayTitle": "Big Feelings When Learning Feels Too Hard",
+      "slug": "big-feelings-when-learning-feels-too-hard-16084025"
     },
     {
       "id": "TPT16084090",
@@ -926,7 +960,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Big Feelings When Lunch Feels Too Busy",
+      "slug": "big-feelings-when-lunch-feels-too-busy-16084090"
     },
     {
       "id": "TPT16083656",
@@ -971,7 +1007,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Big Feelings When Lunch Gets Loud",
+      "slug": "big-feelings-when-lunch-gets-loud-16083656"
     },
     {
       "id": "TPT16084064",
@@ -1042,7 +1080,9 @@
           "Noise Disturbance"
         ],
         "matchScore": 0.53
-      }
+      },
+      "displayTitle": "Big Feelings When My Body Won’t Stay Still",
+      "slug": "big-feelings-when-my-body-won-t-stay-still-16084064"
     },
     {
       "id": "TPT16083702",
@@ -1113,7 +1153,9 @@
           "Noise Disturbance"
         ],
         "matchScore": 0.53
-      }
+      },
+      "displayTitle": "Big Feelings When Waiting in Line Feels Too Hard",
+      "slug": "big-feelings-when-waiting-in-line-feels-too-hard-16083702"
     },
     {
       "id": "TPT16077938",
@@ -1158,7 +1200,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Big Feelings at Recess Social Story for K–2",
+      "slug": "big-feelings-at-recess-social-story-for-k-2-16077938"
     },
     {
       "id": "TPT16079076",
@@ -1223,7 +1267,9 @@
           "Series D: Body Detective"
         ],
         "matchScore": 0.6
-      }
+      },
+      "displayTitle": "Big Feelings in Group Work",
+      "slug": "big-feelings-in-group-work-16079076"
     },
     {
       "id": "TPT16096543",
@@ -1267,7 +1313,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Blurting Answers Because I Might Forget Them",
+      "slug": "blurting-answers-because-i-might-forget-them-16096543"
     },
     {
       "id": "TPT16095173",
@@ -1308,7 +1356,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Blurting Answers Too Quickly in Class",
+      "slug": "blurting-answers-too-quickly-in-class-16095173"
     },
     {
       "id": "TPT16119232",
@@ -1349,7 +1399,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Blurting Answers Without Raising Hand Social Story",
+      "slug": "blurting-answers-without-raising-hand-social-story-16119232"
     },
     {
       "id": "TPT16088404",
@@ -1390,7 +1442,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Blurting Answers Without Raising Hand in Class Discussion",
+      "slug": "blurting-answers-without-raising-hand-in-class-discussion-16088404"
     },
     {
       "id": "TPT16120747",
@@ -1431,7 +1485,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Blurting During Group Work Social Story",
+      "slug": "blurting-during-group-work-social-story-16120747"
     },
     {
       "id": "TPT16094946",
@@ -1474,7 +1530,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Blurting When Excited in Class",
+      "slug": "blurting-when-excited-in-class-16094946"
     },
     {
       "id": "TPT16096473",
@@ -1521,7 +1579,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Blurting When Too Excited to Wait in Class",
+      "slug": "blurting-when-too-excited-to-wait-in-class-16096473"
     },
     {
       "id": "TPT16120066",
@@ -1569,7 +1629,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Blurting Without Raising Hand Social Story",
+      "slug": "blurting-without-raising-hand-social-story-16120066"
     },
     {
       "id": "TPT16120134",
@@ -1611,7 +1673,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Blurting Without Thinking Social Story",
+      "slug": "blurting-without-thinking-social-story-16120134"
     },
     {
       "id": "TPT16120479",
@@ -1657,7 +1721,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Blurting in Class Social Story",
+      "slug": "blurting-in-class-social-story-16120479"
     },
     {
       "id": "TPT16120285",
@@ -1698,7 +1764,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Blurting in Class Social Story",
+      "slug": "blurting-in-class-social-story-16120285"
     },
     {
       "id": "TPT16190931",
@@ -1763,7 +1831,9 @@
           "Series D: Body Detective"
         ],
         "matchScore": 0.6
-      }
+      },
+      "displayTitle": "Body Control Social Story for K–2",
+      "slug": "body-control-social-story-for-k-2-16190931"
     },
     {
       "id": "TPT16015618",
@@ -1828,7 +1898,9 @@
           "Series D: Body Detective"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Body Energy in Group Work Social Story for K–2",
+      "slug": "body-energy-in-group-work-social-story-for-k-2-16015618"
     },
     {
       "id": "TPT16138821",
@@ -1872,7 +1944,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Calling Out Answers During Lessons Social Story",
+      "slug": "calling-out-answers-during-lessons-social-story-16138821"
     },
     {
       "id": "TPT16119663",
@@ -1918,7 +1992,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Calling Out Answers Too Early Social Story",
+      "slug": "calling-out-answers-too-early-social-story-16119663"
     },
     {
       "id": "TPT16094664",
@@ -1959,7 +2035,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Calling Out Before Being Called On in Class",
+      "slug": "calling-out-before-being-called-on-in-class-16094664"
     },
     {
       "id": "TPT16095548",
@@ -2000,7 +2078,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Calling Out for Teacher Attention in Class",
+      "slug": "calling-out-for-teacher-attention-in-class-16095548"
     },
     {
       "id": "TPT16120710",
@@ -2041,7 +2121,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Calling Out in Class Social Story",
+      "slug": "calling-out-in-class-social-story-16120710"
     },
     {
       "id": "TPT16095467",
@@ -2085,7 +2167,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Calling Out to Show What I Know in Class",
+      "slug": "calling-out-to-show-what-i-know-in-class-16095467"
     },
     {
       "id": "TPT16095387",
@@ -2126,7 +2210,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Calling Out to Show What I Know in Class",
+      "slug": "calling-out-to-show-what-i-know-in-class-16095387"
     },
     {
       "id": "TPT15195906",
@@ -2199,7 +2285,9 @@
           "Feeling Stressed",
           "Feeling Nervous"
         ]
-      }
+      },
+      "displayTitle": "Calm Down at Morning Arrival –",
+      "slug": "calm-down-at-morning-arrival-15195906"
     },
     {
       "id": "TPT16190886",
@@ -2246,7 +2334,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Calm My Body Social Story for K–2",
+      "slug": "calm-my-body-social-story-for-k-2-16190886"
     },
     {
       "id": "TPT16077366",
@@ -2309,7 +2399,9 @@
         ],
         "secondaryTags": [],
         "matchScore": 0.53
-      }
+      },
+      "displayTitle": "Calming Big Feelings Social Story for K–2",
+      "slug": "calming-big-feelings-social-story-for-k-2-16077366"
     },
     {
       "id": "TPT15634744",
@@ -2372,7 +2464,9 @@
           "game"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Calming Down After Getting Too Loud Social Story for K–2",
+      "slug": "calming-down-after-getting-too-loud-social-story-for-k-2-15634744"
     },
     {
       "id": "TPT15634687",
@@ -2445,7 +2539,9 @@
           "Restarting Task",
           "Task Interruption"
         ]
-      }
+      },
+      "displayTitle": "Calming Down After Recess Social Story for K–2",
+      "slug": "calming-down-after-recess-social-story-for-k-2-15634687"
     },
     {
       "id": "TPT15203574",
@@ -2507,7 +2603,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Calming Down After Recess Social Story for K–2",
+      "slug": "calming-down-after-recess-social-story-for-k-2-15203574"
     },
     {
       "id": "TPT15212540",
@@ -2569,7 +2667,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Cleaning Up Calmly –",
+      "slug": "cleaning-up-calmly-15212540"
     },
     {
       "id": "TPT15634852",
@@ -2638,7 +2738,9 @@
           "Classroom",
           "Task Interruption"
         ]
-      }
+      },
+      "displayTitle": "Deep Breathing Social Story for K–2",
+      "slug": "deep-breathing-social-story-for-k-2-15634852"
     },
     {
       "id": "TPT15718526",
@@ -2709,7 +2811,9 @@
           "Strong Emotions",
           "Peer Conflict"
         ]
-      }
+      },
+      "displayTitle": "Destroying Games When Feeling Left Out",
+      "slug": "destroying-games-when-feeling-left-out-15718526"
     },
     {
       "id": "TPT15794728",
@@ -2780,7 +2884,9 @@
           "Feeling Excited"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Doing the Fun Part First Social Story for K–2",
+      "slug": "doing-the-fun-part-first-social-story-for-k-2-15794728"
     },
     {
       "id": "TPT15196129",
@@ -2842,7 +2948,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Fast Body, Slow Body A",
+      "slug": "fast-body-slow-body-a-15196129"
     },
     {
       "id": "TPT15665065",
@@ -2906,7 +3014,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Feeling Left Out Social Story for K–2",
+      "slug": "feeling-left-out-social-story-for-k-2-15665065"
     },
     {
       "id": "TPT15726352",
@@ -2969,7 +3079,9 @@
           "Classroom",
           "Strong Emotions"
         ]
-      }
+      },
+      "displayTitle": "Feeling Thermometer Social Story for K–2",
+      "slug": "feeling-thermometer-social-story-for-k-2-15726352"
     },
     {
       "id": "TPT15521932",
@@ -3032,7 +3144,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Finding My Spot at Carpet Time –",
+      "slug": "finding-my-spot-at-carpet-time-15521932"
     },
     {
       "id": "TPT15665633",
@@ -3103,7 +3217,9 @@
           "Wanting to Escape Task",
           "Feeling Tired"
         ]
-      }
+      },
+      "displayTitle": "Finishing What I Start Social Story K–2",
+      "slug": "finishing-what-i-start-social-story-k-2-15665633"
     },
     {
       "id": "TPT16077741",
@@ -3149,7 +3265,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Fixing Mistakes After Speaking Too Fast Social Story for…",
+      "slug": "fixing-mistakes-after-speaking-too-fast-social-story-for-16077741"
     },
     {
       "id": "TPT15726026",
@@ -3212,7 +3330,9 @@
           "worksheet"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Fixing a Friendship After Hitting Social Story K–2",
+      "slug": "fixing-a-friendship-after-hitting-social-story-k-2-15726026"
     },
     {
       "id": "TPT15792091",
@@ -3250,7 +3370,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Following Directions Social Story K–2",
+      "slug": "following-directions-social-story-k-2-15792091"
     },
     {
       "id": "TPT15794112",
@@ -3313,7 +3435,9 @@
         ],
         "secondaryTags": [],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Following Directions Social Story for K–2",
+      "slug": "following-directions-social-story-for-k-2-15794112"
     },
     {
       "id": "TPT15822356",
@@ -3367,7 +3491,9 @@
         ],
         "secondaryTags": [],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Forgetting Things Before Leaving Social Story for K–2",
+      "slug": "forgetting-things-before-leaving-social-story-for-k-2-15822356"
     },
     {
       "id": "TPT15794195",
@@ -3438,7 +3564,9 @@
           "Strong Emotions"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Forgetting the Next Step Social Story for K–2",
+      "slug": "forgetting-the-next-step-social-story-for-k-2-15794195"
     },
     {
       "id": "TPT15822460",
@@ -3514,7 +3642,9 @@
           "Task Interruption"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Forgetting the Rest of My Steps Social Story for K–2",
+      "slug": "forgetting-the-rest-of-my-steps-social-story-for-k-2-15822460"
     },
     {
       "id": "TPT15705953",
@@ -3585,7 +3715,9 @@
           "Peer Conflict",
           "Sensory Input"
         ]
-      }
+      },
+      "displayTitle": "Gentle Hands Social Story for K–2",
+      "slug": "gentle-hands-social-story-for-k-2-15705953"
     },
     {
       "id": "TPT15197370",
@@ -3656,7 +3788,9 @@
           "Sensory Input",
           "Feeling Excited"
         ]
-      }
+      },
+      "displayTitle": "Getting Ready to Learn A",
+      "slug": "getting-ready-to-learn-a-15197370"
     },
     {
       "id": "TPT16077255",
@@ -3719,7 +3853,9 @@
         ],
         "secondaryTags": [],
         "matchScore": 0.62
-      }
+      },
+      "displayTitle": "Handling Conflict Social Story for K–2",
+      "slug": "handling-conflict-social-story-for-k-2-16077255"
     },
     {
       "id": "TPT15196408",
@@ -3787,7 +3923,9 @@
           "Carpet Area",
           "Being Corrected"
         ]
-      }
+      },
+      "displayTitle": "Hands to Myself A",
+      "slug": "hands-to-myself-a-15196408"
     },
     {
       "id": "TPT15634792",
@@ -3860,7 +3998,9 @@
           "Strong Emotions",
           "Sensory Input"
         ]
-      }
+      },
+      "displayTitle": "Heavy Work Social Story for K–2",
+      "slug": "heavy-work-social-story-for-k-2-15634792"
     },
     {
       "id": "TPT16190461",
@@ -3904,7 +4044,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Hitting Back in Conflict Social Story for K–2",
+      "slug": "hitting-back-in-conflict-social-story-for-k-2-16190461"
     },
     {
       "id": "TPT16189765",
@@ -3978,7 +4120,9 @@
           "Wanting to Maintain Control"
         ],
         "matchScore": 0.56
-      }
+      },
+      "displayTitle": "Hitting During Conflict Social Story for K–2",
+      "slug": "hitting-during-conflict-social-story-for-k-2-16189765"
     },
     {
       "id": "TPT16190085",
@@ -4040,7 +4184,9 @@
         ],
         "secondaryTags": [],
         "matchScore": 0.53
-      }
+      },
+      "displayTitle": "Hitting During Conflict Social Story for K–2",
+      "slug": "hitting-during-conflict-social-story-for-k-2-16190085"
     },
     {
       "id": "TPT16139679",
@@ -4109,7 +4255,9 @@
           "Peer Conflict",
           "Strong Emotions"
         ]
-      }
+      },
+      "displayTitle": "Hitting During Group Work Social Story for K–2",
+      "slug": "hitting-during-group-work-social-story-for-k-2-16139679"
     },
     {
       "id": "TPT16140395",
@@ -4158,7 +4306,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Hitting During Long Waits Social Story for K–2",
+      "slug": "hitting-during-long-waits-social-story-for-k-2-16140395"
     },
     {
       "id": "TPT16139435",
@@ -4232,7 +4382,9 @@
           "Wanting to Maintain Control"
         ],
         "matchScore": 0.62
-      }
+      },
+      "displayTitle": "Hitting During Transitions Social Story for K–2",
+      "slug": "hitting-during-transitions-social-story-for-k-2-16139435"
     },
     {
       "id": "TPT16139503",
@@ -4300,7 +4452,9 @@
           "Series C: The Waiting Game"
         ],
         "matchScore": 0.56
-      }
+      },
+      "displayTitle": "Hitting During Transitions Social Story for K–2",
+      "slug": "hitting-during-transitions-social-story-for-k-2-16139503"
     },
     {
       "id": "TPT16189865",
@@ -4348,7 +4502,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Hitting When Angry Social Story for K–2",
+      "slug": "hitting-when-angry-social-story-for-k-2-16189865"
     },
     {
       "id": "TPT16140431",
@@ -4396,7 +4552,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Hitting When Angry Social Story for K–2",
+      "slug": "hitting-when-angry-social-story-for-k-2-16140431"
     },
     {
       "id": "TPT16139784",
@@ -4444,7 +4602,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Hitting When Making Mistakes Social Story for K–2",
+      "slug": "hitting-when-making-mistakes-social-story-for-k-2-16139784"
     },
     {
       "id": "TPT16189480",
@@ -4487,7 +4647,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Hitting When My Face Feels Hot Social Story for K–2",
+      "slug": "hitting-when-my-face-feels-hot-social-story-for-k-2-16189480"
     },
     {
       "id": "TPT16139301",
@@ -4535,7 +4697,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Hitting When Work Feels Too Hard Social Story",
+      "slug": "hitting-when-work-feels-too-hard-social-story-16139301"
     },
     {
       "id": "TPT16190549",
@@ -4600,7 +4764,9 @@
           "Series D: Body Detective"
         ],
         "matchScore": 0.53
-      }
+      },
+      "displayTitle": "Hitting in Class Social Story for K–2",
+      "slug": "hitting-in-class-social-story-for-k-2-16190549"
     },
     {
       "id": "TPT16140514",
@@ -4663,7 +4829,9 @@
         ],
         "secondaryTags": [],
         "matchScore": 0.56
-      }
+      },
+      "displayTitle": "Hitting in Class Social Story for K–2",
+      "slug": "hitting-in-class-social-story-for-k-2-16140514"
     },
     {
       "id": "TPT15634782",
@@ -4736,7 +4904,9 @@
           "Sensory Input",
           "Being Corrected"
         ]
-      }
+      },
+      "displayTitle": "Inside Voice Social Story for K–2",
+      "slug": "inside-voice-social-story-for-k-2-15634782"
     },
     {
       "id": "TPT16119784",
@@ -4782,7 +4952,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Interrupting Others in Discussion Social Story",
+      "slug": "interrupting-others-in-discussion-social-story-16119784"
     },
     {
       "id": "TPT16119954",
@@ -4830,7 +5002,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Interrupting Others in Discussion Social Story",
+      "slug": "interrupting-others-in-discussion-social-story-16119954"
     },
     {
       "id": "TPT15850162",
@@ -4895,7 +5069,9 @@
         ],
         "secondaryTags": [],
         "matchScore": 0.57
-      }
+      },
+      "displayTitle": "Joining a Conversation Social Story for K–2",
+      "slug": "joining-a-conversation-social-story-for-k-2-15850162"
     },
     {
       "id": "TPT16025103",
@@ -4961,7 +5137,9 @@
           "Series D: Body Detective"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Keep Hands to Yourself During Independent Work Social…",
+      "slug": "keep-hands-to-yourself-during-independent-work-social-16025103"
     },
     {
       "id": "TPT16191197",
@@ -5025,7 +5203,9 @@
           "Series D: Body Detective"
         ],
         "matchScore": 0.65
-      }
+      },
+      "displayTitle": "Keep Hands to Yourself Social Story for K–2",
+      "slug": "keep-hands-to-yourself-social-story-for-k-2-16191197"
     },
     {
       "id": "TPT16190655",
@@ -5089,7 +5269,9 @@
           "Series D: Body Detective"
         ],
         "matchScore": 0.61
-      }
+      },
+      "displayTitle": "Keep Hands to Yourself Social Story for K–2",
+      "slug": "keep-hands-to-yourself-social-story-for-k-2-16190655"
     },
     {
       "id": "TPT16190769",
@@ -5153,7 +5335,9 @@
           "Series D: Body Detective"
         ],
         "matchScore": 0.56
-      }
+      },
+      "displayTitle": "Keep Hands to Yourself Social Story for K–2",
+      "slug": "keep-hands-to-yourself-social-story-for-k-2-16190769"
     },
     {
       "id": "TPT16191024",
@@ -5217,7 +5401,9 @@
           "Series D: Body Detective"
         ],
         "matchScore": 0.59
-      }
+      },
+      "displayTitle": "Keep Hands to Yourself Social Story for K–2",
+      "slug": "keep-hands-to-yourself-social-story-for-k-2-16191024"
     },
     {
       "id": "TPT16190837",
@@ -5281,7 +5467,9 @@
           "Series D: Body Detective"
         ],
         "matchScore": 0.59
-      }
+      },
+      "displayTitle": "Keep Hands to Yourself Social Story for K–2",
+      "slug": "keep-hands-to-yourself-social-story-for-k-2-16190837"
     },
     {
       "id": "TPT16025156",
@@ -5345,7 +5533,9 @@
           "Series D: Body Detective"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Keep Hands to Yourself While Moving Social Story for K–2",
+      "slug": "keep-hands-to-yourself-while-moving-social-story-for-k-2-16025156"
     },
     {
       "id": "TPT15829853",
@@ -5410,7 +5600,9 @@
           "Series D: Body Detective"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Keeping Hands to Yourself Social Story for K–2",
+      "slug": "keeping-hands-to-yourself-social-story-for-k-2-15829853"
     },
     {
       "id": "TPT16024638",
@@ -5477,7 +5669,9 @@
           "Series D: Body Detective"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Keeping Hands to Yourself at Recess Social Story for K–2",
+      "slug": "keeping-hands-to-yourself-at-recess-social-story-for-k-2-16024638"
     },
     {
       "id": "TPT15689722",
@@ -5537,7 +5731,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Keeping a Secret Social Story for K–2",
+      "slug": "keeping-a-secret-social-story-for-k-2-15689722"
     },
     {
       "id": "TPT15791192",
@@ -5608,7 +5804,9 @@
           "Task Interruption"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Listening After Your Name Social Story for K–2",
+      "slug": "listening-after-your-name-social-story-for-k-2-15791192"
     },
     {
       "id": "TPT15688832",
@@ -5666,7 +5864,9 @@
           "Classroom",
           "Feeling Excited"
         ]
-      }
+      },
+      "displayTitle": "Looking at the Speaker Social Story for K–2",
+      "slug": "looking-at-the-speaker-social-story-for-k-2-15688832"
     },
     {
       "id": "TPT15664886",
@@ -5737,7 +5937,9 @@
           "Wanting to be First",
           "Peer Conflict"
         ]
-      }
+      },
+      "displayTitle": "Losing a Game Social Story for K–2",
+      "slug": "losing-a-game-social-story-for-k-2-15664886"
     },
     {
       "id": "TPT16077803",
@@ -5784,7 +5986,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Managing Big Feelings While Waiting Social Story for K–2",
+      "slug": "managing-big-feelings-while-waiting-social-story-for-k-2-16077803"
     },
     {
       "id": "TPT16077991",
@@ -5831,7 +6035,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Managing Emotions During Games",
+      "slug": "managing-emotions-during-games-16077991"
     },
     {
       "id": "TPT16077859",
@@ -5899,7 +6105,9 @@
           "Series C: The Waiting Game"
         ],
         "matchScore": 0.64
-      }
+      },
+      "displayTitle": "Managing Emotions During Morning Arrival",
+      "slug": "managing-emotions-during-morning-arrival-16077859"
     },
     {
       "id": "TPT16077438",
@@ -5965,7 +6173,9 @@
           "Series A: The Task Master"
         ],
         "matchScore": 0.62
-      }
+      },
+      "displayTitle": "Managing Feelings About Personal Space",
+      "slug": "managing-feelings-about-personal-space-16077438"
     },
     {
       "id": "TPT15821617",
@@ -6027,7 +6237,9 @@
         ],
         "secondaryTags": [],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Mixing Up the Order of Steps Social Story for K–2",
+      "slug": "mixing-up-the-order-of-steps-social-story-for-k-2-15821617"
     },
     {
       "id": "TPT15475720",
@@ -6103,7 +6315,9 @@
           "Wanting to Continue Game",
           "Feeling Disappointed"
         ]
-      }
+      },
+      "displayTitle": "Moving from One Activity to Another –",
+      "slug": "moving-from-one-activity-to-another-15475720"
     },
     {
       "id": "TPT15707485",
@@ -6178,7 +6392,9 @@
           "Peer Conflict",
           "Strong Emotions"
         ]
-      }
+      },
+      "displayTitle": "No Hitting After Losing a Game Social Story for K–2",
+      "slug": "no-hitting-after-losing-a-game-social-story-for-k-2-15707485"
     },
     {
       "id": "TPT15707336",
@@ -6241,7 +6457,9 @@
           "checklist"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "No Hitting During Centers Social Story for K–2",
+      "slug": "no-hitting-during-centers-social-story-for-k-2-15707336"
     },
     {
       "id": "TPT15707207",
@@ -6310,7 +6528,9 @@
           "Peer Conflict",
           "Strong Emotions"
         ]
-      }
+      },
+      "displayTitle": "No Hitting During Group Work Social Story for K–2",
+      "slug": "no-hitting-during-group-work-social-story-for-k-2-15707207"
     },
     {
       "id": "TPT15707362",
@@ -6383,7 +6603,9 @@
           "Feeling Excited",
           "Wanting to Maintain Control"
         ]
-      }
+      },
+      "displayTitle": "No Hitting During Play Social Story for K–2",
+      "slug": "no-hitting-during-play-social-story-for-k-2-15707362"
     },
     {
       "id": "TPT15707090",
@@ -6446,7 +6668,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "No Hitting Friends Social Story for K–2",
+      "slug": "no-hitting-friends-social-story-for-k-2-15707090"
     },
     {
       "id": "TPT15707158",
@@ -6516,7 +6740,9 @@
           "Strong Emotions",
           "Feeling Unfair"
         ]
-      }
+      },
+      "displayTitle": "No Hitting Siblings Social Story for K–2",
+      "slug": "no-hitting-siblings-social-story-for-k-2-15707158"
     },
     {
       "id": "TPT15705614",
@@ -6578,7 +6804,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "No Hitting Social Story for K–2",
+      "slug": "no-hitting-social-story-for-k-2-15705614"
     },
     {
       "id": "TPT15725428",
@@ -6641,7 +6869,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "No Hitting When I Don't Get My Way Social Story for K–2",
+      "slug": "no-hitting-when-i-dont-get-my-way-social-story-for-k-2-15725428"
     },
     {
       "id": "TPT15718675",
@@ -6703,7 +6933,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "No Hitting When Overstimulated Social Story for K–2",
+      "slug": "no-hitting-when-overstimulated-social-story-for-k-2-15718675"
     },
     {
       "id": "TPT15707386",
@@ -6763,7 +6995,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "No Hitting When Told No Social Story for K–2",
+      "slug": "no-hitting-when-told-no-social-story-for-k-2-15707386"
     },
     {
       "id": "TPT15725401",
@@ -6825,7 +7059,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "No Hitting When Upset Social Story for K–2",
+      "slug": "no-hitting-when-upset-social-story-for-k-2-15725401"
     },
     {
       "id": "TPT15707035",
@@ -6894,7 +7130,9 @@
           "School Entrance",
           "Strong Emotions"
         ]
-      }
+      },
+      "displayTitle": "No Hitting at Home Social Story for K–2",
+      "slug": "no-hitting-at-home-social-story-for-k-2-15707035"
     },
     {
       "id": "TPT15706969",
@@ -6966,7 +7204,9 @@
           "Peer Conflict",
           "Sensory Input"
         ]
-      }
+      },
+      "displayTitle": "No Hitting at Recess Social Story for K–2",
+      "slug": "no-hitting-at-recess-social-story-for-k-2-15706969"
     },
     {
       "id": "TPT15707001",
@@ -7036,7 +7276,9 @@
           "Strong Emotions",
           "Peer Conflict"
         ]
-      }
+      },
+      "displayTitle": "No Hitting in the Classroom Social Story for K–2",
+      "slug": "no-hitting-in-the-classroom-social-story-for-k-2-15707001"
     },
     {
       "id": "TPT15792198",
@@ -7099,7 +7341,9 @@
         ],
         "secondaryTags": [],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Not Understanding Directions Social Story for K–2",
+      "slug": "not-understanding-directions-social-story-for-k-2-15792198"
     },
     {
       "id": "TPT15833036",
@@ -7165,7 +7409,9 @@
           "Series A: The Task Master"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Personal Space Social Story for K–2",
+      "slug": "personal-space-social-story-for-k-2-15833036"
     },
     {
       "id": "TPT15634726",
@@ -7233,7 +7479,9 @@
           "Classroom",
           "Sensory Input"
         ]
-      }
+      },
+      "displayTitle": "Quiet Time Behavior Social Story for K–2",
+      "slug": "quiet-time-behavior-social-story-for-k-2-15634726"
     },
     {
       "id": "TPT15705802",
@@ -7294,7 +7542,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Respecting Personal Space Social Story for K–2",
+      "slug": "respecting-personal-space-social-story-for-k-2-15705802"
     },
     {
       "id": "TPT15634634",
@@ -7356,7 +7606,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Routine Changes Social Story for K–2",
+      "slug": "routine-changes-social-story-for-k-2-15634634"
     },
     {
       "id": "TPT15822185",
@@ -7418,7 +7670,9 @@
         ],
         "secondaryTags": [],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Rushing Through Work Social Story for K–2",
+      "slug": "rushing-through-work-social-story-for-k-2-15822185"
     },
     {
       "id": "TPT16024890",
@@ -7483,7 +7737,9 @@
           "Series D: Body Detective"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Safe Behaviors During Morning Arrival Social Story for K–2",
+      "slug": "safe-behaviors-during-morning-arrival-social-story-for-k-2-16024890"
     },
     {
       "id": "TPT16015011",
@@ -7548,7 +7804,9 @@
           "Series D: Body Detective"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Safe Body During Transitions Social Story for K–2",
+      "slug": "safe-body-during-transitions-social-story-for-k-2-16015011"
     },
     {
       "id": "TPT16015423",
@@ -7613,7 +7871,9 @@
           "Series D: Body Detective"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Safe Body in Class Discussion Social Story for K–2",
+      "slug": "safe-body-in-class-discussion-social-story-for-k-2-16015423"
     },
     {
       "id": "TPT15737039",
@@ -7675,7 +7935,9 @@
           "Classroom",
           "Strong Emotions"
         ]
-      }
+      },
+      "displayTitle": "Safe Hands Reflection Social Story for K–2",
+      "slug": "safe-hands-reflection-social-story-for-k-2-15737039"
     },
     {
       "id": "TPT15745568",
@@ -7746,7 +8008,9 @@
           "Small Group Table",
           "Strong Emotions"
         ]
-      }
+      },
+      "displayTitle": "Safe Hands Social Story for K–2",
+      "slug": "safe-hands-social-story-for-k-2-15745568"
     },
     {
       "id": "TPT16015508",
@@ -7811,7 +8075,9 @@
           "Series D: Body Detective"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Safe Movement During Lunchtime Transitions",
+      "slug": "safe-movement-during-lunchtime-transitions-16015508"
     },
     {
       "id": "TPT15706469",
@@ -7871,7 +8137,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Safe Touch Choices Social Story for K–2",
+      "slug": "safe-touch-choices-social-story-for-k-2-15706469"
     },
     {
       "id": "TPT15725854",
@@ -7932,7 +8200,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Saying Sorry After Hitting Social Story K–2",
+      "slug": "saying-sorry-after-hitting-social-story-k-2-15725854"
     },
     {
       "id": "TPT15521850",
@@ -7994,7 +8264,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Sitting on the Carpet After Recess –",
+      "slug": "sitting-on-the-carpet-after-recess-15521850"
     },
     {
       "id": "TPT16094892",
@@ -8039,7 +8311,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Speaking Out of Turn During Group Discussion",
+      "slug": "speaking-out-of-turn-during-group-discussion-16094892"
     },
     {
       "id": "TPT16095283",
@@ -8084,7 +8358,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Speaking Out of Turn When I Need to Talk Right Now",
+      "slug": "speaking-out-of-turn-when-i-need-to-talk-right-now-16095283"
     },
     {
       "id": "TPT16096841",
@@ -8129,7 +8405,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Speaking Out of Turn in Circle Time Social Story",
+      "slug": "speaking-out-of-turn-in-circle-time-social-story-16096841"
     },
     {
       "id": "TPT15477552",
@@ -8206,7 +8484,9 @@
           "Strong Emotions",
           "Waiting Turns"
         ]
-      }
+      },
+      "displayTitle": "Standing in Line –",
+      "slug": "standing-in-line-15477552"
     },
     {
       "id": "TPT15833238",
@@ -8271,7 +8551,9 @@
           "Series A: The Task Master"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Starting Lunch Routine Social Story for K–2",
+      "slug": "starting-lunch-routine-social-story-for-k-2-15833238"
     },
     {
       "id": "TPT15832051",
@@ -8337,7 +8619,9 @@
           "Series A: The Task Master"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Starting Morning Tasks Social Story for K–2",
+      "slug": "starting-morning-tasks-social-story-for-k-2-15832051"
     },
     {
       "id": "TPT15832898",
@@ -8405,7 +8689,9 @@
           "Series A: The Task Master"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Starting My Turn Social Story for K–2",
+      "slug": "starting-my-turn-social-story-for-k-2-15832898"
     },
     {
       "id": "TPT15665545",
@@ -8467,7 +8753,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Starting My Work Right Away Social Story for K–2",
+      "slug": "starting-my-work-right-away-social-story-for-k-2-15665545"
     },
     {
       "id": "TPT15501491",
@@ -8529,7 +8817,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Starting Something New –",
+      "slug": "starting-something-new-15501491"
     },
     {
       "id": "TPT15793814",
@@ -8592,7 +8882,9 @@
         ],
         "secondaryTags": [],
         "matchScore": 0.62
-      }
+      },
+      "displayTitle": "Starting Too Soon Social Story for K–2",
+      "slug": "starting-too-soon-social-story-for-k-2-15793814"
     },
     {
       "id": "TPT15833333",
@@ -8657,7 +8949,9 @@
           "Series A: The Task Master"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Starting a Group Project Social Story for K–2",
+      "slug": "starting-a-group-project-social-story-for-k-2-15833333"
     },
     {
       "id": "TPT15832743",
@@ -8723,7 +9017,9 @@
           "Series A: The Task Master"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Starting an Activity at Recess Social Story for K–2",
+      "slug": "starting-an-activity-at-recess-social-story-for-k-2-15832743"
     },
     {
       "id": "TPT15832920",
@@ -8790,7 +9086,9 @@
           "Series A: The Task Master"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Starting on the Carpet Social Story",
+      "slug": "starting-on-the-carpet-social-story-15832920"
     },
     {
       "id": "TPT15522055",
@@ -8843,7 +9141,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Starting the Day After a Busy Morning –",
+      "slug": "starting-the-day-after-a-busy-morning-15522055"
     },
     {
       "id": "TPT15665778",
@@ -8907,7 +9207,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Staying on Topic Social Story for K–2",
+      "slug": "staying-on-topic-social-story-for-k-2-15665778"
     },
     {
       "id": "TPT15706226",
@@ -8968,7 +9270,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Stop Hurting Others Social Story for K–2",
+      "slug": "stop-hurting-others-social-story-for-k-2-15706226"
     },
     {
       "id": "TPT15794486",
@@ -9031,7 +9335,9 @@
         ],
         "secondaryTags": [],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Stop Too Early Social Story for K–2",
+      "slug": "stop-too-early-social-story-for-k-2-15794486"
     },
     {
       "id": "TPT15203185",
@@ -9092,7 +9398,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Stopping Before Moving –",
+      "slug": "stopping-before-moving-15203185"
     },
     {
       "id": "TPT15210411",
@@ -9154,7 +9462,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Switching from Play to Learning –",
+      "slug": "switching-from-play-to-learning-15210411"
     },
     {
       "id": "TPT15634615",
@@ -9216,7 +9526,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Taking Turns Social Story for K–2",
+      "slug": "taking-turns-social-story-for-k-2-15634615"
     },
     {
       "id": "TPT15726010",
@@ -9278,7 +9590,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Taking a Breath Before Hitting Social Story for K–2",
+      "slug": "taking-a-breath-before-hitting-social-story-for-k-2-15726010"
     },
     {
       "id": "TPT15522008",
@@ -9346,7 +9660,9 @@
           "Hallway",
           "Sensory Input"
         ]
-      }
+      },
+      "displayTitle": "Taking a Breath When I Come In Fast for Impulse Control –",
+      "slug": "taking-a-breath-when-i-come-in-fast-for-impulse-control-15522008"
     },
     {
       "id": "TPT16138659",
@@ -9388,7 +9704,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Talking During Carpet Time Social Story",
+      "slug": "talking-during-carpet-time-social-story-16138659"
     },
     {
       "id": "TPT16139207",
@@ -9433,7 +9751,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Talking During Independent Work Social Story",
+      "slug": "talking-during-independent-work-social-story-16139207"
     },
     {
       "id": "TPT16119903",
@@ -9474,7 +9794,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Talking During Teacher Instruction Social Story",
+      "slug": "talking-during-teacher-instruction-social-story-16119903"
     },
     {
       "id": "TPT16138851",
@@ -9519,7 +9841,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Talking Out of Turn During Circle Time Social Story",
+      "slug": "talking-out-of-turn-during-circle-time-social-story-16138851"
     },
     {
       "id": "TPT16095605",
@@ -9563,7 +9887,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Talking Over Others During Group Discussion",
+      "slug": "talking-over-others-during-group-discussion-16095605"
     },
     {
       "id": "TPT16095087",
@@ -9604,7 +9930,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Talking Without Raising Hand in a Noisy Classroom",
+      "slug": "talking-without-raising-hand-in-a-noisy-classroom-16095087"
     },
     {
       "id": "TPT15665369",
@@ -9676,7 +10004,9 @@
           "Peer Conflict",
           "Wanting to Help Others"
         ]
-      }
+      },
+      "displayTitle": "Telling or Tattling Social Story for K–2",
+      "slug": "telling-or-tattling-social-story-for-k-2-15665369"
     },
     {
       "id": "TPT15849617",
@@ -9739,7 +10069,9 @@
         ],
         "secondaryTags": [],
         "matchScore": 0.53
-      }
+      },
+      "displayTitle": "Thinking Before Answering in Class Social Story for K–2",
+      "slug": "thinking-before-answering-in-class-social-story-for-k-2-15849617"
     },
     {
       "id": "TPT15745626",
@@ -9808,7 +10140,9 @@
           "Classroom",
           "Wanting to Maintain Control"
         ]
-      }
+      },
+      "displayTitle": "Token Board Social Story for K–2",
+      "slug": "token-board-social-story-for-k-2-15745626"
     },
     {
       "id": "TPT15634707",
@@ -9872,7 +10206,9 @@
           "Small Group Table",
           "Task Interruption"
         ]
-      }
+      },
+      "displayTitle": "Transitioning Between Centers Social Story for K–2",
+      "slug": "transitioning-between-centers-social-story-for-k-2-15634707"
     },
     {
       "id": "TPT15476598",
@@ -9925,7 +10261,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Trying Again After a Mistake",
+      "slug": "trying-again-after-a-mistake-15476598"
     },
     {
       "id": "TPT15689600",
@@ -9997,7 +10335,9 @@
           "Classroom",
           "Strong Emotions"
         ]
-      }
+      },
+      "displayTitle": "Trying a New Way Social Story K–2",
+      "slug": "trying-a-new-way-social-story-k-2-15689600"
     },
     {
       "id": "TPT15522101",
@@ -10059,7 +10399,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Unpacking My Backpack Calmly – Morning Routine No-Prep…",
+      "slug": "unpacking-my-backpack-calmly-morning-routine-no-prep-15522101"
     },
     {
       "id": "TPT15706929",
@@ -10121,7 +10463,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Using Safe Hands in Class Social Story for K–2",
+      "slug": "using-safe-hands-in-class-social-story-for-k-2-15706929"
     },
     {
       "id": "TPT15726153",
@@ -10192,7 +10536,9 @@
           "Task Difficulty",
           "Frustration"
         ]
-      }
+      },
+      "displayTitle": "Using Strong Bodies Safely Social Story for K–2",
+      "slug": "using-strong-bodies-safely-social-story-for-k-2-15726153"
     },
     {
       "id": "TPT15725459",
@@ -10253,7 +10599,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Using Words Instead of Hitting Social Story for K–2",
+      "slug": "using-words-instead-of-hitting-social-story-for-k-2-15725459"
     },
     {
       "id": "TPT15665843",
@@ -10322,7 +10670,9 @@
           "Play Area",
           "Strong Emotions"
         ]
-      }
+      },
+      "displayTitle": "Using Words When I'm Angry Social Story",
+      "slug": "using-words-when-im-angry-social-story-15665843"
     },
     {
       "id": "TPT15726246",
@@ -10384,7 +10734,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Using the Calm Corner Social Story for K–2",
+      "slug": "using-the-calm-corner-social-story-for-k-2-15726246"
     },
     {
       "id": "TPT16201811",
@@ -10430,7 +10782,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "Wait Before Reacting Social Story for K–2",
+      "slug": "wait-before-reacting-social-story-for-k-2-16201811"
     },
     {
       "id": "TPT15833150",
@@ -10497,7 +10851,9 @@
           "Series C: The Waiting Game"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Wait My Turn to Speak Social Story for K–2",
+      "slug": "wait-my-turn-to-speak-social-story-for-k-2-15833150"
     },
     {
       "id": "TPT15821545",
@@ -10567,7 +10923,9 @@
           "Carpet Area",
           "Noise Disturbance"
         ]
-      }
+      },
+      "displayTitle": "Waiting Calmly at a Class Party Social Story for K–2",
+      "slug": "waiting-calmly-at-a-class-party-social-story-for-k-2-15821545"
     },
     {
       "id": "TPT16077058",
@@ -10634,7 +10992,9 @@
           "Series C: The Waiting Game"
         ],
         "matchScore": 0.62
-      }
+      },
+      "displayTitle": "Waiting My Turn at Recess Social Story for K–2",
+      "slug": "waiting-my-turn-at-recess-social-story-for-k-2-16077058"
     },
     {
       "id": "TPT16077645",
@@ -10701,7 +11061,9 @@
           "Series C: The Waiting Game"
         ],
         "matchScore": 0.62
-      }
+      },
+      "displayTitle": "Waiting My Turn in Class Social Story for K–2",
+      "slug": "waiting-my-turn-in-class-social-story-for-k-2-16077645"
     },
     {
       "id": "TPT16076915",
@@ -10768,7 +11130,9 @@
           "Series C: The Waiting Game"
         ],
         "matchScore": 0.59
-      }
+      },
+      "displayTitle": "Waiting My Turn to Talk in Conversation Social Story for…",
+      "slug": "waiting-my-turn-to-talk-in-conversation-social-story-for-16076915"
     },
     {
       "id": "TPT15634533",
@@ -10837,7 +11201,9 @@
           "Waiting Turns",
           "Long Waiting Time"
         ]
-      }
+      },
+      "displayTitle": "Waiting Without Talking Social Story for K–2",
+      "slug": "waiting-without-talking-social-story-for-k-2-15634533"
     },
     {
       "id": "TPT15850006",
@@ -10905,7 +11271,9 @@
           "Series C: The Waiting Game"
         ],
         "matchScore": 0.67
-      }
+      },
+      "displayTitle": "Waiting for My Turn to Share Social Story for K–2",
+      "slug": "waiting-for-my-turn-to-share-social-story-for-k-2-15850006"
     },
     {
       "id": "TPT15197313",
@@ -10979,7 +11347,9 @@
           "Wanting to Share Ideas",
           "Long Waiting Time"
         ]
-      }
+      },
+      "displayTitle": "Waiting for My Turn – A",
+      "slug": "waiting-for-my-turn-a-15197313"
     },
     {
       "id": "TPT15522261",
@@ -11054,7 +11424,9 @@
           "Feeling Unfair",
           "Being Corrected"
         ]
-      }
+      },
+      "displayTitle": "Waiting for the Teacher to Be Ready for Impulse Control –…",
+      "slug": "waiting-for-the-teacher-to-be-ready-for-impulse-control-15522261"
     },
     {
       "id": "TPT15850040",
@@ -11124,7 +11496,9 @@
           "Long Waiting Time"
         ],
         "matchScore": 0.64
-      }
+      },
+      "displayTitle": "Waiting to Answer Social Story for K–2",
+      "slug": "waiting-to-answer-social-story-for-k-2-15850040"
     },
     {
       "id": "TPT15849875",
@@ -11194,7 +11568,9 @@
           "Long Waiting Time"
         ],
         "matchScore": 0.6
-      }
+      },
+      "displayTitle": "Waiting to Ask Questions Social Story for K–2",
+      "slug": "waiting-to-ask-questions-social-story-for-k-2-15849875"
     },
     {
       "id": "TPT15849932",
@@ -11264,7 +11640,9 @@
           "Long Waiting Time"
         ],
         "matchScore": 0.56
-      }
+      },
+      "displayTitle": "Waiting to Be Called On Social Story for K–2",
+      "slug": "waiting-to-be-called-on-social-story-for-k-2-15849932"
     },
     {
       "id": "TPT16015324",
@@ -11332,7 +11710,9 @@
           "Series C: The Waiting Game"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Waiting to Speak During Classroom Transitions",
+      "slug": "waiting-to-speak-during-classroom-transitions-16015324"
     },
     {
       "id": "TPT16015033",
@@ -11400,7 +11780,9 @@
           "Series C: The Waiting Game"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Waiting to Speak During Games Social Story",
+      "slug": "waiting-to-speak-during-games-social-story-16015033"
     },
     {
       "id": "TPT16015100",
@@ -11468,7 +11850,9 @@
           "Series C: The Waiting Game"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Waiting to Speak During Morning Arrival",
+      "slug": "waiting-to-speak-during-morning-arrival-16015100"
     },
     {
       "id": "TPT16015206",
@@ -11536,7 +11920,9 @@
           "Series C: The Waiting Game"
         ],
         "matchScore": 0.92
-      }
+      },
+      "displayTitle": "Waiting to Speak During Work Social Story for K–2",
+      "slug": "waiting-to-speak-during-work-social-story-for-k-2-16015206"
     },
     {
       "id": "TPT16014697",
@@ -11604,7 +11990,9 @@
           "Series C: The Waiting Game"
         ],
         "matchScore": 0.6
-      }
+      },
+      "displayTitle": "Waiting to Speak Social Story Bundle for K–2",
+      "slug": "waiting-to-speak-social-story-bundle-for-k-2-16014697"
     },
     {
       "id": "TPT16077303",
@@ -11671,7 +12059,9 @@
           "Series C: The Waiting Game"
         ],
         "matchScore": 0.69
-      }
+      },
+      "displayTitle": "Waiting to Speak Using Turn Token Social Story for K–2",
+      "slug": "waiting-to-speak-using-turn-token-social-story-for-k-2-16077303"
     },
     {
       "id": "TPT16076998",
@@ -11739,7 +12129,9 @@
           "Series C: The Waiting Game"
         ],
         "matchScore": 0.73
-      }
+      },
+      "displayTitle": "Waiting to Speak at Lunch Social Story for K–2",
+      "slug": "waiting-to-speak-at-lunch-social-story-for-k-2-16076998"
     },
     {
       "id": "TPT15849528",
@@ -11807,7 +12199,9 @@
           "Series C: The Waiting Game"
         ],
         "matchScore": 0.69
-      }
+      },
+      "displayTitle": "Waiting to Talk During Group Time Social Story for K–2",
+      "slug": "waiting-to-talk-during-group-time-social-story-for-k-2-15849528"
     },
     {
       "id": "TPT15725705",
@@ -11875,7 +12269,9 @@
           "Lunch Time",
           "Seeking Attention"
         ]
-      }
+      },
+      "displayTitle": "Walking Away Instead of Hitting Social Story for K–2",
+      "slug": "walking-away-instead-of-hitting-social-story-for-k-2-15725705"
     },
     {
       "id": "TPT15501463",
@@ -11941,7 +12337,9 @@
           "Rule Explanation",
           "Wanting to be First"
         ]
-      }
+      },
+      "displayTitle": "Walking Back to the Classroom –",
+      "slug": "walking-back-to-the-classroom-15501463"
     },
     {
       "id": "TPT15477651",
@@ -12002,7 +12400,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "When Everything Feels Like Too Much –",
+      "slug": "when-everything-feels-like-too-much-15477651"
     },
     {
       "id": "TPT15665343",
@@ -12065,7 +12465,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "When Friends Whisper Social Story for K–2",
+      "slug": "when-friends-whisper-social-story-for-k-2-15665343"
     },
     {
       "id": "TPT15476556",
@@ -12127,7 +12529,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "When I Can’t Get It Perfect –",
+      "slug": "when-i-can-t-get-it-perfect-15476556"
     },
     {
       "id": "TPT15689087",
@@ -12198,7 +12602,9 @@
           "Feeling Nervous",
           "Task Interruption"
         ]
-      }
+      },
+      "displayTitle": "When I Feel Embarrassed Social Story for K–2",
+      "slug": "when-i-feel-embarrassed-social-story-for-k-2-15689087"
     },
     {
       "id": "TPT15477584",
@@ -12260,7 +12666,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "When I Have to Stop Playing –",
+      "slug": "when-i-have-to-stop-playing-15477584"
     },
     {
       "id": "TPT15522155",
@@ -12332,7 +12740,9 @@
           "Playground",
           "Peer Conflict"
         ]
-      }
+      },
+      "displayTitle": "When I Want to Be First for Line Behavior –",
+      "slug": "when-i-want-to-be-first-for-line-behavior-15522155"
     },
     {
       "id": "TPT15203114",
@@ -12392,7 +12802,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "When I Want to Talk Right Now –",
+      "slug": "when-i-want-to-talk-right-now-15203114"
     },
     {
       "id": "TPT15501484",
@@ -12461,7 +12873,9 @@
           "Carpet Area",
           "Sensory Input"
         ]
-      }
+      },
+      "displayTitle": "When My Body Feels Too Busy –",
+      "slug": "when-my-body-feels-too-busy-15501484"
     },
     {
       "id": "TPT15477637",
@@ -12531,7 +12945,9 @@
           "Feeling Excited",
           "Sensory Input"
         ]
-      }
+      },
+      "displayTitle": "When My Body Is Still in Play Mode –",
+      "slug": "when-my-body-is-still-in-play-mode-15477637"
     },
     {
       "id": "TPT15196333",
@@ -12590,7 +13006,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "When My Body Wants to Tip Social Story K–2",
+      "slug": "when-my-body-wants-to-tip-social-story-k-2-15196333"
     },
     {
       "id": "TPT16083841",
@@ -12628,7 +13046,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "When My Body Won’t Stay Still on the Carpet",
+      "slug": "when-my-body-won-t-stay-still-on-the-carpet-16083841"
     },
     {
       "id": "TPT15501472",
@@ -12700,7 +13120,9 @@
           "Sensory Input",
           "Feeling Excited"
         ]
-      }
+      },
+      "displayTitle": "When My Hands Want to Reach –",
+      "slug": "when-my-hands-want-to-reach-15501472"
     },
     {
       "id": "TPT15477526",
@@ -12762,7 +13184,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "When My Work Feels Too Hard –",
+      "slug": "when-my-work-feels-too-hard-15477526"
     },
     {
       "id": "TPT15477603",
@@ -12839,7 +13263,9 @@
           "Strong Emotions",
           "Wanting to be First"
         ]
-      }
+      },
+      "displayTitle": "When Others Are Still Talking –",
+      "slug": "when-others-are-still-talking-15477603"
     },
     {
       "id": "TPT15522343",
@@ -12916,7 +13342,9 @@
           "Lunchroom",
           "Task Boredom"
         ]
-      }
+      },
+      "displayTitle": "When Waiting Feels Too Long for Time Management –",
+      "slug": "when-waiting-feels-too-long-for-time-management-15522343"
     },
     {
       "id": "TPT15689644",
@@ -12977,7 +13405,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "When a Craft Mistake Happens Social Story for K–2",
+      "slug": "when-a-craft-mistake-happens-social-story-for-k-2-15689644"
     },
     {
       "id": "TPT15665415",
@@ -13038,7 +13468,9 @@
           "social-story"
         ],
         "secondaryTags": []
-      }
+      },
+      "displayTitle": "When a Joke Isn’t Funny Social Story for K–2",
+      "slug": "when-a-joke-isn-t-funny-social-story-for-k-2-15665415"
     },
     {
       "id": "TPT15706144",
@@ -13112,7 +13544,9 @@
           "Task Difficulty",
           "Being Corrected"
         ]
-      }
+      },
+      "displayTitle": "Whole Body Safety Social Story for K–2",
+      "slug": "whole-body-safety-social-story-for-k-2-15706144"
     },
     {
       "id": "TPT16365644",
@@ -13150,7 +13584,9 @@
         "formats": [
           "social-story"
         ]
-      }
+      },
+      "displayTitle": "Big Picture Thinking Read Aloud for K–2",
+      "slug": "big-picture-thinking-read-aloud-for-k-2-16365644"
     },
     {
       "id": "TPT16366230",
@@ -13190,7 +13626,9 @@
         "formats": [
           "social-story"
         ]
-      }
+      },
+      "displayTitle": "Big Picture Thinking Read Aloud for K–2",
+      "slug": "big-picture-thinking-read-aloud-for-k-2-16366230"
     },
     {
       "id": "TPT16365762",
@@ -13231,7 +13669,9 @@
         "formats": [
           "social-story"
         ]
-      }
+      },
+      "displayTitle": "Big Picture Thinking Read Aloud for K–2",
+      "slug": "big-picture-thinking-read-aloud-for-k-2-16365762"
     },
     {
       "id": "TPT16365587",
@@ -13272,7 +13712,9 @@
         "formats": [
           "social-story"
         ]
-      }
+      },
+      "displayTitle": "Big Picture Thinking Read Aloud for K–2",
+      "slug": "big-picture-thinking-read-aloud-for-k-2-16365587"
     },
     {
       "id": "TPT16365735",
@@ -13312,7 +13754,9 @@
         "formats": [
           "social-story"
         ]
-      }
+      },
+      "displayTitle": "Big Picture Thinking Read Aloud for K–2",
+      "slug": "big-picture-thinking-read-aloud-for-k-2-16365735"
     },
     {
       "id": "TPT16335764",
@@ -13352,7 +13796,9 @@
         "formats": [
           "social-story"
         ]
-      }
+      },
+      "displayTitle": "Big Picture Thinking Read Aloud for K–2",
+      "slug": "big-picture-thinking-read-aloud-for-k-2-16335764"
     },
     {
       "id": "TPT16365822",
@@ -13392,7 +13838,9 @@
         "formats": [
           "social-story"
         ]
-      }
+      },
+      "displayTitle": "Big Picture Thinking Read Aloud for K–2",
+      "slug": "big-picture-thinking-read-aloud-for-k-2-16365822"
     },
     {
       "id": "TPT16365789",
@@ -13433,7 +13881,9 @@
         "formats": [
           "social-story"
         ]
-      }
+      },
+      "displayTitle": "Big Picture Thinking Read Aloud for K–2",
+      "slug": "big-picture-thinking-read-aloud-for-k-2-16365789"
     },
     {
       "id": "TPT16366167",
@@ -13474,7 +13924,9 @@
         "formats": [
           "social-story"
         ]
-      }
+      },
+      "displayTitle": "Big Picture Thinking Read Aloud for K–2",
+      "slug": "big-picture-thinking-read-aloud-for-k-2-16366167"
     },
     {
       "id": "TPT16365554",
@@ -13515,7 +13967,9 @@
         "formats": [
           "social-story"
         ]
-      }
+      },
+      "displayTitle": "Big Picture Thinking Read Aloud for K–2",
+      "slug": "big-picture-thinking-read-aloud-for-k-2-16365554"
     },
     {
       "id": "TPT16424856",
@@ -13554,7 +14008,9 @@
         "formats": [
           "social-story"
         ]
-      }
+      },
+      "displayTitle": "Flexible Thinking Read Aloud for K–2",
+      "slug": "flexible-thinking-read-aloud-for-k-2-16424856"
     },
     {
       "id": "TPT16319086",
@@ -13592,7 +14048,9 @@
         "formats": [
           "social-story"
         ]
-      }
+      },
+      "displayTitle": "Thinking Skills Stories for K–2",
+      "slug": "thinking-skills-stories-for-k-2-16319086"
     }
   ],
   "domainCounts": {

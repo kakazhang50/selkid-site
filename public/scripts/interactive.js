@@ -1,22 +1,20 @@
 (function () {
   'use strict';
 
-  var PAGE_SIZE = 9999;
+  var PAGE_SIZE = 48;
   var COVER_FALLBACK = '/assets/covers/sel-waiting-cover.png';
 
-  function coverImgUrl(product) {
-    var local = (product.localImage || '').trim();
-    if (local && local.indexOf('..') === -1 && local.indexOf('assets/') === 0) {
-      return '/' + local.replace(/^\//, '');
-    }
-    var url = (product.coverUrl || '').trim();
-    if (url.indexOf('http') === 0) return url;
-    return COVER_FALLBACK;
-  }
+  var SEARCH_SYNONYMS = {
+    blurting: ['calling out', 'call out', 'interrupting', 'talking out', 'speak out', 'shout out'],
+    waiting: ['wait', 'turn', 'patience', 'line', 'my turn'],
+    hitting: ['hands', 'safe hands', 'gentle hands', 'boundaries', 'personal space'],
+    regulation: ['calm', 'big feelings', 'emotional', 'self-control', 'reset'],
+    friendship: ['friend', 'repair', 'apolog', 'left out'],
+    executive: ['forget', 'directions', 'steps', 'memory', 'focus'],
+  };
 
-  function priceLabel(product) {
-    return product.price || 'TPT';
-  }
+  var FACET_STATE_KEYS = ['scenario', 'trigger', 'emotion', 'skill', 'casel'];
+  var WAITLIST_KEY = 'selkid_waitlist_v1';
 
   function escapeHtml(value) {
     return String(value || '')
@@ -26,16 +24,22 @@
       .replace(/"/g, '&quot;');
   }
 
-  function truncateText(value, max) {
-    var text = String(value || '').trim();
-    if (text.length <= max) return text;
-    return text.slice(0, max).replace(/\s+\S*$/, '') + '…';
+  function expandSearchTerms(q) {
+    var terms = [q];
+    Object.keys(SEARCH_SYNONYMS).forEach(function (key) {
+      var syns = SEARCH_SYNONYMS[key];
+      if (q.indexOf(key) !== -1 || syns.some(function (s) { return q.indexOf(s) !== -1; })) {
+        terms.push(key);
+        terms = terms.concat(syns);
+      }
+    });
+    return terms.filter(function (t, i, arr) { return t && arr.indexOf(t) === i; });
   }
 
-  function productDescription(product) {
-    return truncateText(product.description, 160);
+  function tagList(value) {
+    if (!value) return [];
+    return value.split('|').filter(Boolean);
   }
-  var WAITLIST_KEY = 'selkid_waitlist_v1';
 
   function initNav() {
     var header = document.querySelector('.site-header');
@@ -237,72 +241,33 @@
     });
   }
 
-  function productCard(product) {
-    var img = coverImgUrl(product);
-    var title = escapeHtml(product.title || '');
-    var desc = escapeHtml(productDescription(product));
-    var tags = product.selTags || {};
-    var meta = product.matrixMeta || {};
-    var metaHtml = '';
-    if (product.grades) {
-      metaHtml += '<span class="product-meta-pill">' + escapeHtml(product.grades) + '</span>';
+  function cardMatches(card, state) {
+    if (state.category !== 'all' && card.getAttribute('data-category-id') !== state.category) return false;
+    if (state.thinkingSkill !== 'all') {
+      var ts = tagList(card.getAttribute('data-thinking-skills'));
+      if (ts.indexOf(state.thinkingSkill) === -1) return false;
     }
-    if (product.category) {
-      metaHtml += '<span class="product-meta-pill product-meta-pill--cat">' + escapeHtml(product.category) + '</span>';
-    } else if (meta.mechanism && meta.mechanism.en) {
-      metaHtml += '<span class="product-meta-pill product-meta-pill--cat">' + escapeHtml(meta.mechanism.en) + '</span>';
-    } else if (product.pillar === 'thinking' && tags.thinkingSkills && tags.thinkingSkills[0]) {
-      metaHtml += '<span class="product-meta-pill product-meta-pill--cat">' + escapeHtml(tags.thinkingSkills[0].replace(/-/g, ' ')) + '</span>';
-    } else if (tags.skills && tags.skills[0]) {
-      metaHtml += '<span class="product-meta-pill product-meta-pill--cat">' + escapeHtml(tags.skills[0].replace(/-/g, ' ')) + '</span>';
+    var facetMap = {
+      scenario: 'data-scenarios',
+      trigger: 'data-triggers',
+      emotion: 'data-emotions',
+      skill: 'data-skills',
+      casel: 'data-casel',
+    };
+    for (var i = 0; i < FACET_STATE_KEYS.length; i++) {
+      var key = FACET_STATE_KEYS[i];
+      if (!state[key]) continue;
+      var attr = facetMap[key];
+      var vals = tagList(card.getAttribute(attr));
+      if (vals.indexOf(state[key]) === -1) return false;
     }
-    var buyUrl = product.tptUrl || '#';
-    return (
-      '<article class="product-card product-card--catalog">' +
-      '<div class="product-cover">' +
-      '<img src="' +
-      escapeHtml(img) +
-      '" alt="' +
-      title +
-      '" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="' +
-      COVER_FALLBACK +
-      '">' +
-      '<span class="product-cover-badge">' +
-      escapeHtml(priceLabel(product)) +
-      '</span>' +
-      '</div>' +
-      '<div class="product-body">' +
-      (metaHtml ? '<div class="product-meta-row">' + metaHtml + '</div>' : '') +
-      '<h3 class="product-title">' +
-      product.title +
-      '</h3>' +
-      (desc
-        ? '<p class="product-desc">' + desc + '</p>'
-        : '<p class="product-desc product-desc--muted">See full description on Teachers Pay Teachers.</p>') +
-      '<a class="btn btn-secondary product-buy-btn" href="' +
-      escapeHtml(buyUrl) +
-      '" target="_blank" rel="noopener noreferrer">Buy on TPT →</a>' +
-      '</div></article>'
-    );
-  }
-
-  var FACET_KEYS = {
-    scenario: 'scenarios',
-    trigger: 'triggers',
-    emotion: 'emotions',
-    skill: 'skills',
-    casel: 'casel',
-    thinkingSkill: 'thinkingSkills',
-  };
-
-  var FACET_STATE_KEYS = ['scenario', 'trigger', 'emotion', 'skill', 'casel'];
-
-  function productMatchesFacets(product, facets) {
-    var tags = product.selTags || {};
-    for (var key in facets) {
-      if (!facets[key]) continue;
-      var arr = tags[FACET_KEYS[key]] || [];
-      if (arr.indexOf(facets[key]) === -1) return false;
+    if (state.search) {
+      var hay = card.getAttribute('data-search') || '';
+      var terms = expandSearchTerms(state.search);
+      var hit = terms.some(function (t) {
+        return hay.indexOf(t) !== -1;
+      });
+      if (!hit) return false;
     }
     return true;
   }
@@ -327,9 +292,11 @@
     var bar = document.querySelector('[data-filter-bar]');
     var grid = document.querySelector('[data-catalog-grid]');
     if (!bar || !grid) return;
-    var pillar = grid.getAttribute('data-catalog') || bar.getAttribute('data-filter-pillar') || 'sel';
+
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('[data-product-card]'));
+    if (!cards.length) return;
+
     var state = {
-      pillar: pillar,
       category: 'all',
       thinkingSkill: 'all',
       scenario: '',
@@ -340,10 +307,71 @@
       preset: '',
       search: '',
     };
-    var allProducts = [];
     var shown = PAGE_SIZE;
     var statusBar = bar.querySelector('[data-filter-status]');
     var countEl = bar.querySelector('[data-result-count]');
+    var resultsBar = document.querySelector('[data-results-bar]');
+    var resultsSummary = document.querySelector('[data-results-summary]');
+    var activeFilterPills = document.querySelector('[data-active-filter-pills]');
+    var resultsSection = document.querySelector('[data-catalog-results]');
+    var hadUrlFilters = false;
+
+    function facetLabel(facet, id) {
+      var chip = bar.querySelector('.facet-chip[data-facet="' + facet + '"][data-facet-id="' + id + '"]');
+      if (!chip) return id.replace(/-/g, ' ');
+      var clone = chip.cloneNode(true);
+      var em = clone.querySelector('em');
+      if (em) em.remove();
+      return clone.textContent.trim();
+    }
+
+    function categoryLabel(id) {
+      var btn = bar.querySelector('[data-category="' + id + '"]');
+      return btn ? btn.textContent.trim() : id;
+    }
+
+    function updateResultsBar(matched) {
+      var hasFilters =
+        activeFacets().length > 0 || state.preset || state.search || state.category !== 'all' || state.thinkingSkill !== 'all';
+      if (resultsBar) resultsBar.hidden = !hasFilters;
+      if (!hasFilters || !resultsSummary) return;
+
+      var parts = [];
+      if (state.category !== 'all') parts.push(categoryLabel(state.category));
+      if (state.thinkingSkill !== 'all') {
+        var tBtn = bar.querySelector('[data-thinking-skill="' + state.thinkingSkill + '"]');
+        parts.push(tBtn ? tBtn.textContent.trim() : state.thinkingSkill);
+      }
+      FACET_STATE_KEYS.forEach(function (k) {
+        if (state[k]) parts.push(facetLabel(k, state[k]));
+      });
+      if (state.search) parts.push('Search: “' + state.search + '”');
+
+      var visible = Math.min(shown, matched.length);
+      resultsSummary.textContent =
+        matched.length +
+        ' stor' +
+        (matched.length === 1 ? 'y' : 'ies') +
+        ' match' +
+        (parts.length ? ' · ' + parts.join(' · ') : '') +
+        (visible < matched.length ? ' (showing ' + visible + ')' : '');
+
+      if (activeFilterPills) {
+        activeFilterPills.innerHTML = '';
+        parts.forEach(function (label) {
+          var pill = document.createElement('span');
+          pill.className = 'catalog-active-pill';
+          pill.textContent = label;
+          activeFilterPills.appendChild(pill);
+        });
+      }
+    }
+
+    function scrollToResults() {
+      if (!resultsSection) return;
+      var top = resultsSection.getBoundingClientRect().top + window.scrollY - 88;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    }
 
     function activeFacets() {
       return FACET_STATE_KEYS.filter(function (k) {
@@ -389,48 +417,59 @@
     }
 
     function render() {
-      var list = allProducts.filter(function (p) {
-        if (p.pillar !== state.pillar) return false;
-        if (state.category !== 'all' && p.categoryId !== state.category) return false;
-        if (state.thinkingSkill !== 'all') {
-          var ts = (p.selTags && p.selTags.thinkingSkills) || [];
-          if (ts.indexOf(state.thinkingSkill) === -1) return false;
-        }
-        if (!productMatchesFacets(p, state)) return false;
-        if (state.search) {
-          var q = state.search;
-          var hay = ((p.title || '') + ' ' + (p.description || '') + ' ' + (p.category || '')).toLowerCase();
-          if (hay.indexOf(q) === -1) return false;
-        }
-        return true;
+      var matched = cards.filter(function (card) {
+        return cardMatches(card, state);
       });
-      var slice = list.slice(0, shown);
-      grid.innerHTML = slice.length
-        ? slice.map(productCard).join('')
-        : '<p class="grid-empty">No resources match this combination. Try removing a filter or pick another quick pick.</p>';
-      if (countEl) {
-        countEl.textContent =
-          slice.length === list.length
-            ? list.length + ' resource' + (list.length === 1 ? '' : 's')
-            : 'Showing ' + slice.length + ' of ' + list.length;
-      }
-      var wrap = grid.parentElement;
-      if (wrap) {
-        var existing = wrap.querySelector('[data-load-more]');
-        if (existing) existing.remove();
-        if (shown < list.length) {
-          var btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'btn btn-secondary load-more-btn';
-          btn.setAttribute('data-load-more', '');
-          btn.textContent = 'Load more (' + (list.length - shown) + ' remaining)';
-          btn.addEventListener('click', function () {
-            shown = Math.min(shown + PAGE_SIZE, list.length);
-            render();
-          });
-          wrap.appendChild(btn);
+      cards.forEach(function (card) {
+        card.classList.add('catalog-card-hidden');
+        card.classList.remove('catalog-card-filtered-out');
+      });
+      matched.forEach(function (card, index) {
+        card.classList.remove('catalog-card-filtered-out');
+        if (index < shown) card.classList.remove('catalog-card-hidden');
+      });
+      cards.forEach(function (card) {
+        if (matched.indexOf(card) === -1) {
+          card.classList.add('catalog-card-filtered-out');
+          card.classList.add('catalog-card-hidden');
         }
+      });
+
+      var empty = grid.querySelector('.grid-empty-dynamic');
+      if (empty) empty.remove();
+      if (!matched.length) {
+        var p = document.createElement('p');
+        p.className = 'grid-empty grid-empty-dynamic';
+        p.textContent = 'No resources match this combination. Try removing a filter or pick another quick pick.';
+        grid.appendChild(p);
       }
+
+      if (countEl) {
+        var visible = Math.min(shown, matched.length);
+        countEl.textContent =
+          visible === matched.length
+            ? matched.length + ' resource' + (matched.length === 1 ? '' : 's')
+            : 'Showing ' + visible + ' of ' + matched.length;
+      }
+
+      updateResultsBar(matched);
+
+      var wrap = resultsSection || grid.parentElement || grid;
+      var existing = wrap.querySelector('[data-load-more]');
+      if (existing) existing.remove();
+      if (shown < matched.length) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'btn btn-secondary load-more-btn';
+        btn.setAttribute('data-load-more', '');
+        btn.textContent = 'Load more (' + (matched.length - shown) + ' remaining)';
+        btn.addEventListener('click', function () {
+          shown = Math.min(shown + PAGE_SIZE, matched.length);
+          render();
+        });
+        wrap.appendChild(btn);
+      }
+
       syncUrl(state);
       updateFacetUI();
     }
@@ -466,6 +505,7 @@
       state.preset = presetBtn.getAttribute('data-preset');
       shown = PAGE_SIZE;
       render();
+      scrollToResults();
     }
 
     function applyParams(params) {
@@ -508,17 +548,25 @@
         var search = bar.querySelector('[data-search]');
         if (search) search.value = q;
       }
+      hadUrlFilters =
+        activeFacets().length > 0 ||
+        state.category !== 'all' ||
+        state.thinkingSkill !== 'all' ||
+        !!state.search;
+      if (hadUrlFilters) {
+        var advanced = bar.querySelector('.catalog-advanced');
+        if (advanced) advanced.open = true;
+      }
     }
 
-    fetch('/data/catalog.json')
-      .then(function (r) {
-        return r.json();
-      })
-      .then(function (data) {
-        allProducts = data.products || [];
-        applyParams(new URLSearchParams(window.location.search));
-        render();
-      });
+    applyParams(new URLSearchParams(window.location.search));
+    cards.forEach(function (card, index) {
+      if (index >= PAGE_SIZE) card.classList.add('catalog-card-hidden');
+    });
+    render();
+    if (hadUrlFilters) {
+      window.setTimeout(scrollToResults, 120);
+    }
 
     bar.addEventListener('click', function (event) {
       var preset = event.target.closest('.catalog-preset');
@@ -551,6 +599,7 @@
         }
         shown = PAGE_SIZE;
         render();
+        scrollToResults();
         return;
       }
 
@@ -569,6 +618,7 @@
         state.preset = '';
         shown = PAGE_SIZE;
         render();
+        scrollToResults();
         return;
       }
 
@@ -600,6 +650,7 @@
         state.preset = '';
         shown = PAGE_SIZE;
         render();
+        if (state.search) scrollToResults();
       });
     }
   }

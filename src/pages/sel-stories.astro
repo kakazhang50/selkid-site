@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CatalogMatrixFilters from '@/components/CatalogMatrixFilters.astro';
-import SelFrameworkExplainer from '@/components/SelFrameworkExplainer.astro';
 import PageCTA from '@/components/PageCTA.astro';
 import { catalog } from '@/lib/catalog';
 import { pageJsonLdExtra } from '@/lib/seo';
@@ -22,38 +21,25 @@ const breadcrumbs = [
   breadcrumbs={breadcrumbs}
   jsonLdExtra={pageJsonLdExtra({ breadcrumbs })}
 >
-  <section class="page-hero refined">
+  <section class="page-hero refined page-hero--catalog">
     <div>
-      <p class="eyebrow">SEL Foundation · CASEL-aligned · Pillar 1</p>
+      <p class="eyebrow">SEL Foundation · CASEL-aligned</p>
       <h1>SEL Stories</h1>
       <p>
-        {catalog.pillars.sel} stories built on the <strong>CASEL Framework</strong>, organized as{' '}
-        <strong>Scenario × Trigger × Emotion × Skill</strong> — professional competencies delivered through Rex &amp; Dino
-        read-alouds, not random worksheets.
+        {catalog.pillars.sel} read-alouds — find by topic, search, or matrix. Each resource has a preview page with a
+        direct link to Teachers Pay Teachers.
       </p>
       <div class="page-stats">
         <div class="stat-chip"><strong>{catalog.pillars.sel}</strong><span>SEL stories</span></div>
         <div class="stat-chip"><strong>5</strong><span>CASEL competencies</span></div>
-        <div class="stat-chip"><strong>{caselCounts['self-management'] || 0}</strong><span>Self-Management tagged</span></div>
+        <div class="stat-chip"><strong>{caselCounts['self-management'] || 0}</strong><span>Self-Management</span></div>
       </div>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#matrix-filters">Browse stories</a>
-        <a class="btn btn-ghost" href="/learning-system#casel">How CASEL powers SELKID</a>
+        <a class="btn btn-primary" href="#matrix-filters">Browse all stories</a>
+        <a class="btn btn-ghost" href="/learning-system#sel-matrix">How the matrix works</a>
       </div>
     </div>
     <img src="/assets/covers/sel-waiting-cover.png" alt="SELKID social story cover" />
-  </section>
-
-  <section class="section light section--compact" id="sel-matrix">
-    <div class="section-inner">
-      <details class="framework-brief">
-        <summary>
-          <span class="eyebrow">Find the right story</span>
-          <strong>How the Scenario × Trigger × Emotion × Skill matrix works</strong>
-        </summary>
-        <SelFrameworkExplainer />
-      </details>
-    </div>
   </section>
 
   <CatalogMatrixFilters pillar="sel" />

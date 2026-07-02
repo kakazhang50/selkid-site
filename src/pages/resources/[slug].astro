@@ -1,0 +1,164 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ProductGrid from '@/components/ProductGrid.astro';
+import PageCTA from '@/components/PageCTA.astro';
+import {
+  catalog,
+  coverSrc,
+  productCardTitle,
+  relatedProducts,
+} from '@/lib/catalog';
+import { site } from '@/lib/site';
+import { absoluteUrl, breadcrumbSchema, webPageSchema } from '@/lib/seo';
+
+export function getStaticPaths() {
+  return catalog.products
+    .filter((p) => (p as { slug?: string }).slug)
+    .map((product) => ({
+      params: { slug: (product as { slug: string }).slug },
+      props: { product },
+    }));
+}
+
+interface Props {
+  product: (typeof catalog.products)[number];
+}
+
+const { product } = Astro.props;
+const slug = (product as { slug?: string }).slug!;
+const title = productCardTitle(product);
+const description = (product.description || `${title} — SELKID classroom resource.`).slice(0, 300);
+const cover = coverSrc(product);
+const related = relatedProducts(product, 4);
+
+const pillarLabel =
+  product.pillar === 'thinking' ? 'Thinking Skills' : product.pillar === 'ai' ? 'AI Cognition' : 'SEL Stories';
+const pillarHref =
+  product.pillar === 'thinking' ? '/thinking-skills' : product.pillar === 'ai' ? '/ai-cognition' : '/sel-stories';
+
+const breadcrumbs = [
+  { name: 'Home', href: '/' },
+  { name: pillarLabel, href: pillarHref },
+  { name: title, href: `/resources/${slug}` },
+];
+
+const pageUrl = absoluteUrl(`/resources/${slug}`);
+const tags = product.selTags || {};
+
+const productSchema = {
+  '@type': 'Product',
+  '@id': `${pageUrl}#product`,
+  name: title,
+  description: product.description || description,
+  image: absoluteUrl(cover),
+  url: pageUrl,
+  brand: { '@type': 'Brand', name: site.brandName },
+  offers: {
+    '@type': 'Offer',
+    url: product.tptUrl,
+    priceCurrency: 'USD',
+    price: product.price === 'FREE' ? '0' : (product.price || '').replace('$', '') || undefined,
+    availability: 'https://schema.org/InStock',
+    seller: { '@type': 'Organization', name: 'Teachers Pay Teachers' },
+  },
+  category: product.category || pillarLabel,
+  audience: {
+    '@type': 'EducationalAudience',
+    educationalRole: 'teacher',
+    audienceType: product.grades || 'K–2',
+  },
+};
+
+const jsonLdExtra = [
+  webPageSchema({ name: `${title} | ${site.brandName}`, description, url: pageUrl, type: 'WebPage' }),
+  breadcrumbSchema(breadcrumbs),
+  productSchema,
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage={cover}
+  ogImageAlt={`${title} — ${site.brandName} cover`}
+  breadcrumbs={breadcrumbs}
+  jsonLdExtra={jsonLdExtra}
+>
+  <article class="resource-detail">
+    <div class="resource-detail-inner">
+      <div class="resource-detail-media">
+        <img
+          src={cover}
+          alt={`Cover: ${title}`}
+          width="480"
+          height="640"
+          loading="eager"
+          decoding="async"
+          referrerpolicy="no-referrer"
+        />
+      </div>
+      <div class="resource-detail-main">
+        <p class="eyebrow">{pillarLabel}{product.grades ? ` · ${product.grades}` : ''}</p>
+        <h1>{title}</h1>
+        {product.category && <p class="resource-detail-cat">{product.category}</p>}
+        {
+          product.price && (
+            <p class="resource-detail-price">
+              {product.price === 'FREE' ? 'Free on Teachers Pay Teachers' : product.price}
+            </p>
+          )
+        }
+        <div class="resource-detail-cta">
+          <a class="btn btn-primary btn-lg" href={product.tptUrl} target="_blank" rel="noopener noreferrer">
+            Buy on TPT →
+          </a>
+          <a class="btn btn-secondary" href="/free-resources#subscribe">Get free sample</a>
+        </div>
+        {
+          product.description && (
+            <div class="resource-detail-desc">
+              <h2>About this resource</h2>
+              <p>{product.description}</p>
+            </div>
+          )
+        }
+        {
+          (tags.skills?.length || tags.casel?.length || tags.thinkingSkills?.length) && (
+            <div class="resource-detail-tags">
+              <h2>Classroom tags</h2>
+              <div class="resource-tag-list">
+                {tags.skills?.map((s) => <span class="resource-tag">{s.replace(/-/g, ' ')}</span>)}
+                {tags.casel?.map((s) => <span class="resource-tag resource-tag--casel">{s.replace(/-/g, ' ')}</span>)}
+                {tags.thinkingSkills?.map((s) => <span class="resource-tag">{s.replace(/-/g, ' ')}</span>)}
+              </div>
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </article>
+
+  {
+    related.length > 0 && (
+      <section class="section light">
+        <div class="section-inner">
+          <div class="section-heading centered section-heading--compact">
+            <p class="eyebrow">You may also like</p>
+            <h2>Related resources</h2>
+          </div>
+          <ProductGrid products={related} />
+        </div>
+      </section>
+    )
+  }
+
+  <PageCTA
+    title="New to SELKID?"
+    description="Start with the free Unit 1 comic sample, or browse the full learning system."
+    links={[
+      { href: '/free-resources#subscribe', label: 'Get free sample' },
+      { href: pillarHref, label: `Browse ${pillarLabel}`, variant: 'secondary' },
+      { href: '/learning-system', label: 'Learning System', variant: 'ghost' },
+    ]}
+  />
+</BaseLayout>

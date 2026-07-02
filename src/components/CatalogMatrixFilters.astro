@@ -1,6 +1,8 @@
 ---
 import { catalog } from '@/lib/catalog';
 import { selFramework } from '@/lib/selFramework';
+import ProductGrid from '@/components/ProductGrid.astro';
+import { productsByPillar } from '@/lib/catalog';
 
 interface Props {
   pillar?: 'sel' | 'thinking';
@@ -30,6 +32,7 @@ const skillItems = facetItems(selFramework.skills, 'skills');
 const thinkingItems = facetItems(thinkingSkills, 'thinkingSkills');
 
 const totalInPillar = pillar === 'sel' ? catalog.pillars.sel : catalog.pillars.thinking;
+const pillarProducts = productsByPillar(pillar);
 
 const placeholder =
   searchPlaceholder ||
@@ -202,6 +205,12 @@ const placeholder =
       </div>
     </div>
 
-    <div class="product-grid catalog-grid" data-catalog-grid data-catalog={pillar} data-paginate></div>
+    <div class="catalog-results" data-catalog-results>
+      <div class="catalog-results-bar" data-results-bar hidden>
+        <p class="catalog-results-summary" data-results-summary></p>
+        <div class="catalog-active-filters" data-active-filter-pills></div>
+      </div>
+      <ProductGrid products={pillarProducts} catalogMode catalogGrid pillar={pillar} />
+    </div>
   </div>
 </section>

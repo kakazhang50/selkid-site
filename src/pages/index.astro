@@ -2,11 +2,8 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import HeroHome from '@/components/HeroHome.astro';
 import AudiencePaths from '@/components/AudiencePaths.astro';
-import BeliefBand from '@/components/BeliefBand.astro';
 import MatrixPreview from '@/components/MatrixPreview.astro';
-import StepsGrid from '@/components/StepsGrid.astro';
 import ProductGrid from '@/components/ProductGrid.astro';
-import SocialProof from '@/components/SocialProof.astro';
 import { site } from '@/lib/site';
 import EducatorNotesPreview from '@/components/EducatorNotesPreview.astro';
 import { catalog, pickHomepageFeatured } from '@/lib/catalog';
@@ -56,12 +53,10 @@ const homeDescription = `SELKID offers ${total}+ CASEL-aligned SEL stories, thin
         <div class="section-heading centered section-heading--compact">
           <p class="eyebrow">How SELKID works</p>
           <h2>Story → Discussion → Activity → Reflection</h2>
+          <p class="section-lead">Every resource follows the same classroom rhythm — <a href="/learning-system">see the full learning system</a>.</p>
         </div>
-        <StepsGrid />
       </div>
     </section>
-
-    <BeliefBand />
 
     <section class="unit-timeline">
       <div class="section-inner">
@@ -108,8 +103,6 @@ const homeDescription = `SELKID offers ${total}+ CASEL-aligned SEL stories, thin
       </div>
     </section>
 
-    <SocialProof />
-
     <EducatorNotesPreview />
 
     <section class="product-section">
@@ -120,10 +113,8 @@ const homeDescription = `SELKID offers ${total}+ CASEL-aligned SEL stories, thin
         </div>
         <ProductGrid products={featured} />
         <p class="section-cta-row">
-          <a class="btn btn-secondary" href="/sel-stories">Browse all stories</a>
-          <a class="btn btn-ghost" href={site.tptStore} target="_blank" rel="noopener"
-            >Shop on TPT ({total}+)</a
-          >
+          <a class="btn btn-primary" href="/sel-stories">Browse all {total}+ stories</a>
+          <a class="btn btn-ghost" href={site.tptStore} target="_blank" rel="noopener">Teachers Pay Teachers</a>
         </p>
       </div>
     </section>

@@ -30,6 +30,9 @@ export default defineConfig({
         } else if (highPriorityPaths.has(normalized)) {
           item.priority = 0.9;
           item.changefreq = 'weekly';
+        } else if (path.startsWith('/resources/')) {
+          item.priority = 0.85;
+          item.changefreq = 'monthly';
         } else if (path.startsWith('/educator-notes/')) {
           item.priority = 0.7;
           item.changefreq = 'monthly';

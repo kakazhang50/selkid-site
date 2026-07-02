@@ -1,0 +1,19 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { site } from '@/lib/site';
+---
+
+<BaseLayout title="Page not found" description="This page could not be found on SELKID." noindex>
+  <section class="error-page">
+    <div class="error-page-inner">
+      <p class="eyebrow">404</p>
+      <h1>This path isn’t in Maple Forest</h1>
+      <p>Rex took a wrong turn. Try one of these instead:</p>
+      <div class="error-page-actions">
+        <a class="btn btn-primary" href="/sel-stories">Browse SEL stories</a>
+        <a class="btn btn-secondary" href="/thinking-skills">Thinking skills</a>
+        <a class="btn btn-ghost" href="/">Back home</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

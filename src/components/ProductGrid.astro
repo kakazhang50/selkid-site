@@ -1,62 +1,29 @@
 ---
+import ProductCard from '@/components/ProductCard.astro';
 import type { Product } from '@/lib/catalog';
-import { coverSrc, COVER_FALLBACK } from '@/lib/catalog';
 
 interface Props {
   products: Product[];
+  catalogMode?: boolean;
+  catalogGrid?: boolean;
+  pillar?: string;
 }
 
-const { products } = Astro.props;
-
-function excerpt(text: string, max = 140): string {
-  const t = (text || '').trim();
-  if (t.length <= max) return t;
-  return t.slice(0, max).replace(/\s+\S*$/, '') + '…';
-}
-
-function priceLabel(product: Product): string {
-  if (product.price) return product.price;
-  return 'TPT';
-}
+const { products, catalogMode = false, catalogGrid = false, pillar = '' } = Astro.props;
 ---
 
-<div class="product-grid catalog-grid">
+<div
+  class="product-grid catalog-grid"
+  data-catalog-grid={catalogGrid ? '' : undefined}
+  data-catalog={catalogGrid ? pillar : undefined}
+  data-paginate={catalogGrid ? '' : undefined}
+  aria-live={catalogGrid ? 'polite' : undefined}
+>
   {
     products.length === 0 ? (
       <p class="grid-empty">No resources match this filter.</p>
     ) : (
-      products.map((product) => (
-        <article class="product-card product-card--catalog">
-          <div class="product-cover">
-            <img
-              src={coverSrc(product)}
-              alt={product.title}
-              loading="lazy"
-              decoding="async"
-              referrerpolicy="no-referrer"
-              data-fallback={COVER_FALLBACK}
-            />
-            <span class="product-cover-badge">{priceLabel(product)}</span>
-          </div>
-          <div class="product-body">
-            <div class="product-meta-row">
-              {product.grades && <span class="product-meta-pill">{product.grades}</span>}
-              {product.category && <span class="product-meta-pill product-meta-pill--cat">{product.category}</span>}
-            </div>
-            <h3 class="product-title">{product.title}</h3>
-            {
-              product.description ? (
-                <p class="product-desc">{excerpt(product.description)}</p>
-              ) : (
-                <p class="product-desc product-desc--muted">See full description on Teachers Pay Teachers.</p>
-              )
-            }
-            <a class="btn btn-secondary product-buy-btn" href={product.tptUrl} target="_blank" rel="noopener noreferrer">
-              Buy on TPT →
-            </a>
-          </div>
-        </article>
-      ))
+      products.map((product) => <ProductCard product={product} catalogMode={catalogMode} />)
     )
   }
 </div>
