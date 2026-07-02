@@ -11,10 +11,24 @@ export const catalog = catalogData as Catalog;
 export const educationMatrix = matrixData as EducationMatrix;
 export const aiSeries = aiSeriesData as AiSeries;
 
+export const COVER_FALLBACK = '/assets/covers/sel-waiting-cover.png';
+export const LOCAL_COVER_PREFIX = 'assets/covers/tpt';
+
+function normalizeLocalPath(localImage?: string | null): string | null {
+  const local = (localImage || '').trim();
+  if (!local || local.includes('..')) return null;
+  const path = local.replace(/^\//, '');
+  if (!path.startsWith('assets/')) return null;
+  return `/${path}`;
+}
+
+/** Prefer site-hosted cover; TPT URL is fallback only. */
 export function coverSrc(product: Product): string {
-  if (product.coverUrl) return product.coverUrl;
-  if (product.localImage) return `/${product.localImage.replace(/^\//, '')}`;
-  return '/assets/covers/sel-waiting-cover.png';
+  const local = normalizeLocalPath(product.localImage);
+  if (local) return local;
+  const url = (product.coverUrl || '').trim();
+  if (url.startsWith('http')) return url;
+  return COVER_FALLBACK;
 }
 
 /** Stable key so duplicate TPT artwork does not repeat on the homepage. */

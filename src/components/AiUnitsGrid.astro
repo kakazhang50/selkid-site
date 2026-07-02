@@ -1,23 +1,24 @@
 ---
 import { aiSeries } from '@/lib/catalog';
+import { site } from '@/lib/site';
 ---
 
 <div class="product-grid">
   {
     aiSeries.units.map((unit) => (
-      <article class="unit-card">
-        <a class="unit-link" href="/free-resources">
-          <div class="unit-cover">
-            <img src={`/${unit.cover.replace(/^\//, '')}`} alt={`Unit ${unit.number} — ${unit.title}`} loading="lazy" />
-            <span class="unit-badge">Unit {unit.number}</span>
-          </div>
-          <div class="unit-body">
-            <h3>{unit.title}</h3>
-            <p class="unit-subtitle">{unit.subtitle}</p>
-            <p>{unit.description}</p>
-            <span class="unit-cta">Learn more</span>
-          </div>
-        </a>
+      <article class="product-card product-card--catalog unit-card">
+        <div class="unit-cover product-cover">
+          <img src={`/${unit.cover.replace(/^\//, '')}`} alt={`Unit ${unit.number} — ${unit.title}`} loading="lazy" referrerpolicy="no-referrer" decoding="async" />
+          <span class="unit-badge">Unit {unit.number}</span>
+        </div>
+        <div class="unit-body product-body">
+          <h3 class="product-title">{unit.title}</h3>
+          <p class="unit-subtitle">{unit.subtitle}</p>
+          <p class="product-desc">{unit.description}</p>
+          <a class="btn btn-primary product-buy-btn" href={site.tptStore} target="_blank" rel="noopener noreferrer">
+            Buy on TPT →
+          </a>
+        </div>
       </article>
     ))
   }

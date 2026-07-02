@@ -10,6 +10,8 @@
 /sel-library.html      /sel-stories      301
 /for-educators.html    /about            301
 /resources.html        /free-resources   301
+/shop                  /sel-stories      301
+/shop/                 /sel-stories      301
 
 # Legacy Substack paths → main site
 /p/*       /                  301

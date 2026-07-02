@@ -44,19 +44,19 @@ const breadcrumbs = [
     <img src="/assets/covers/sel-waiting-cover.png" alt="SELKID social story cover" />
   </section>
 
-  <section class="section light" id="sel-matrix">
+  <section class="section light section--compact" id="sel-matrix">
     <div class="section-inner">
-      <div class="section-heading centered section-heading--compact">
-        <p class="eyebrow">Find the right story</p>
-        <h2>Scenario × Trigger × Emotion × Skill</h2>
-      </div>
-      <SelFrameworkExplainer />
+      <details class="framework-brief">
+        <summary>
+          <span class="eyebrow">Find the right story</span>
+          <strong>How the Scenario × Trigger × Emotion × Skill matrix works</strong>
+        </summary>
+        <SelFrameworkExplainer />
+      </details>
     </div>
   </section>
 
-  <section class="section white section--flush-top">
-    <CatalogMatrixFilters pillar="sel" />
-  </section>
+  <CatalogMatrixFilters pillar="sel" />
 
   <PageCTA
     title="New to SELKID?"
