@@ -65,7 +65,8 @@ npm run publish
 
 | Problem | Fix |
 |---------|-----|
-| Build fails on Cloudflare | 确认 build command = `npm run build`，output = `dist` |
+| Build fails on Cloudflare | 确认 build command = `npm run build`，output = `dist`；**不要**依赖仓库外的 `selkid-tools`（已改为 `scripts/enrich_catalog_meta.mjs`） |
+| Push 后线上仍是旧页 / 无 SKU 卡片 | Pages → **Deployments** 看最新构建是否 **Failed**；失败则 Retry；成功则 Ctrl+F5。本地 `dist/sel-stories/index.html` 应 ~450KB（含 210 张 SSR 卡片） |
 | 旧 .html 链接 404 | `public/_redirects` 已做 301 |
 | SEL 筛选不工作 | 确认 `public/data/catalog.json` 存在 |
 | 图片 404 | 确认 `public/assets/` 已提交 |
