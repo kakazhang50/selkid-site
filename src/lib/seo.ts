@@ -119,6 +119,98 @@ export function faqSchema(faqs: FaqItem[]) {
   };
 }
 
+export function productOfferExtras() {
+  const yearAhead = new Date();
+  yearAhead.setFullYear(yearAhead.getFullYear() + 1);
+  const priceValidUntil = yearAhead.toISOString().slice(0, 10);
+
+  return {
+    itemCondition: 'https://schema.org/NewCondition',
+    priceValidUntil,
+    shippingDetails: {
+      '@type': 'OfferShippingDetails',
+      shippingRate: {
+        '@type': 'MonetaryAmount',
+        value: '0',
+        currency: 'USD',
+      },
+      shippingDestination: {
+        '@type': 'DefinedRegion',
+        addressCountry: 'US',
+      },
+      deliveryTime: {
+        '@type': 'ShippingDeliveryTime',
+        handlingTime: {
+          '@type': 'QuantitativeValue',
+          minValue: 0,
+          maxValue: 0,
+          unitCode: 'DAY',
+        },
+        transitTime: {
+          '@type': 'QuantitativeValue',
+          minValue: 0,
+          maxValue: 0,
+          unitCode: 'DAY',
+        },
+      },
+    },
+    hasMerchantReturnPolicy: {
+      '@type': 'MerchantReturnPolicy',
+      applicableCountry: 'US',
+      returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+      merchantReturnDays: 30,
+      returnMethod: 'https://schema.org/ReturnByMail',
+      returnFees: 'https://schema.org/FreeReturn',
+      merchantReturnLink:
+        'https://help.teacherspayteachers.com/hc/en-us/articles/360000319298-Refund-Policy',
+    },
+  };
+}
+
+export function productSchema(opts: {
+  name: string;
+  description: string;
+  image: string;
+  pageUrl: string;
+  tptUrl: string;
+  price?: string;
+  category?: string;
+  grades?: string;
+  sku?: string;
+}) {
+  const price =
+    opts.price === 'FREE' ? '0' : (opts.price || '').replace(/^\$/, '').trim() || undefined;
+  const offerExtras = productOfferExtras();
+
+  const schema: Record<string, unknown> = {
+    '@type': ['Product', 'LearningResource'],
+    '@id': `${opts.pageUrl}#product`,
+    name: opts.name,
+    description: opts.description,
+    image: opts.image,
+    url: opts.pageUrl,
+    brand: { '@type': 'Brand', name: site.brandName },
+    category: opts.category,
+    learningResourceType: 'read-aloud',
+    educationalLevel: opts.grades || 'K-2',
+    offers: {
+      '@type': 'Offer',
+      url: opts.tptUrl,
+      priceCurrency: 'USD',
+      price,
+      availability: 'https://schema.org/InStock',
+      seller: { '@type': 'Organization', name: 'Teachers Pay Teachers' },
+      ...offerExtras,
+    },
+  };
+
+  if (opts.sku) {
+    schema.sku = opts.sku;
+  }
+
+  return schema;
+}
+
 export function articleSchema(opts: {
   title: string;
   description: string;

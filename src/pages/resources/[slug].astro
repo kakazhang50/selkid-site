@@ -9,7 +9,7 @@ import {
   relatedProducts,
 } from '@/lib/catalog';
 import { site } from '@/lib/site';
-import { absoluteUrl, breadcrumbSchema, webPageSchema } from '@/lib/seo';
+import { absoluteUrl, breadcrumbSchema, productSchema, webPageSchema } from '@/lib/seo';
 
 export function getStaticPaths() {
   return catalog.products
@@ -45,34 +45,22 @@ const breadcrumbs = [
 const pageUrl = absoluteUrl(`/resources/${slug}`);
 const tags = product.selTags || {};
 
-const productSchema = {
-  '@type': 'Product',
-  '@id': `${pageUrl}#product`,
+const productSchemaNode = productSchema({
   name: title,
   description: product.description || description,
-  image: absoluteUrl(cover),
-  url: pageUrl,
-  brand: { '@type': 'Brand', name: site.brandName },
-  offers: {
-    '@type': 'Offer',
-    url: product.tptUrl,
-    priceCurrency: 'USD',
-    price: product.price === 'FREE' ? '0' : (product.price || '').replace('$', '') || undefined,
-    availability: 'https://schema.org/InStock',
-    seller: { '@type': 'Organization', name: 'Teachers Pay Teachers' },
-  },
+  image: cover.startsWith('http') ? cover : absoluteUrl(cover),
+  pageUrl,
+  tptUrl: product.tptUrl,
+  price: product.price,
   category: product.category || pillarLabel,
-  audience: {
-    '@type': 'EducationalAudience',
-    educationalRole: 'teacher',
-    audienceType: product.grades || 'K–2',
-  },
-};
+  grades: product.grades,
+  sku: product.tptId,
+});
 
 const jsonLdExtra = [
   webPageSchema({ name: `${title} | ${site.brandName}`, description, url: pageUrl, type: 'WebPage' }),
   breadcrumbSchema(breadcrumbs),
-  productSchema,
+  productSchemaNode,
 ];
 ---
 
