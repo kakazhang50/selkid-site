@@ -51,10 +51,8 @@ const productSchemaNode = productSchema({
   image: cover.startsWith('http') ? cover : absoluteUrl(cover),
   pageUrl,
   tptUrl: product.tptUrl,
-  price: product.price,
   category: product.category || pillarLabel,
   grades: product.grades,
-  sku: product.tptId,
 });
 
 const jsonLdExtra = [
